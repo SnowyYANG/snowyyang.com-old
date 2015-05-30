@@ -1,5 +1,10 @@
 <?php namespace snowy_asia;
 
+/* 
+ * by Snowy YANG
+ * for http://snowy.asia/
+ */
+
 require_once('config.php');
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST['password'] === PASSWORD)
 {
@@ -7,8 +12,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST['password'] === PASSWORD)
     $title = $_POST['title'];
     $content = $_POST['content'];
     require_once('data.php');
-    if ($id === 0) $id = db_add_diary ($title, $content);
-    else set_diary ($id, $title, $content);
+    if ($id === 0) $id = db_add_diary($title, $content);
+    else db_set_diary($id, $title, $content);
 }
 else
 {
@@ -16,7 +21,7 @@ else
     if ($id !== 0)
     {
         require_once('data.php');
-        if ($r = get_diary($id))
+        if ($r = db_get_diary($id))
         {
             $title = $r['title'];
             $content = $r['content'];
@@ -27,18 +32,26 @@ else
 ?>
 <!DOCTYPE html>
 <!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
+by Snowy YANG
+for http://snowy.asia/
 -->
 <html>
     <head>
         <meta charset="UTF-8">
         <title>Edit Diary</title>
+        <script src="/edit.js"></script>
+        <script>
+            var pe;
+            
+            function _onload() {
+                pe = document.getElementById('password');
+                pe.value = getPassword();
+            }
+        </script>
     </head>
-    <body>
+    <body onload="_onload()">
         <form method="POST">
-            <input name="password" type="password"/>
+            <input name="password" id="password" type="password" onchange="setPassword(pe.value)"/>
             <?php
             if ($id === 0)
             {

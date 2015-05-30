@@ -3,6 +3,11 @@
 require_once('config.php');
 require_once('data.php');
 
+function diary_content($content)
+{
+    return str_replace("\n", '<br>', $content);
+}
+
 if ($q = $_GET['q'])
 {
     $q = explode('/', $q);
@@ -15,7 +20,7 @@ if ($q = $_GET['q'])
                 if ($model = get_diary($id))
                 {
                     $title = $model['title'];
-                    $content = $model['content'];
+                    $content = diary_content($model['content']);
                     $done = TRUE;
                 }
             }
@@ -26,12 +31,13 @@ if ($q = $_GET['q'])
                 $content = '';
                 while($r = db_fetch_row($model))
                 {
+                    $d = diary_content($r['content']);
                     $content.=
-"<br/>
-$r[title] ($r[create_time])<br/>
-<br/>
-$r[content]<br/>
------------<br/>";
+"<br>
+$r[title] ($r[create_time])<br>
+<br>
+$d<br>
+-----------<br>";
                 }
                 $done = TRUE;
             }
@@ -44,20 +50,26 @@ if (!$done)
     $title = 'Snowy';
     $model = db_get_homepage();
     $diary = $model['diary'];
+    $d = diary_content($diary['content']);
     $content =
-"少女工房<br/>
------------<br/>
-<br/>
-<a href=\"/diary\">Diary</a><br/>
-<br/>
-$diary[title] ($diary[create_time])<br/>
-<br/>
-$diary[content] <br/>
------------<br/>
+"少女工房<br>
+-----------<br>
+<br>
+<a href=\"/diary\">Diary</a><br>
+<br>
+$diary[title] ($diary[create_time])<br>
+<br>
+$d<br>
+-----------<br>
 <br/>
 未完待续...";
 }
 ?>
+<!DOCTYPE html>
+<!--
+by Snowy YANG
+for http://snowy.asia/
+-->
 <html>
     <head>
         <meta charset="UTF-8">

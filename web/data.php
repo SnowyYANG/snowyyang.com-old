@@ -1,5 +1,10 @@
 <?php namespace snowy_asia;
 
+/* 
+ * by Snowy YANG
+ * for http://snowy.asia/
+ */
+
 require_once('config.php');
 
 function db_get()
