@@ -1,17 +1,18 @@
-<?php namespace snowy_asia;
+<?php
 
 /* 
  * by Snowy YANG
  * for http://snowy.asia/
  */
 
-require_once('config.php');
+require_once('../config.php');
+require_once('../data.php');
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST['password'] === PASSWORD)
 {
     $id = intval($_POST['id']);
     $title = $_POST['title'];
-    $content = $_POST['content'];
-    require_once('data.php');
+    $content = str_replace("\r\n", "\n", $_POST['content']);
     if ($id === 0) $id = db_add_diary($title, $content);
     else db_set_diary($id, $title, $content);
 }
@@ -20,7 +21,6 @@ else
     $id = intval($_GET['id']);
     if ($id !== 0)
     {
-        require_once('data.php');
         if ($r = db_get_diary($id))
         {
             $title = $r['title'];

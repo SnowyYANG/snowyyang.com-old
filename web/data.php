@@ -1,11 +1,10 @@
-<?php namespace snowy_asia;
+<?php
 
 /* 
  * by Snowy YANG
  * for http://snowy.asia/
  */
-
-require_once('config.php');
+require_once 'config.php';
 
 function db_get()
 {
@@ -22,7 +21,7 @@ function db_fetch_row($rows)
 function db_get_homepage()
 {
     $db = db_get();
-    $result = mysqli_query($db, 'SELECT * FROM diary LIMIT 1');
+    $result = mysqli_query($db, 'SELECT * FROM diary ORDER BY create_time DESC LIMIT 1');
     $diary = mysqli_fetch_assoc($result);
     mysqli_free_result($result);
     mysqli_close($db);

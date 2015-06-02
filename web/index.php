@@ -1,7 +1,6 @@
-<?php namespace snowy_asia;
+<?php
 
-require_once('config.php');
-require_once('data.php');
+require_once 'data.php';
 
 function diary_content($content)
 {
@@ -61,7 +60,7 @@ $diary[title] ($diary[create_time])<br>
 <br>
 $d<br>
 -----------<br>
-<br/>
+<br>
 未完待续...";
 }
 ?>
