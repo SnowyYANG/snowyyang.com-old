@@ -11,29 +11,6 @@ function db_get()
     return mysqli_connect(DB_SERVER, DB_USER, DB_PASSWORD, DB_DATABASE);
 }
 
-function db_fetch_row($rows)
-{
-    $r = mysqli_fetch_assoc($rows);
-    if ($r === NULL) mysql_free_result($rows);
-    return $r;
-}
-
-function db_get_homepage()
-{
-    $db = db_get();
-    $result = mysqli_query($db, 'SELECT * FROM diary ORDER BY create_time DESC LIMIT 1');
-    $diary = mysqli_fetch_assoc($result);
-    mysqli_free_result($result);
-    mysqli_close($db);
-    return ['diary' => $diary];
-}
-
-function db_get_diaries()
-{
-    $db = db_get();
-    return mysqli_query($db, 'SELECT * FROM diary');
-}
-
 function db_add_diary($title, $content)
 {
     $db = db_get();
