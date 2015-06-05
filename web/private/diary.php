@@ -5,18 +5,18 @@
  * for http://snowy.asia/
  */
 
-require 'data.php';
+require 'private/data.php';
 
 function diary_model()
 {
-    static $mysqli = null, $result;
+    static $mysqli, $result;
     
-    if ($mysqli === null)
+    if (!$mysqli)
     {
         $mysqli = db_get();
-        $result = mysqli_query($db, 'SELECT * FROM diary');
+        $result = mysqli_query($mysqli, 'SELECT * FROM diary');
     }
-    if ($model = mysqli_fetch_assoc($result)) str_replace("\n", '<br>', $model['content']);
+    if ($model = mysqli_fetch_assoc($result)) $model['content'] = str_replace("\n", '<br>', $model['content']);
     else
     {
         mysqli_free_result($result);

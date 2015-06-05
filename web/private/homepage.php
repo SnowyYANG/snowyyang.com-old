@@ -5,7 +5,7 @@
  * for http://snowy.asia/
  */
 
-require_once 'data.php';
+require_once 'private/data.php';
 
 function homepage_model()
 {
