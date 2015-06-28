@@ -1,10 +1,8 @@
 <?php
 
-if ($q = $_GET['q'])
-{
+if ($q = $_GET['q']) {
     $q = explode('/', $q);
-    switch ($q[1])
-    {
+    switch ($q[1]) {
         case 'diary':
             $router = 'diary';
             break;
@@ -24,6 +22,11 @@ for http://snowy.asia/
     <head>
         <meta charset="UTF-8">
         <title><?php echo $title ?> - 少女工房</title>
+        <style>
+body{
+    font: 16px Microsoft YaHei
+}
+        </style>
     </head>
     <body>
         <?php require 'private/'.$router.'_view.php'; ?>
