@@ -24,6 +24,8 @@ for http://snowy.asia/
         <title><?php echo $title ?> - 少女工房</title>
         <style>
 body{
+    margin: 0;
+    padding: 0;
     font: 16px Microsoft YaHei
 }
         </style>
