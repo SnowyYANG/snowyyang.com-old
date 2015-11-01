@@ -9,11 +9,15 @@ for http://snowy.asia/
 </div>
 <p style="width: 32em; margin-left: 5em"><?php
 while($model = diary_model()) {
-    if ($first) {?>-----------<br>
-<?php }
-    $first = true;?><br>
+    if ($nonfirst) {
+        ?>-----------<br>
+<?php
+    }
+    $nonfirst = true;
+?><br>
 <?php echo "$model[title] ($model[create_time])"; ?><br>
 <br>
 <?php echo $model['content']; ?><br>
-<?php }
+<?php
+}
 ?></p>

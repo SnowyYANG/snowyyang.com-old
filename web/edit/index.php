@@ -43,8 +43,12 @@ function db_set_diary($id, $title, $content) {
     if (is_int($id)) {
         $db = db_get();
         $title = mysqli_real_escape_string($db, $title);
-        $content = mysqli_real_escape_string($db, $content);
-        mysqli_query($db, "UPDATE diary SET title = '$title', content = '$content' WHERE id = $id", MYSQLI_USE_RESULT);
+        if ($content) {
+            $content = mysqli_real_escape_string($db, $content);
+            mysqli_query($db, "UPDATE diary SET title = '$title', content = '$content' WHERE id = $id", MYSQLI_USE_RESULT);
+        }
+        else
+            mysqli_query($db, "UPDATE diary SET title = '$title' WHERE id = $id", MYSQLI_USE_RESULT);
         mysqli_close($db);
     }
 }
@@ -52,7 +56,7 @@ function db_set_diary($id, $title, $content) {
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $id = intval($_POST['id']);
     $title = $_POST['title'];
-    $content = str_replace("\r\n", "\n", $_POST['content']);
+    $content = $_POST['content'] === '' ? null : str_replace("\r\n", "\n", $_POST['content']);
     if ($id === 0) $id = db_add_diary($title, $content);
     else db_set_diary($id, $title, $content);
 }
