@@ -1,6 +1,5 @@
 config.php
-/web/rfwiki/
-/web/nbproject/private/
-/web/test.php
-/web/test.html
-/web/private/test.php
+/nbproject/private/
+/test.php
+/test.html
+/private/test.php
