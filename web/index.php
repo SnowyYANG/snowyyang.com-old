@@ -16,6 +16,9 @@ if ($q = $_GET['q']) {
         case 'diary':
             $router = 'diary';
             break;
+        case 'rf4':
+            require_once 'rfwiki/index.php';
+            exit(0);
     }
 }
 
