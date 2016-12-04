@@ -51,6 +51,7 @@ function parse_link($text) {
 }
 
 function fulltext($html) {
+    $html = preg_replace("/[ \t]+/", ' ', $html);
     $html = str_replace('</td><td>', ' ', $html);
     return preg_replace('/<.+?>/', '', $html);
 }
