@@ -6,7 +6,6 @@
  */
 
 require __DIR__.'/config.php';
-require __DIR__.'/parser.php';
 
 $mysqli = new mysqli(DB_SERVER, DB_USER, DB_PASSWORD, DB_DATABASE);
 if ($mysqli->connect_errno) {
@@ -21,12 +20,13 @@ $ip = mysqli_real_escape_string($mysqli, $_SERVER['REMOTE_ADDR']);
 $browser = mysqli_real_escape_string($mysqli, $_SERVER['HTTP_USER_AGENT']);
 mysqli_query($mysqli, "INSERT rfwiki_requests (time, uri, referer, ip, browser) VALUES ('$time', '$uri', '$referer', '$ip', '$browser')", MYSQLI_USE_RESULT);
 
+require __DIR__.'/parser.php';
 $edit = $_REQUEST['a'] === 'edit';
+$search = $_REQUEST['s'];
 $url = $_REQUEST['q'];
 if ($url[0] === '/') $url = substr ($url, 1);
-if (!$edit && strtolower($url) === 'toc') $url = ''; //edit...
-$special = $url === 'QandA' || $url === 'Logs';
 $url = $mysqli->escape_string($url);
+if ($special = $url === 'QandA' || $url === 'Logs' || $search) require __DIR__.'/special.php';
 
 if ($edit && $_POST['password'] === EDIT_PASSWORD) {
     $title = $_POST['title'];
@@ -47,7 +47,7 @@ if ($edit && $_POST['password'] === EDIT_PASSWORD) {
         }
     }
 }
-else {
+else if (!$special) {
     $result = $mysqli->query("SELECT time,title,content FROM rfwiki_pages WHERE url='$url'");
     $page = $result->fetch_assoc();
     if ($page === null) {
@@ -61,33 +61,23 @@ else {
         if ($edit) $memo = '编辑了'.($url === '' ? '主页。' : $title.'页面。');
     }
     $result->close();
-    if ($url === 'QandA' && $_POST['phrase'] === '我不是在发广告') {
-        $question = trim($_POST['question']);
-        if ($question !== '') {
-            $question = $mysqli->escape_string($question);
-            $qip = mysqli_real_escape_string($mysqli, $_SERVER['REMOTE_ADDR']);
-            $mysqli->query("INSERT INTO rfwiki_qanda(question, qip, qtime) VALUES ('$question','$qip', now())");
-        }
+    $title = htmlspecialchars($title);
+}
+else if ($url === 'QandA' && $_POST['phrase'] === '我不是在发广告') {
+    $question = trim($_POST['question']);
+    if ($question !== '') {
+        $question = $mysqli->escape_string($question);
+        $qip = mysqli_real_escape_string($mysqli, $_SERVER['REMOTE_ADDR']);
+        $mysqli->query("INSERT INTO rfwiki_qanda(question, qip, qtime) VALUES ('$question','$qip', now())");
     }
 }
-
-$result = $mysqli->query('SELECT content FROM rfwiki_pages WHERE url = \'toc\'');
-if (!$result) {
-    die('DB Error...');
-}
-$toc = $result->fetch_assoc()['content'];
-$result->close();
-if (!$special) $mysqli->close();
-
-$title = htmlspecialchars($title);
-$toc = parse_link($toc);
 ?>
 
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
-        <title><?php echo $title === '' ? '符文工房中文百科': $title.' - 符文工房中文百科'; ?></title>
+        <title><?php echo $title === '' ? '符文工房中文百科': ($title ?? specialtitle()).' - 符文工房中文百科'; ?></title>
         <link href="<?php echo SITE; ?>/favicon.ico" rel="shortcut icon"/>
         <link href="<?php echo SITE; ?>/rfwiki.css" type="text/css" rel="stylesheet"/>
     </head>
@@ -102,7 +92,10 @@ $toc = parse_link($toc);
                     </a>
                     <div id="toc">
                     <?php 
-                    echo $toc;
+                    if ($result = $mysqli->query("SELECT html FROM rfwiki_pages WHERE url = 'toc'")) {
+                        echo parse_link($result->fetch_assoc()['html']);
+                        $result->close();
+                    }
                     ?>
                     </div>
                 </td>
@@ -135,14 +128,16 @@ $toc = parse_link($toc);
                         }
                     }
                     else {
-                    ?>
-                        <div style="font-size:0.7em; float:right">
-                            <a href="<?php echo SITE; ?>/index.php?a=edit&q=<?php echo htmlspecialchars($url); ?>" style="color:white">编辑</a>
-                        </div>
-                    <?php 
+                        if (!$special) {
+                        ?>
+                            <div style="font-size:0.7em; float:right">
+                                <a href="<?php echo SITE; ?>/index.php?a=edit&q=<?php echo htmlspecialchars($url); ?>" style="color:white">编辑</a>
+                            </div>
+                        <?php 
+                        }
                         echo '<div style="padding-right:1em">';
-                        echo parse_link(parse_template($content));
-                        if ($special) require __DIR__.'/special.php';
+                        if ($special) specialcontent();
+                        else echo parse_link(parse_template($content));
                         echo '</div>';
                     } 
                     ?>

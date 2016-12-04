@@ -5,11 +5,22 @@
  * for 符文工房中文百科
  */
 
-if ($url === 'QandA') qanda();
-else if ($url === 'Logs') logs();
+function specialtitle() {
+    global $url;
+    return $url === 'QandA' ? '留言板' : $url === 'Logs' ? '更新日志' : '搜索';
+}
+
+function specialcontent() {
+    global $url;
+    if ($url === 'QandA') qanda();
+    else if ($url === 'Logs') logs();
+    else if ($search) search();
+}
 
 function qanda() {
     ?>
+    <h2>留言板</h2>
+    <p>如果对游戏或网站内容有任何问题，可以在这里留言，也欢迎留下个人建议。</p>    
     <form method="POST" style="text-align:right; padding-right:1em">
         <input name="question" style="width:100%" type="text" placeholder="输入问题或留言...可以匿名或在末尾 - 附上姓名"><br>
         <span style="font-size:80%">输入我不是在发广告--&gt;</span><input name="phrase" text="text">
@@ -36,7 +47,7 @@ function qanda() {
 }
 
 function logs() {
-    echo '<p>';
+    echo '<h2>更新日志</h2><p>';
     global $mysqli;
     if ($result = $mysqli->query('SELECT * FROM rfwiki_logs ORDER BY time DESC LIMIT 100')) {
         while ($row = $result->fetch_assoc()) {
@@ -47,4 +58,10 @@ function logs() {
     else echo '无法加载更新日志。';
     $mysqli->close();
     echo '</p>';
+}
+
+function search() {
+    if ($result = $mysqli->query("SELECT * FROM rfwiki_pages WHERE MATCH (fulltext) AGAINST ('$search')")) {
+        
+    }
 }
