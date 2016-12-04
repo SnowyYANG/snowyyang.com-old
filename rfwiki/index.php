@@ -34,8 +34,8 @@ if ($edit && $_POST['password'] === EDIT_PASSWORD) {
     $memo = $_POST['memo'];
     if ($_POST['save']) {
         $t = $mysqli->escape_string($title);
+        $html = parse_template($content);
         $c = $mysqli->escape_string($content);
-        $html = parse_template($c);
         $fulltext = fulltext($html);
         if ($mysqli->query("INSERT INTO rfwiki_pages(url,title,content,html,`fulltext`) VALUES('$url','$t','$c','$html','$fulltext') ON DUPLICATE KEY UPDATE title='$t',content='$c',html='$html',`fulltext`='$fulltext'") && $mysqli->affected_rows) {
             $page_id = $mysqli->insert_id;
