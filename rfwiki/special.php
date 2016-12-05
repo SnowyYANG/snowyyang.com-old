@@ -73,7 +73,7 @@ function search() {
             <?php
         }
         $search = htmlspecialchars($search);
-        if (!$result->num_rows) echo "<p>找不到包含 $search 的页面。</p>";
+        if (!$result->num_rows) echo "<p>找不到包含{$search}的页面。</p>";
         $result->free();
     }
 }

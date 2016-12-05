@@ -90,7 +90,7 @@ else if ($url === 'QandA' && $_POST['phrase'] === '我不是在发广告') {
                     <a href="<?php echo SITE; ?>">
                         <h1 style="width:4em;padding:0 0.5em;color:#205010">符文工房中文百科</h1>
                     </a>
-                    <form onsubmit="return !!this.s.value"><input name="s" style="width: 80%; margin:0 1em" placeholder="搜索" value="<?php echo htmlspecialchars($search); ?>"></form>
+                    <form action="<?php echo SITE;?>" onsubmit="return !!this.s.value"><input name="s" style="width: 80%; margin:0 1em" placeholder="搜索" value="<?php echo htmlspecialchars($search); ?>"></form>
                     <div id="toc">
                     <?php 
                     if ($result = $mysqli->query("SELECT html FROM rfwiki_pages WHERE url = 'toc'")) {
