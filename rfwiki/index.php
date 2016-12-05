@@ -60,7 +60,7 @@ else if (!$special) {
         $content = $page['content'];
         if ($edit) $memo = '编辑了'.($url === '' ? '主页。' : $title.'页面。');
     }
-    $result->close();
+    $result->free();
     $title = htmlspecialchars($title);
 }
 else if ($url === 'QandA' && $_POST['phrase'] === '我不是在发广告') {
@@ -90,11 +90,12 @@ else if ($url === 'QandA' && $_POST['phrase'] === '我不是在发广告') {
                     <a href="<?php echo SITE; ?>">
                         <h1 style="width:4em;padding:0 0.5em;color:#205010">符文工房中文百科</h1>
                     </a>
+                    <form onsubmit="return !!this.s.value"><input name="s" style="width: 80%; margin:0 1em" placeholder="搜索" value="<?php echo htmlspecialchars($search); ?>"></form>
                     <div id="toc">
                     <?php 
                     if ($result = $mysqli->query("SELECT html FROM rfwiki_pages WHERE url = 'toc'")) {
                         echo parse_link($result->fetch_assoc()['html']);
-                        $result->close();
+                        $result->free();
                     }
                     ?>
                     </div>
@@ -131,13 +132,14 @@ else if ($url === 'QandA' && $_POST['phrase'] === '我不是在发广告') {
                         if (!$special) {
                         ?>
                             <div style="font-size:0.7em; float:right">
-                                <a href="<?php echo SITE; ?>/index.php?a=edit&q=<?php echo htmlspecialchars($url); ?>" style="color:white">编辑</a>
+                                <a href="<?php echo SITE; ?>/?a=edit&q=<?php echo htmlspecialchars($url); ?>" style="color:white">编辑</a>
                             </div>
                         <?php 
                         }
                         echo '<div style="padding-right:1em">';
                         if ($special) specialcontent();
                         else echo parse_link(parse_template($content));
+                        $mysqli->close();
                         echo '</div>';
                     } 
                     ?>

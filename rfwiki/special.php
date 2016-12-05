@@ -11,7 +11,7 @@ function specialtitle() {
 }
 
 function specialcontent() {
-    global $url;
+    global $url,$search;
     if ($url === 'QandA') qanda();
     else if ($url === 'Logs') logs();
     else if ($search) search();
@@ -39,10 +39,9 @@ function qanda() {
             }
             echo '<br>';
         }
-        $result->close();
+        $result->free();
     }
     else echo '无法加载已有的问题或留言。';
-    $mysqli->close();
     echo '</p>';
 }
 
@@ -53,15 +52,28 @@ function logs() {
         while ($row = $result->fetch_assoc()) {
             echo "$row[time] $row[memo]<br>";
         }
-        $result->close();
+        $result->free();
     }
     else echo '无法加载更新日志。';
-    $mysqli->close();
     echo '</p>';
 }
 
 function search() {
-    if ($result = $mysqli->query("SELECT * FROM rfwiki_pages WHERE MATCH (fulltext) AGAINST ('$search')")) {
+    global $search,$mysqli;
+    echo "<h2>搜索结果 - $search</h2>";
+    $search = $mysqli->escape_string($search);
+    //if ($result = $mysqli->query("SELECT url,title,`fulltext` FROM rfwiki_pages WHERE MATCH (`fulltext`) AGAINST ('$search')")) {
+    if ($result = $mysqli->query("SELECT url,title,`fulltext` FROM rfwiki_pages WHERE `fulltext` LIKE '%$search%'")) {
+        while($row = $result->fetch_assoc()) {
+            ?>
+    <div>
+        <a href="<?php echo SITE.'/'.htmlspecialchars($row['url']); ?>"><?php echo $row['title']; ?></a>
         
+    </div>
+            <?php
+        }
+        $search = htmlspecialchars($search);
+        if (!$result->num_rows) echo "<p>找不到包含 $search 的页面。</p>";
+        $result->free();
     }
 }
