@@ -10,7 +10,7 @@
 <p>请使用Firefox浏览器打开本网页，IE浏览器似乎不能正常使用。以后会修复这个问题，陆续增加网站留言功能，热门搜索色、常用色推荐功能。<br>
 目前只有全彩，共13522种颜色，皮革、淡彩、浓彩的数据没有（因为我没有相关的衣服）。下载所有颜色列表：<a href="<?php echo SITE;?>mc.txt">mc.txt</a>，<a href="<?php echo SITE; ?>mc.xlsx">mc.xlsx</a>。</p>
 
-<form><input id="s" style="width:80%" type="text"><input id="button" type="button" value="搜索"></form><br>
+<form id="f"><input name="s" style="width:80%" type="text"><input type="submit" value="搜索"></form><br>
 <div>“#十六进制颜色代码(数量)”查找指定数量的最相似颜色，注意请使用半角#()，如“#FFFF00(100)”搜索近似的100种亮黄色；<br>
 “R/G/B大于小于等于号十进制数值”查找符合要求的颜色，注意字母大写符号半角单条语句不要有空格，如“G=0 B=0”搜索纯红色；<br>
 混合使用以上查找，直接用空格隔开，如“#008000(100) R&lt;64 B&lt;64”搜索近似纯绿的100种中绿色。<br>
@@ -27,8 +27,13 @@
         return '<div style="text-align:center;vertical-align: middle;padding-top:0.5em;width:10em;height:2em;display:inline-block;background:'+color+';color:'+fc+'">'+str+'</div>';
     }
     
-    document.getElementById('button').onclick = function() {
-        var ss = document.getElementById('s').value.split(' ');
+    document.getElementById('f').onsubmit = function() {
+        var xhr = new XMLHttpRequest();
+        if (xhr) {
+            xhr.open('GET','<?php echo SITE;?>mc?s='+encodeURIComponent(this.s.value));
+            xhr.send();
+        }
+        var ss = this.s.value.split(' ');
         var results = [];
         for (var c of colors) {
             var match = true;
@@ -66,5 +71,6 @@
                 r.innerHTML += colorBlock(results[i][0],results[i][1],results[i][2],results[i][3],results[i][3]);
             }
         }
+        return false;
     };
 </script>
