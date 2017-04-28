@@ -6,6 +6,9 @@ if ($q = $_GET['q']) {
         case 'mc':
             $router = 'mc';
             break;
+        case 'mrp':
+            $router = 'mrp';
+            break;
         case 'rfwiki':
             $_GET['q'] = substr($_GET['q'], 7);
             $_REQUEST['q'] = substr($_REQUEST['q'], 7);
