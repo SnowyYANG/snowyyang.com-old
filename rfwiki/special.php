@@ -20,7 +20,7 @@ function specialcontent() {
 function qanda() {
     ?>
     <h2>留言板</h2>
-    <p>如果对游戏或网站内容有任何问题，可以在这里留言，也欢迎留下个人建议。</p>    
+    <p>如果对游戏或网站内容有任何问题，可以在这里留言，也欢迎留下个人建议。因为站长懒散，可能几个月后才有回复。</p>    
     <form method="POST" style="text-align:right; padding-right:1em">
         <input name="question" style="width:100%" type="text" placeholder="输入问题或留言...可以匿名或在末尾 - 附上姓名"><br>
         <span style="font-size:80%">输入我不是在发广告--&gt;</span><input name="phrase" text="text">
