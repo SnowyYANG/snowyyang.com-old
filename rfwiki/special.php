@@ -29,7 +29,7 @@ function qanda() {
     <?php
     echo '<p>';
     global $mysqli;
-    if ($result = $mysqli->query('SELECT * FROM rfwiki_qanda')) {
+    if ($result = $mysqli->query('SELECT * FROM rfwiki_qanda ORDER BY qtime DESC')) {
         while ($row = $result->fetch_assoc()) {
             $question = htmlspecialchars($row['question']);
             if ($row['answer'] === null) echo "言：$question <span class=\"timestamp\">($row[qtime])</span><br>";
