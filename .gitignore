@@ -5,3 +5,4 @@ config.web.php
 /test.html
 /private/test.php
 /rfwiki/img/
+baidu_verify_*
