@@ -7,7 +7,7 @@
 
 function specialtitle() {
     global $url;
-    return $url === 'QandA' ? '留言板' : $url === 'Logs' ? '更新日志' : '搜索';
+    return $url === 'QandA' ? '留言板' : ($url === 'Logs' ? '更新日志' : '搜索');
 }
 
 function specialcontent() {
