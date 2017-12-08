@@ -14,13 +14,6 @@ if ($_REQUEST['s']) {
 
 function view() {
 ?>
-<?php
-
-/* 
- * by Snowy YANG
- * for http://snowy.asia/
- */
-?>
 <h1>洛奇普通染色颜色代码大全</h1>
 <p>by 冰之妖夜（玛丽服务器）</p>
 <p>欢迎使用洛奇普通染色颜色代码大全。请使用Firefox浏览器打开本网页，IE浏览器似乎不能正常使用。<span style="color:red">年内将更新</span>加入留言、推荐颜色等功能。<br>
