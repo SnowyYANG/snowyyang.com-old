@@ -7,8 +7,8 @@
 ?>
 <h1>洛奇普通染色颜色代码大全</h1>
 <p>by 冰之妖夜（玛丽服务器）</p>
-<p>欢迎使用洛奇普通染色颜色代码大全。请使用Firefox浏览器打开本网页，IE浏览器似乎不能正常使用。年内加入网站留言、热门搜索色、推荐颜色功能。<br>
-目前只有布染全彩，共13537种颜色（上一个版本13522没有统计被黑边遮住的部分），皮革、淡彩、浓彩的数据目前没有（因为我太懒了）。<br>
+<p>欢迎使用洛奇普通染色颜色代码大全。请使用Firefox浏览器打开本网页，IE浏览器似乎不能正常使用。<span style="color:red">年内将更新</span>加入留言、推荐颜色等功能。<br>
+目前只有布染全彩，共13537种颜色，皮革、淡彩、浓彩的数据目前没有（因为我太懒了）。<br>
 下载所有颜色列表：<a href="<?php echo SITE;?>mc.txt">mc.txt</a>，<a href="<?php echo SITE; ?>mc.xlsx">mc.xlsx</a>。</p>
 
 <form id="f"><input name="s" style="width:80%" type="text" placeholder="#008000(100) R&lt;64 B&lt;64"><input type="submit" value="搜索"></form><br>

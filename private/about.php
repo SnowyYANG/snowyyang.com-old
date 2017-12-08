@@ -5,5 +5,6 @@
  * for http://snowy.asia/
  */
 
+require_once 'private/data.php';
 
-$title = 'Snowy';
+$title = '关于Snowy';
