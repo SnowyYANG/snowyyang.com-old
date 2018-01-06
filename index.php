@@ -50,14 +50,14 @@ body{
         </style>
     </head>
     <body>
-        <a href="<?php echo SITE;?>" style="color:#000000">
+        <a href="<?php echo SITE;?>" style="color:<?php echo $router == 'homepage' ? '#000000' : '#ffffff';?>">
             <div style="width: 3em; position: fixed; margin:0; top:0;background: #eaf4fc; padding: 1em; height: 100%;">
                 <h style="font:3em SimSun; width:0; font-weight: bold">少女工房</h>
             </div>
         </a>
         <div style="margin:0em 6em"><?php view(); ?></div>
         <div style="width: 3em; position: fixed; top:0; right:0; background: #eaf4fc; padding: 1em; height: 100%;">
-          <footer style="position:absolute; left:1em; bottom:8em; color:#ffffff; white-space:nowrap; transform-origin:left center 0; transform:rotate(90deg)">Snowy❄2017</footer>
+          <footer style="position:absolute; left:1em; bottom:8em; color:#ffffff; white-space:nowrap; transform-origin:left center 0; transform:rotate(90deg)">Snowy❄2018</footer>
         </div>
     </body>
 </html>
