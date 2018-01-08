@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!--
+by Snowy YANG
+for http://snowy.asia/
+-->
+<html><head>
+        <meta charset="UTF-8">
+        <title>少女工房</title>
+        <style>
+body{
+    margin: 0;
+    padding: 0;
+    font: 16px Microsoft YaHei
+}
+        </style>
+    </head>
+    <body>
+        <a href="http://snowy.asia/" style="color:#ffffff">
+            <div style="width: 3em; position: fixed; margin:0; top:0;background: #eaf4fc; padding: 1em; height: 100%;">
+                <h style="font:3em SimSun; width:0; font-weight: bold">少女工房</h>
+            </div>
+        </a>
+        <div style="margin:0em 6em">
+            <form><input id="f" type="file"></form>
+            <canvas id="c"></canvas><br>
+            <p id="r"></p>
+            <script>
+function RGB2HTML(red, green, blue)
+{
+    var decColor =0x1000000 | blue | (green << 8) | (red << 16);
+    return '#'+decColor.toString(16).substr(1);
+}
+
+document.getElementById('f').onchange = function() {
+    var file = this.files[0];
+    var fr = new FileReader();
+    fr.onload = function () {
+        var img = new Image();
+        img.onload = function () {
+            var canvas = document.getElementById("c");
+            canvas.width = img.width;
+            canvas.height = img.height;
+            canvas.getContext('2d').drawImage(img, 0, 0, img.width, img.height);
+            
+            var pixelData = canvas.getContext('2d').getImageData(0, 0, img.width, img.height).data;
+            var results = new Set();
+            for (var i = 0; i < pixelData.length; i += 4) {
+                var r = pixelData[i];
+                var g = pixelData[i+1];
+                var b = pixelData[i+2];
+                results.add('<br>['+r+','+g+','+b+']');
+            }
+            document.getElementById('r').innerHTML = Array.from(results).join();
+        };
+        img.src = fr.result;
+    };
+    fr.readAsDataURL(file);
+}
+            </script>
+        </div>
+        <div style="width: 3em; position: fixed; top:0; right:0; background: #eaf4fc; padding: 1em; height: 100%;">
+          <footer style="position:absolute; left:1em; bottom:11em; color:#ffffff; white-space:nowrap; transform-origin:left center 0; transform:rotate(90deg)">Snowy❄2017oct30</footer>
+        </div>
+</body></html>
