@@ -28,6 +28,8 @@ mysqli_query($mysqli, "INSERT requests (time, uri, referer, ip, browser) VALUES 
 
 if (!isset($router)) $router = 'homepage';
 
+$style = '';
+
 require 'private/'.$router.'.php';
 
 mysqli_close($mysqli);
@@ -47,6 +49,7 @@ body{
     padding: 0;
     font: 16px Microsoft YaHei
 }
+<?php echo $style; ?>
         </style>
     </head>
     <body>
