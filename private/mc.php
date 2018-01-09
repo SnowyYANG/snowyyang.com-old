@@ -144,9 +144,11 @@ document.forms[0].onsubmit = function() {
         case 'weapon': colors = weapon; break;
         default: colors = [];
     }
-    for (var c of colors) {
+    for (var ci in colors) {
+        var c = colors[ci];
         var match = true;
-        for (var s of ss)
+        for (var si in ss)
+            var s = ss[si];
             if (s[0] === 'R' || s[0] === 'G' || s[0] === 'B') {
                 num = parseInt(s.substring(2));
                 if (s[0] === 'R') a = c[0];
@@ -158,14 +160,16 @@ document.forms[0].onsubmit = function() {
             results.push(c);
         }
     }
-    for (var s of ss) {
+    for (var si in ss) {
+        var s = ss[si];
         if (s[0] !== '#' && s.substring(0,6).match(/^[0-9a-f]{6}/i)) s='#'+s;
         if (s[0] === '#') {
             var R = parseInt("0x" + s.substring(1,3));
             var G = parseInt("0x" + s.substring(3,5));
             var B = parseInt("0x" + s.substring(5,7));
             var S = s;
-            for (var c of results) {
+            for (var ci in results) {
+                var c = results[ci];
                 c[4] = 2*Math.pow(c[0]-R,2)+4*Math.pow(c[1]-G,2)+3*Math.pow(c[2]-B,2);
                 //c[4]=deltaE(rgb2lab(c),rgb2lab([R,G,B]));
             }
