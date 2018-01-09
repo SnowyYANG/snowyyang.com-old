@@ -37,9 +37,9 @@ function view() {
             <input type="radio" name="c" value="cloth" checked/>全彩
             <input type="radio" name="c" value="cloth_bright" />淡彩
             <input type="radio" name="c" value="leather" />皮革
+            <input type="radio" name="c" value="silk" />丝绸
             <input type="radio" name="c" value="metal" />金属
             <input type="radio" name="c" value="weapon" />武器
-            <input type="radio" name="c" value="silk" />丝绸
             <br>
             <input name="s" style="width:25.3em" type="text" placeholder="#008000 R&lt;64 B&lt;64">
             <input type="submit" value="搜索">
@@ -118,8 +118,8 @@ function deltaE(labA, labB){
 }
 
 var radios = document.forms[0].c;
-for(var radio of radios) {
-    radio.onchange = function() {
+for(var i = 0; i < radios.length; ++i) {
+    radios[i].onchange = function() {
         document.getElementById('dye').src = '<?php echo SITE;?>mabicolor/'+this.value+'.png';
     };
 }
@@ -135,7 +135,7 @@ document.forms[0].onsubmit = function() {
     var ss = this.s.value.split(' ');
     results = [];
     var colors;
-    switch(document.forms[0].c.value) {
+    switch(this['c'].value) {
         case 'cloth': colors = cloth; break;
         case 'cloth_bright': colors = cloth_bright; break;
         case 'leather': colors = leather; break;
