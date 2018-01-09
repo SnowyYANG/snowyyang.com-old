@@ -134,16 +134,7 @@ document.forms[0].onsubmit = function() {
     }
     var ss = this.s.value.split(' ');
     results = [];
-    var colors;
-    switch(this['c'].value) {
-        case 'cloth': colors = cloth; break;
-        case 'cloth_bright': colors = cloth_bright; break;
-        case 'leather': colors = leather; break;
-        case 'metal': colors = metal; break;
-        case 'silk': colors = silk; break;
-        case 'weapon': colors = weapon; break;
-        default: colors = [];
-    }
+    var colors = window[this.c.value];
     for (var ci in colors) {
         var c = colors[ci];
         var match = true;
