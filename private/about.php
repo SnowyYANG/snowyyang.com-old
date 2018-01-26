@@ -28,6 +28,11 @@ Aldnoah.Zero 斯雷因双公主党<br>
 符文工房4 亚瑟控<br>
 霹雳布袋戏 死国粉<br>
 <br>
+八面玲珑百灵鸟 嘤嘤楚楚笼中傲<br>
+经风经雨声不毁 历霜历雪更妖娆<br>
+机关算尽不误命 露财露色也平安<br>
+耐得春宵萧寒夜 平步青云又一朝​<br>
+<br>
 LinkedIn: <a target="_blank" href="https://www.linkedin.com/in/alicefeiyang/">Alice Fei YANG</a><br>
 GitHub: <a target="_blank" href="https://github.com/SnowyYANG">SnowyYANG</a><br>
 洛奇：冰之妖夜（国服全服 大号在玛丽服务器）<br>
