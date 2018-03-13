@@ -25,7 +25,7 @@ Alice Snowy Fei YANG<br>
 八面玲珑百灵鸟 嘤嘤楚楚笼中傲<br>
 经风|枫经雨生不毁|悔 若霜若雪尽妖娆<br>
 机关算尽不误命 露才|财露色也平安<br>
-耐得春宵萧寒夜 平步青云又一朝|招 | 笼鸟不出妖恋色 冰心难解夜梦来​<br>
+耐得春宵萧寒夜 平步青云又一朝 | 笼鸟不出妖恋色 冰心难解夜梦来​<br>
 <br>
 LinkedIn: <a target="_blank" href="https://www.linkedin.com/in/alicefeiyang/">Alice Fei YANG</a><br>
 GitHub: <a target="_blank" href="https://github.com/SnowyYANG">SnowyYANG</a><br>
