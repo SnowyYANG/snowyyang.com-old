@@ -6,3 +6,4 @@ config.web.php
 /private/test.php
 /rfwiki/img/
 baidu_verify_*
+*.ppk
