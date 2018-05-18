@@ -1,8 +1,9 @@
 config.php
-config.web.php
+!/backup/config.php
 /nbproject/private/
 /test.php
 /test.html
 /private/test.php
 /rfwiki/img/
 baidu_verify_*
+*.ppk
