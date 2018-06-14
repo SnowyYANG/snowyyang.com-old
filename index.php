@@ -28,8 +28,6 @@ mysqli_query($mysqli, "INSERT requests (time, uri, referer, ip, browser) VALUES 
 
 if (!$router) $router = 'homepage';
 
-$style = '';
-
 require 'private/'.$router.'.php';
 
 mysqli_close($mysqli);
