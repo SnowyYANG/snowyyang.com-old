@@ -5,8 +5,6 @@
  * for http://snowy.asia/
  */
 
-$title = 'Snowy';
-
 function view() {
 ?>
 <p>

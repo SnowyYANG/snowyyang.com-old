@@ -4,7 +4,7 @@
  * by Snowy YANG
  * for http://snowy.asia/
  */
-$title = '关于Snowy';
+$title = 'Snowy';
 
 function view() {
 ?>
