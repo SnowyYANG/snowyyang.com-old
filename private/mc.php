@@ -7,16 +7,6 @@
 
 $title = '洛奇普染颜色大全';
 
-$style = '
-.mcblock {
-    text-align:center;
-    vertical-align: middle;
-    padding-top:0.5em;
-    width:10em;
-    height:2em;
-    display:inline-block;
-}';
-
 if ($_REQUEST['s']) {
     $s = $mysqli->escape_string($_SERVER['QUERY_STRING']);
     $mysqli->query("INSERT mc_s(ip,s) VALUES('$ip','$s')");
@@ -24,6 +14,16 @@ if ($_REQUEST['s']) {
 
 function view() {
 ?>
+<style>
+.mcblock {
+    text-align:center;
+    vertical-align: middle;
+    padding-top:0.5em;
+    width:10em;
+    height:2em;
+    display:inline-block;
+}
+</style>
 <h1>洛奇普通染色颜色代码大全</h1>
 <p>by 冰之妖夜（国服全服 日常在玛丽服务器）</p>
 <p>欢迎使用洛奇普通染色颜色代码大全，这里可以搜索普染和金属普染能染出的精确颜色代码。<br>
@@ -31,7 +31,7 @@ function view() {
 <br>
 <table>
     <tr>
-    <td><img id="dye" src="<?php echo SITE;?>mabicolor/cloth.png"></td>
+    <td><img id="dye" src="/mabicolor/cloth.png"></td>
     <td style="margin-left:1em">
         <form>
             <input type="radio" name="c" value="cloth" checked/>全彩
@@ -55,12 +55,12 @@ function view() {
     </tr>
 </table>
 <div id="r"></div>
-<script src="<?php echo SITE;?>mabicolor/cloth.js"></script>
-<script src="<?php echo SITE;?>mabicolor/cloth_bright.js"></script>
-<script src="<?php echo SITE;?>mabicolor/leather.js"></script>
-<script src="<?php echo SITE;?>mabicolor/metal.js"></script>
-<script src="<?php echo SITE;?>mabicolor/silk.js"></script>
-<script src="<?php echo SITE;?>mabicolor/weapon.js"></script>
+<script src="/mabicolor/cloth.js"></script>
+<script src="/mabicolor/cloth_bright.js"></script>
+<script src="/mabicolor/leather.js"></script>
+<script src="/mabicolor/metal.js"></script>
+<script src="/mabicolor/silk.js"></script>
+<script src="/mabicolor/weapon.js"></script>
 <script>
 function compare(a,b) {
     return a[4]-b[4];

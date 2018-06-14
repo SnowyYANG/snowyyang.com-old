@@ -15,7 +15,7 @@ if ($q = $_GET['q']) {
     }
 }
 
-require_once 'private/data.php';
+require 'config.php'; 
 $mysqli = mysqli_connect(DB_SERVER, DB_USER, DB_PASSWORD, DB_DATABASE);
 
 date_default_timezone_set('Asia/Hong_Kong');
@@ -26,7 +26,7 @@ $ip = mysqli_real_escape_string($mysqli, $_SERVER['REMOTE_ADDR']);
 $browser = mysqli_real_escape_string($mysqli, $_SERVER['HTTP_USER_AGENT']);
 mysqli_query($mysqli, "INSERT requests (time, uri, referer, ip, browser) VALUES ('$time', '$uri', '$referer', '$ip', '$browser')", MYSQLI_USE_RESULT);
 
-if (!isset($router)) $router = 'homepage';
+if (!$router) $router = 'homepage';
 
 $style = '';
 
@@ -42,7 +42,7 @@ for http://snowy.asia/
 <html>
     <head>
         <meta charset="UTF-8">
-        <title><?php echo $title ?> - 少女工房</title>
+        <title><?php if ($title) echo $title.' - '; ?>雪亚幻想境地</title>
         <style>
 body{
     margin: 0;
@@ -55,7 +55,7 @@ body{
     <body>
         <a href="<?php echo SITE;?>" style="color:<?php echo $router == 'homepage' ? '#000000' : '#ffffff';?>">
             <div style="width: 3em; position: fixed; margin:0; top:0;background: #eaf4fc; padding: 1em; height: 100%;">
-                <h style="font:3em SimSun; width:0; font-weight: bold">少女工房</h>
+                <h style="font:3em SimSun; width:0; font-weight: bold">雪亚幻想境地</h>
             </div>
         </a>
         <div style="margin:0em 6em"><?php view(); ?></div>
