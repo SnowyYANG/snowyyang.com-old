@@ -5,7 +5,7 @@
  * for http://snowy.asia/
  */
 
-$title = 'Snowy';
+$title = '雪鸟幻想之笼';
 
 $text = <<<'TEXT'
 （更新中...最后编辑于2018年6月14日）
@@ -57,6 +57,13 @@ $text = <<<'TEXT'
 TEXT;
 
 function view() {
+?>
+<style>
+p {
+	line-height:1.5
+}
+</style>
+<?php
 	global $text;
 	echo '<p>';
 	$lines = explode("\n",$text);
