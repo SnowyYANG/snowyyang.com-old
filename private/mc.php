@@ -29,10 +29,9 @@ function view() {
 <p>欢迎使用洛奇普通染色颜色代码大全，这里可以搜索普染和金属普染能染出的精确颜色代码。<br>
 <span style="color:red">本页面最近几天正在更新中，内容可能不稳定。</span>下一版更新：推荐颜色、留言板。<br>请使用Firefox、Chrome浏览器打开本网页，IE浏览器目前不能正常使用。<br>
 <br>
-<table>
-    <tr>
-    <td style="vertical-align:top"><img id="dye" src="/mabicolor/cloth.png"></td>
-    <td style="margin-left:1em">
+<div style="display:flex">
+    <div><img id="dye" src="/mabicolor/cloth.png"></div>
+    <div style="margin-left:1em">
         <form>
             <input type="radio" name="c" value="cloth" checked/>全彩
             <input type="radio" name="c" value="cloth_bright" />淡彩
@@ -44,15 +43,14 @@ function view() {
             <input name="s" style="width:25.3em" type="text" placeholder="#008000 R&lt;64 B&lt;64">
             <input type="submit" value="搜索">
         </form>
-    <p>“#十六进制颜色代码”查找最相似颜色，如“#FFFF00”搜索近似的亮黄色；<br>
-    “R/G/B大于小于等于号十进制数值”筛选颜色，字母大写符号半角不要有空格，如“G=0 B=0”搜索纯红色；<br>
-    混合使用以上查找，用空格隔开，如“#008000 R&lt;64 B&lt;64”搜索中绿色。<br>
-    颜色对比算法正在调整中。<br>
-    <br>
-    推荐染色助手：<a href="http://www.yydzh.com/read.php?tid=1402600">http://www.yydzh.com/read.php?tid=1402600</a><br>
-    推荐纸娃娃模拟器：<a href="http://labo.erinn.biz/cs/index.php?action=changeFramework">http://labo.erinn.biz/cs/index.php?action=changeFramework</a><br></p>
-    </td>
-    </tr>
+		<p>“#十六进制颜色代码”查找最相似颜色，如“#FFFF00”搜索近似的亮黄色；<br>
+		“R/G/B大于小于等于号十进制数值”筛选颜色，字母大写符号半角不要有空格，如“G=0 B=0”搜索纯红色；<br>
+		混合使用以上查找，用空格隔开，如“#008000 R&lt;64 B&lt;64”搜索中绿色。<br>
+		颜色对比算法正在调整中。<br>
+		<br>
+		推荐染色助手：<a href="http://www.yydzh.com/read.php?tid=1402600">http://www.yydzh.com/read.php?tid=1402600</a><br>
+		推荐纸娃娃模拟器：<a href="http://labo.erinn.biz/cs/index.php?action=changeFramework">http://labo.erinn.biz/cs/index.php?action=changeFramework</a><br></p>
+    </div>
 </table>
 <div id="r"></div>
 <script src="/mabicolor/cloth.js"></script>
