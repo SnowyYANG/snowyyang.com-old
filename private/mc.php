@@ -31,7 +31,7 @@ function view() {
 <br>
 <table>
     <tr>
-    <td><img id="dye" src="/mabicolor/cloth.png"></td>
+    <td style="vertical-align:top"><img id="dye" src="/mabicolor/cloth.png"></td>
     <td style="margin-left:1em">
         <form>
             <input type="radio" name="c" value="cloth" checked/>全彩
