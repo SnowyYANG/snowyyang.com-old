@@ -27,7 +27,7 @@ function view() {
 <h1>洛奇普通染色颜色代码大全</h1>
 <p>by 冰之妖夜（国服全服 日常在玛丽服务器）</p>
 <p>欢迎使用洛奇普通染色颜色代码大全，这里可以搜索普染和金属普染能染出的精确颜色代码。<br>
-<span style="color:red">本页面最近几天正在更新中，内容可能不稳定。</span>下一版更新：推荐颜色、留言板。<br>请使用Firefox、Chrome浏览器打开本网页，IE浏览器目前不能正常使用。<br>
+下一版更新：推荐颜色、留言板。<br>请使用Firefox、Chrome浏览器打开本网页，IE浏览器目前不能正常使用。<br>
 <br>
 <div style="display:flex">
     <div><img id="dye" src="/mabicolor/cloth.png"></div>
