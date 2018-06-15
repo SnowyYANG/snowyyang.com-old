@@ -13,6 +13,9 @@ if ($q = $_GET['q']) {
             $_REQUEST['q'] = substr($_REQUEST['q'], 7);
             require_once 'rfwiki/index.php';
             exit(0);
+		default:
+			http_response_code(404);
+			break;
     }
 }
 
