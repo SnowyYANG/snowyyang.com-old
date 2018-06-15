@@ -45,6 +45,7 @@ for http://snowy.asia/
     <head>
         <meta charset="UTF-8">
         <title><?php if ($title) echo $title.' - '; ?>雪亚幻想境地</title>
+		<link rel="shortcut icon" href="/favicon.ico"/>
         <style>
 body{
     margin: 0;
