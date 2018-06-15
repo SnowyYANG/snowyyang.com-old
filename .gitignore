@@ -1,4 +1,5 @@
 config.php
+config.web.php
 !/backup/config.php
 /nbproject/private/
 /test.php
