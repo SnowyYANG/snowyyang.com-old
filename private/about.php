@@ -28,6 +28,7 @@ LinkedIn: <a target="_blank" href="https://www.linkedin.com/in/alicefeiyang/">Al
 GitHub: <a target="_blank" href="https://github.com/SnowyYANG">SnowyYANG</a><br>
 洛奇：冰之妖夜（国服全服）<br>
 精灵宝可梦：大正8年8月的东京百合花<br>
+微博：<a href="http://weibo.com/AliceFYANG">若雪爱丽丝</a><br>
 百度贴吧：<a target="_blank" href="http://tieba.baidu.com/home/main?un=%E8%8B%A5%E9%9B%AA%E7%88%B1%E4%B8%BD%E4%B8%9D">若雪爱丽丝</a><br>
 </p>
 <script>
