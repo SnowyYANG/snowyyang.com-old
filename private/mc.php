@@ -46,10 +46,8 @@ function view() {
 		<p>“#十六进制颜色代码”查找最相似颜色，如“#FFFF00”搜索近似的亮黄色；<br>
 		“R/G/B大于小于等于号十进制数值”筛选颜色，字母大写符号半角不要有空格，如“G=0 B=0”搜索纯红色；<br>
 		混合使用以上查找，用空格隔开，如“#008000 R&lt;64 B&lt;64”搜索中绿色。<br>
-		颜色对比算法正在调整中。<br>
 		<br>
-		推荐染色助手：<a href="http://www.yydzh.com/read.php?tid=1402600">http://www.yydzh.com/read.php?tid=1402600</a><br>
-		推荐纸娃娃模拟器：<a href="http://labo.erinn.biz/cs/index.php?action=changeFramework">http://labo.erinn.biz/cs/index.php?action=changeFramework</a><br></p>
+		推荐工具：<a target="_blank" href="http://www.yydzh.com/read.php?tid=1402600">染色助手</a>，<a target="_blank" href="http://labo.erinn.biz/cs/index.php?action=changeFramework">纸娃娃模拟器</a>。</p>
     </div>
 </div>
 <div id="r"></div>
