@@ -10,6 +10,7 @@ $title = '洛奇普染颜色大全';
 if ($_REQUEST['s']) {
     $s = $mysqli->escape_string($_SERVER['QUERY_STRING']);
     $mysqli->query("INSERT mc_s(ip,s) VALUES('$ip','$s')");
+	exit;
 }
 
 function view() {
@@ -123,19 +124,20 @@ for(var i = 0; i < radios.length; ++i) {
 var results = [];
 document.forms[0].onsubmit = function() {
     if (!this.s.value) return false;
-    var xhr = new XMLHttpRequest();
-    if (xhr) {
-        xhr.open('GET','<?php echo SITE;?>mc?c='+encodeURIComponent(this.c.value)+'&s='+encodeURIComponent(this.s.value));
-        xhr.send();
-    }
     var ss = this.s.value.split(' ');
     results = [];
 	var colors = null;
 	for (var ei = 0; ei < this.c.length; ei++)
 		if (this.c[ei].checked) {
-			colors = window[this.c[ei].value];
+			colors = this.c[ei].value;
 			break;
 		}
+    var xhr = new XMLHttpRequest();
+    if (xhr) {
+        xhr.open('GET','<?php echo SITE;?>mc?c='+encodeURIComponent(colors)+'&s='+encodeURIComponent(this.s.value));
+        xhr.send();
+    }
+	colors = window[colors];
     for (var ci in colors) {
         var c = colors[ci];
         var match = true;
