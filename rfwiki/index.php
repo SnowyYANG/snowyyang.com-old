@@ -12,7 +12,6 @@ if ($mysqli->connect_errno) {
     die($mysqli->connect_errno.$mysqli->connect_error);
 }
 
-date_default_timezone_set('Asia/Hong_Kong');
 $time = date('Y-m-d H:i:s', $_SERVER['REQUEST_TIME']);
 $uri = mysqli_real_escape_string($mysqli, $_SERVER['REQUEST_URI']);
 $referer = mysqli_real_escape_string($mysqli, $_SERVER['HTTP_REFERER']);
