@@ -51,7 +51,7 @@ function view() {
 		推荐染色助手：<a href="http://www.yydzh.com/read.php?tid=1402600">http://www.yydzh.com/read.php?tid=1402600</a><br>
 		推荐纸娃娃模拟器：<a href="http://labo.erinn.biz/cs/index.php?action=changeFramework">http://labo.erinn.biz/cs/index.php?action=changeFramework</a><br></p>
     </div>
-</table>
+</div>
 <div id="r"></div>
 <script src="/mabicolor/cloth.js"></script>
 <script src="/mabicolor/cloth_bright.js"></script>
