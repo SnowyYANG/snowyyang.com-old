@@ -5,6 +5,7 @@ if ($q = $_GET['q']) {
     switch ($q[1]) {
 		case '':
         case 'mc':
+		case 'mrp':
         case 'about':
 		case 'dreamcage':
             $router = $q[1];
