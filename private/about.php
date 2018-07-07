@@ -16,7 +16,7 @@ Alice Snowy Fei YANG<br>
 常年在香港深居简出<br>
 事业感情均已稳定 谢绝各类猎头<br>
 人生梦想成为全能天才美少女<br>
-实际追求吃吃睡睡<br>
+实际每天吃吃睡睡<br>
 <br>
 <img src="/kazeyuki816.jpg"><br>
 八面玲珑百灵鸟 嘤嘤楚楚笼中傲<br>
