@@ -19,10 +19,7 @@ Alice Snowy Fei YANG<br>
 实际每天吃吃睡睡<br>
 <br>
 <img src="/kazeyuki816.jpg"><br>
-八面玲珑百灵鸟 嘤嘤楚楚笼中傲<br>
-<span onmouseenter="yin(this)" onmouseleave="yang(this)">经风经雨生不毁 历霜历雪尽妖娆<br>
-机关算尽不误命 露财露色也平安<br>
-耐得春宵萧寒夜 平步青云又一朝​<br></span>
+<span onmouseenter="yin(this)" onmouseleave="yang(this)">八面玲珑百灵鸟 嘤嘤楚楚笼中傲<br>经风经雨生不毁 历霜历雪尽妖娆<br>机关算尽不误命 露财露色也平安<br>耐得春宵萧寒夜 平步青云又一朝<br></span>​
 <br>
 LinkedIn: <a target="_blank" href="https://www.linkedin.com/in/alicefeiyang/">Alice Fei YANG</a><br>
 GitHub: <a target="_blank" href="https://github.com/SnowyYANG">SnowyYANG</a><br>
@@ -33,10 +30,10 @@ GitHub: <a target="_blank" href="https://github.com/SnowyYANG">SnowyYANG</a><br>
 </p>
 <script>
 var yin = function(e) {
-	e.innerHTML = '经枫经雨生不悔 若霜若雪竞妖娆<br>机关算尽不误命 露才露色也平安<br>笼鸟不出妖恋色 冰心难解夜梦来​<br>';
+	e.innerHTML = '八面玲珑百灵鸟 嘤嘤楚楚笼中傲<br>经枫经雨生不悔 若霜若雪竞妖娆<br>机关算尽不误命 露才露色也平安<br>笼鸟不出妖恋色 冰心难解夜梦来<br>​';
 };
 var yang = function(e) {
-	e.innerHTML = '经风经雨生不毁 历霜历雪尽妖娆<br>机关算尽不误命 露财露色也平安<br>耐得春宵萧寒夜 平步青云又一朝​<br>';
+	e.innerHTML = '八面玲珑百灵鸟 嘤嘤楚楚笼中傲<br>经风经雨生不毁 历霜历雪尽妖娆<br>机关算尽不误命 露财露色也平安<br>耐得春宵萧寒夜 平步青云又一朝​<br>';
 };
 </script>
 <?php
