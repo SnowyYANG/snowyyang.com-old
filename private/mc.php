@@ -106,9 +106,9 @@ document.forms[0].onsubmit = function() {
         if (s[0] !== '#' && s.substring(0,6).match(/^[0-9a-f]{6}/i)) s='#'+s;
         if (s[0] === '#') {
 			var S = parseInt(s.substring(1,7),16);
-            var R = S & 0xff;
+            var R = (S >> 16) & 0xff;
             var G = (S >> 8) & 0xff;
-            var B = (S >> 16) & 0xff;
+            var B = S & 0xff;
             S = s;
             for (var ci in results) {
                 var c = results[ci];
