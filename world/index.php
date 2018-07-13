@@ -5,7 +5,7 @@
  * for 时与空与梦的旅人
  */
 
-require __DIR__.'/config.php';
+require_once __DIR__.'/../config.php';
 
 $mysqli = new mysqli(DB_SERVER, DB_USER, DB_PASSWORD, DB_DATABASE);
 if ($mysqli->connect_errno) {
@@ -33,13 +33,6 @@ mysqli_query($mysqli, "INSERT world_requests (time, uri, referer, ip, browser) V
         </style>
     </head>
     <body>
-		<div style="width:32em; horizontal-align:middle">
-			<form>
-				<input placeholder="用户名"><br>
-				<input placeholder="密码"><br>
-				<input type="submit" name="login" value="登陆">
-				<input type="submit" name="register" value="注册">
-			</form>
-		</div>
+		<div style="width:32em; horizontal-align:middle">2019年后启动<br><a href="http://snowy.asia/">返回雪亚幻想境地...</a></div>
     </body>
 </html>

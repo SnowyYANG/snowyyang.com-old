@@ -11,9 +11,11 @@ if ($q = $_GET['q']) {
             $router = $q[1];
             break;
         case 'rfwiki':
-            $_GET['q'] = substr($_GET['q'], 7);
-            $_REQUEST['q'] = substr($_REQUEST['q'], 7);
-            require_once 'rfwiki/index.php';
+		case 'world':
+			$skip = strlen($q[1])+1;
+            $_GET['q'] = substr($_GET['q'], $skip);
+            $_REQUEST['q'] = substr($_REQUEST['q'], $skip);
+            require $q[1].'/index.php';
             exit;
 		case 'mc.txt':
 		case 'mc.xlsx':
@@ -25,7 +27,7 @@ if ($q = $_GET['q']) {
     }
 }
 
-require 'config.php'; 
+require_once 'config.php'; 
 if ($mysqli = mysqli_connect(DB_SERVER, DB_USER, DB_PASSWORD, DB_DATABASE)) {
 $time = date('Y-m-d H:i:s', $_SERVER['REQUEST_TIME']);
 $uri = mysqli_real_escape_string($mysqli, $_SERVER['REQUEST_URI']);
