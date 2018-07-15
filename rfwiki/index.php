@@ -67,7 +67,11 @@ else if ($url === 'QandA' && $_POST['phrase'] === '我不是在发广告') {
     if ($question !== '') {
         $question = $mysqli->escape_string($question);
         $qip = mysqli_real_escape_string($mysqli, $_SERVER['REMOTE_ADDR']);
-        $mysqli->query("INSERT INTO rfwiki_qanda(question, qip, qtime) VALUES ('$question','$qip', now())");
+        $mysqli->query("INSERT INTO rfwiki_qanda(question, qip) VALUES ('$question','$qip')");
+		if (($result=$mysqli->query('SELECT * FROM meta WHERE name="mailed" AND value!=""')) && !$result->num_rows) {
+			$value = mail(CS_EMAIL,'SA updated','New user feedback in rfwiki QandA.');
+			$mysqli->query("UPDATE meta SET value='$value' WHERE name='mailed' LIMIT 1");
+		}
     }
 }
 ?>
