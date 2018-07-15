@@ -26,9 +26,9 @@ function view() {
 </style>
 <h1>洛奇普通染色颜色代码大全</h1>
 <p>by 冰之妖夜（国服全服 日常在玛丽服务器）</p>
-<p style="color:#3366ff">广告：工程师的冬柏树群282157732 欢迎你的加盟 <b>洛奇攻略索引</b>计划预想中</p>
+<p style="color:#3366ff">广告：欢迎加入工程师的冬柏树群282157732 <b>洛奇攻略索引</b>计划预想中</p>
 <p>欢迎使用洛奇普通染色颜色代码大全，这里可以搜索普染和金属普染能染出的精确颜色代码。<br>
-下一版更新：推荐颜色、留言板。<br>
+下一版更新：推荐颜色。<span style="color:#ff0000">注意：可能不支持QQ、百度浏览器，建议使用Edge、Firefox、Chrome。</span><br>
 <br>
 <div style="display:flex">
     <div><img id="dye" src="/mabicolor/cloth.png"></div>
