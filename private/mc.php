@@ -26,7 +26,7 @@ function view() {
 </style>
 <h1>洛奇普通染色颜色代码大全</h1>
 <p>by 冰之妖夜（国服全服 日常在玛丽服务器）</p>
-<p style="color:#3366ff">广告：欢迎加入工程师的冬柏树群282157732 <b>洛奇攻略索引</b>计划预想中</p>
+<p style="color:#005000">广告：欢迎加入工程师的冬柏树群282157732 <b>洛奇攻略索引</b>计划预想中</p>
 <p>欢迎使用洛奇普通染色颜色代码大全，这里可以搜索普染和金属普染能染出的精确颜色代码。<br>
 下一版更新：推荐颜色。<span style="color:#ff0000">注意：可能不支持QQ浏览器</span>，建议使用最新版Firefox、Chrome。<br>
 <br>
@@ -49,7 +49,7 @@ function view() {
             <button>搜索</button>
         </form>
 		<p>“#十六进制颜色代码”查找最相似颜色，如“#FFFF00”搜索近似的亮黄色；<br>
-		“R/G/B大于小于等于号十进制数值”筛选颜色，字母大写符号半角不要有空格，如“G=0 B=0”搜索纯红色；<br>
+		“R/G/B大于小于等于号十进制数值”筛选颜色，符号半角不要有空格，如“G=0 B=0”搜索纯红色；<br>
 		混合使用以上查找，用空格隔开，如“#008000 R&lt;64 B&lt;64”搜索中绿色。<br>
 		<br>
 		推荐工具：<a target="_blank" href="http://www.yydzh.com/read.php?tid=1402600">染色助手</a>，<a target="_blank" href="http://labo.erinn.biz/cs/index.php?action=changeFramework">纸娃娃模拟器</a>。</p>
@@ -100,22 +100,24 @@ document.forms[0].onsubmit = function() {
     for (var ci in _colors) {
         var c = _colors[ci];
         var match = true;
-        for (var si in ss)
+        for (var si in ss) {
             var s = ss[si];
-            if (s[0] === 'R' || s[0] === 'G' || s[0] === 'B') {
-                num = parseInt(s.substring(2));
-                if (s[0] === 'R') a = c[0];
-                else if (s[0] === 'G') a = c[1];
-                else a = c[2];
-                match &= s[1] === '=' ? a === num : s[1] === '<' ? a < num : a > num;
+            if (s.match(/^[RGB][<>=]=?[+-0-9]+$/i)) {
+                num = parseInt(s.substring(s[2]==='='?3:2));
+                a = c[(s[0] === 'R' || s[0] === 'r')?0:(s[0] === 'G' || s[0] === 'g')?1:2];
+                match &= (s[1] === '='|| s[2] === '=') ? a === num : s[1] === '<' ? a < num : a > num;
             }
-        if (match) results.push(c);
+		}
+        if (match) {
+			c[3] = ci;
+			results.push(c);
+		}
     }
     for (var si in ss) {
         var s = ss[si];
-        if (s[0] !== '#' && s.substring(0,6).match(/^[0-9a-f]{6}/i)) s='#'+s;
-        if (s[0] === '#') {
-			var S = parseInt(s.substring(1,7),16);
+		var S;
+        if (S = s.match(/^#?[0-9a-f]{6,8}/i)) {
+			var S = parseInt(s[0] === '#'?S[0].substr(1):S[0],16);
             var R = (S >> 16) & 0xff;
             var G = (S >> 8) & 0xff;
             var B = S & 0xff;
