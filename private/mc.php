@@ -28,20 +28,24 @@ function view() {
 <p>by 冰之妖夜（国服全服 日常在玛丽服务器）</p>
 <p style="color:#3366ff">广告：欢迎加入工程师的冬柏树群282157732 <b>洛奇攻略索引</b>计划预想中</p>
 <p>欢迎使用洛奇普通染色颜色代码大全，这里可以搜索普染和金属普染能染出的精确颜色代码。<br>
-下一版更新：推荐颜色。<span style="color:#ff0000">注意：可能不支持QQ、百度浏览器，建议使用Edge、Firefox、Chrome。</span><br>
+下一版更新：推荐颜色。<span style="color:#ff0000">注意：可能不支持QQ浏览器</span>，建议使用最新版Firefox、Chrome。<br>
 <br>
 <div style="display:flex">
     <div><img id="dye" src="/mabicolor/cloth.png"></div>
     <div style="margin-left:1em">
         <form>
-            <input type="radio" name="c" value="cloth" checked/>全彩
-            <input type="radio" name="c" value="cloth_bright" />淡彩
-            <input type="radio" name="c" value="leather" />皮革
-            <input type="radio" name="c" value="silk" />丝绸
-            <input type="radio" name="c" value="metal" />金属
-            <input type="radio" name="c" value="weapon" />武器
+            <input id="r1" type="radio" name="c" value="cloth" checked/><label for="r1">全彩</label>
+            <input id="r2" type="radio" name="c" value="cloth_bright" /><label for="r2">淡彩</label>
+            <input id="r3" type="radio" name="c" value="leather" /><label for="r3">皮革</label>
+            <input id="r4" type="radio" name="c" value="silk" /><label for="r4">丝绸</label>
+            <input id="r5" type="radio" name="c" value="metal" /><label for="r5">金属</label>
+            <input id="r6" type="radio" name="c" value="weapon" /><label for="r6">武器</label>
             <br>
-            <input name="s" style="width:25.3em" type="text" placeholder="#008000 R&lt;64 B&lt;64" required>
+			<span id="cps" style="position:relative">
+				<input id="cp" type="color" style="position:absolute;left:0;opacity:0;width:0" onchange="this.form.s.value=this.value">
+				<label for="cp" style="cursor:pointer;text-decoration:underline;color:#0000c0;font-size:80%;font-weight:bold;">点此选色</label>
+			</span>
+            <input name="s" style="width:21.3em" placeholder="#008000 R&lt;64 B&lt;64" required>
             <button>搜索</button>
         </form>
 		<p>“#十六进制颜色代码”查找最相似颜色，如“#FFFF00”搜索近似的亮黄色；<br>
@@ -59,9 +63,15 @@ function view() {
 <script src="/mabicolor/silk.js"></script>
 <script src="/mabicolor/weapon.js"></script>
 <script>
+var cp = document.getElementById('cp');
+if (cp.value !== '#000000') {
+	document.getElementById('cps').style.display = 'none';
+	document.forms[0].s.style.width = '25.3em';
+}
 var results;
 var i;
 var colors = 'cloth';
+var search;
 
 var radios = document.forms[0].c;
 for(var i = 0; i < radios.length; ++i) {
@@ -78,13 +88,13 @@ function colorBlock(r,g,b,str) {
 }
 
 document.forms[0].onsubmit = function() {
-    if (!this.s.value) return false;
+    if (!(search = this.s.value)) return false;
     var xhr = new XMLHttpRequest();
     if (xhr) {
-        xhr.open('GET','/mc?c='+encodeURIComponent(colors)+'&s='+encodeURIComponent(this.s.value));
+        xhr.open('GET','/mc?c='+encodeURIComponent(colors)+'&s='+encodeURIComponent(search));
         xhr.send();
     }
-    var ss = this.s.value.split(' ');
+    var ss = search.split(' ');
     results = [];
 	var _colors = window[colors];
     for (var ci in _colors) {
@@ -112,10 +122,9 @@ document.forms[0].onsubmit = function() {
             S = s;
             for (var ci in results) {
                 var c = results[ci];
-                c[4] = 2*Math.pow(c[0]-R,2)+4*Math.pow(c[1]-G,2)+3*Math.pow(c[2]-B,2);
-                //c[4]=deltaE(rgb2lab(c),rgb2lab([R,G,B]));
+                c[3] = 2*Math.pow(c[0]-R,2)+4*Math.pow(c[1]-G,2)+3*Math.pow(c[2]-B,2);
             }
-            results.sort(function(a,b) { return a[4]-b[4]; });
+            results.sort(function(a,b) { return a[3]-b[3]; });
             break;
         }
     }
@@ -131,8 +140,13 @@ document.forms[0].onsubmit = function() {
 };
 
 function morecolor() {
+    var xhr = new XMLHttpRequest();
+    if (xhr) {
+        xhr.open('GET','/mc?a=more&c='+encodeURIComponent(colors)+'&s='+encodeURIComponent(search));
+        xhr.send();
+    }
 	var r = [];
-    for (num = i; i<results.length && (i<num+100 || results[i][4] !== results[i-1][4]); ++i)
+    for (num = i; i<results.length && (i<num+100 || results[i][3] === results[i-1][3]); ++i)
         r.push(colorBlock(results[i][0],results[i][1],results[i][2],'#'+(0x1000000 | results[i][2] | (results[i][1] << 8) | (results[i][0] << 16)).toString(16).substr(1)));
     if (i < results.length) r.push('<div onclick="this.outerHTML = morecolor()" class="mcblock" style="background:#f0f0f0;color:#6699cc;cursor:pointer">更多颜色</div>');
     return r.join('');
