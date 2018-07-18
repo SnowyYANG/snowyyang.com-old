@@ -116,12 +116,11 @@ document.forms[0].onsubmit = function() {
     for (var si in ss) {
         var s = ss[si];
 		var S;
-        if (S = s.match(/^#?[0-9a-f]{6,8}/i)) {
-			var S = parseInt(s[0] === '#'?S[0].substr(1):S[0],16);
+        if (S = s.match(/[0-9a-f]{6,8}/i)) {
+			S = parseInt(S[0],16);
             var R = (S >> 16) & 0xff;
             var G = (S >> 8) & 0xff;
             var B = S & 0xff;
-            S = s;
             for (var ci in results) {
                 var c = results[ci];
                 c[3] = 2*Math.pow(c[0]-R,2)+4*Math.pow(c[1]-G,2)+3*Math.pow(c[2]-B,2);
