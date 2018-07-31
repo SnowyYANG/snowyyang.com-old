@@ -8,6 +8,7 @@ if ($q = $_GET['q']) {
 		case 'mrp':
         case 'about':
 		case 'dreamcage':
+		case 'nighry':
             $router = $q[1];
             break;
         case 'rfwiki':

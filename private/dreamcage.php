@@ -9,14 +9,7 @@ $title = '雪鸟幻梦之笼';
 
 
 function view() {
-?>
-<style>
-p {
-	line-height:1.8
-}
-</style>
-<h1>雪鸟幻梦之笼</h1>
-<?php
+global $title;
 $text = <<<'TEXT'
 <b>未完结时的前言</b>
 定下雪鸟这个游戏 我开始写这篇小说 然后三次删掉了写好的几千字开始重写
@@ -128,7 +121,7 @@ $text = <<<'TEXT'
 这样一做，就是八年，直到我二十二岁的时候，发生了一件痛苦的事。
 TEXT;
 $timestamp = date('Y年n月j日H:i:s', filemtime(__FILE__));
-echo "<p style=\"max-width:50em\">（更新中...最后编辑于${timestamp}）<br><br>";
+echo "<h1>$title</h1><p style=\"max-width:50em\">（更新中...最后编辑于${timestamp}）<br><br>";
 $lines = explode("\n",$text);
 foreach($lines as $l) {
 	echo $l;
