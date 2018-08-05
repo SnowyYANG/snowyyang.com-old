@@ -72,6 +72,8 @@ else if ($url === 'QandA' && $_POST['phrase'] === '我不是在发广告') {
 			$value = mail(CS_EMAIL,'SA updated','New user feedback in rfwiki QandA.');
 			$mysqli->query("UPDATE meta SET value='$value' WHERE name='mailed' LIMIT 1");
 		}
+		header('Location: '.SITE.'/QandA', true, 303);
+		exit;
     }
 }
 ?>
@@ -117,7 +119,7 @@ else if ($url === 'QandA' && $_POST['phrase'] === '我不是在发广告') {
                             <input name="title" type="text" value="<?php echo $title; ?>" style="width:90%">
                             <textarea name="content" style="width:90%" rows="30"><?php echo $content; ?></textarea>
                             <input name="memo" type="text" value="<?php echo $memo;?>" style="width: 90%"><br>
-                            <input id="password" name="password" type="password">
+                            编辑密码：<input id="password" name="password" type="password">
                             <input type="submit" name="preview" value="Preview">
                             <input type="submit" name="save" value="Submit" onclick="_onclick()">
                         </form>
