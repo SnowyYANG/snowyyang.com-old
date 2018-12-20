@@ -1,8 +1,0 @@
-<#if licenseFirst??>
-${licenseFirst}
-</#if>
-${licensePrefix}by Snowy YANG
-${licensePrefix}for http://snowy.asia/
-<#if licenseLast??>
-${licenseLast}
-</#if>

@@ -9,6 +9,8 @@ $title = '通灵夜记';
 
 
 function view() {
+	echo '幻想封印中...';
+	return;
 global $title;
 $text = <<<'TEXT'
 有些故事会比较晦暗甚至让人难受，所以17+。

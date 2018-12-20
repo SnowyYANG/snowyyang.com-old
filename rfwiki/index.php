@@ -4,20 +4,21 @@
  * by Snowy YANG
  * for 符文工房中文百科
  */
-
 require __DIR__.'/config.php';
 
 $mysqli = new mysqli(DB_SERVER, DB_USER, DB_PASSWORD, DB_DATABASE);
 if ($mysqli->connect_errno) {
-    die($mysqli->connect_errno.$mysqli->connect_error);
+    http_response_code(503);
+    echo '符文工房中文百科 维护中。Maintaining...';
+    exit;
 }
 
-$time = date('Y-m-d H:i:s', $_SERVER['REQUEST_TIME']);
-$uri = mysqli_real_escape_string($mysqli, $_SERVER['REQUEST_URI']);
-$referer = mysqli_real_escape_string($mysqli, $_SERVER['HTTP_REFERER']);
-$ip = mysqli_real_escape_string($mysqli, $_SERVER['REMOTE_ADDR']);
-$browser = mysqli_real_escape_string($mysqli, $_SERVER['HTTP_USER_AGENT']);
-mysqli_query($mysqli, "INSERT rfwiki_requests (time, uri, referer, ip, browser) VALUES ('$time', '$uri', '$referer', '$ip', '$browser')", MYSQLI_USE_RESULT);
+$mysqli->set_charset('utf8mb4');
+$uri = $mysqli->escape_string($_SERVER['REQUEST_URI']);
+$referer = $mysqli->escape_string($_SERVER['HTTP_REFERER']);
+$ip = $mysqli->escape_string($_SERVER['REMOTE_ADDR']);
+$browser = $mysqli->escape_string($_SERVER['HTTP_USER_AGENT']);
+$mysqli->query("INSERT rfwiki_requests (uri, referer, ip, browser) VALUES ('$uri', '$referer', '$ip', '$browser')");
 
 require __DIR__.'/parser.php';
 $edit = $_REQUEST['a'] === 'edit';
@@ -66,7 +67,7 @@ else if ($url === 'QandA' && $_POST['phrase'] === PHRASE) {
     $question = trim($_POST['question']);
     if ($question !== '') {
         $question = $mysqli->escape_string($question);
-        $qip = mysqli_real_escape_string($mysqli, $_SERVER['REMOTE_ADDR']);
+        $qip = $mysqli->escape_string($_SERVER['REMOTE_ADDR']);
         $mysqli->query("INSERT INTO rfwiki_qanda(question, qip) VALUES ('$question','$qip')");
 		if (($result=$mysqli->query('SELECT * FROM meta WHERE name="mailed" AND value!=""')) && !$result->num_rows) {
 			$value = mail(CS_EMAIL,'SA updated','New user feedback in rfwiki QandA.');
@@ -137,7 +138,7 @@ else if ($url === 'QandA' && $_POST['phrase'] === PHRASE) {
                         if (!$special) {
                         ?>
                             <div style="font-size:0.7em; float:right">
-                                <a href="<?php echo SITE; ?>/?a=edit&q=<?php echo htmlspecialchars($url); ?>" style="color:white">编辑</a>
+                                <a href="<?php echo SITE; ?>/?a=edit&q=<?php echo htmlspecialchars($url); ?>"></a>
                             </div>
                         <?php 
                         }

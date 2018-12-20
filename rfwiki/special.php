@@ -20,7 +20,7 @@ function specialcontent() {
 function qanda() {
     ?>
     <h2>留言板</h2>
-    <p>如果对游戏或网站内容有任何问题，可以在这里留言，也欢迎留下个人建议。与符文工房无关的话题如果需要讨论请私信站长<a href="http://weibo.com/AliceFYANG">个人微博</a>。因为站长懒散，可能几个月后才有回复。</p>    
+    <p>如果对游戏或网站内容有任何问题，可以在这里留言，也欢迎留下个人建议。因为站长懒散，可能几个月后才有回复。</p>    
     <form method="POST" style="text-align:right; padding-right:1em">
         <textarea name="question" style="width:100%" type="text" placeholder="输入问题或留言...可以匿名或在末尾 - 附上姓名"><?php echo htmlspecialchars($_POST['question']);?></textarea><br>
         <span style="font-size:80%">主人公的住处原本应该是谁的房间？填入答案（中文）--&gt;</span><input name="phrase" text="text" value="<?php if ($_POST['question']) echo '答案错误'; ?>">

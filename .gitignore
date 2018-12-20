@@ -1,10 +1,14 @@
 config.php
 /backup/web/
+/temp
 !/backup/config.php
 /nbproject/private/
 /test.php
-/test.html
 /private/test.php
 /public/rfwiki/img/
+test.html
+yydzh.*
+alipay.jpg
 baidu_verify_*
 *.ppk
+*.pem

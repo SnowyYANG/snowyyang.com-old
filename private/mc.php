@@ -8,8 +8,10 @@
 $title = '洛奇普染颜色大全';
 
 if ($_REQUEST['s']) {
-    $s = $mysqli->escape_string($_SERVER['QUERY_STRING']);
-    $mysqli->query("INSERT mc_s(ip,s) VALUES('$ip','$s')");
+    if ($mysqli) {
+        $s = $mysqli->escape_string($_SERVER['QUERY_STRING']);
+        $mysqli->query("INSERT mc_s(ip,s) VALUES('$ip','$s')");
+    }
 	exit;
 }
 

@@ -9,7 +9,7 @@ $title = 'Snowy';
 function view() {
 ?>
 <p>
-Alice Snowy Fei YANG<br>
+Alice <strong>Snowy</strong> Fei YANG<br>
 若雪爱丽丝<br>
 <br>
 出生于安徽省芜湖市<br>
@@ -18,7 +18,6 @@ Alice Snowy Fei YANG<br>
 人生梦想成为全能天才美少女<br>
 实际每天吃吃睡睡<br>
 <br>
-<img src="/kazeyuki816.jpg"><br>
 <span onmouseenter="yin(this)" onmouseleave="yang(this)">八面玲珑百灵鸟 嘤嘤楚楚笼中傲<br>经风经雨生不毁 历霜历雪尽妖娆<br>机关算尽不误命 露财露色也平安<br>耐得春宵萧寒夜 平步青云又一朝<br></span>​
 <br>
 LinkedIn: <a target="_blank" href="https://www.linkedin.com/in/alicefeiyang/">Alice Fei YANG</a><br>
