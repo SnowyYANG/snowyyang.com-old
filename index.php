@@ -12,6 +12,7 @@ if ($q = $_GET['q']) {
             $router = $q[1];
             break;
         case 'rfwiki':
+        case 'mabiwiki':
 		case 'world':
 			$skip = strlen($q[1])+1;
             $_GET['q'] = substr($_GET['q'], $skip);

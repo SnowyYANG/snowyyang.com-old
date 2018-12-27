@@ -1,0 +1,89 @@
+/*
+by Snowy YANG
+for 洛奇wiki
+*/
+
+body {
+    margin: 0;
+    font: 16px Microsoft YaHei;
+    height: 100vh
+        
+}
+p {
+    line-height: 1.5
+}
+em {
+    color: rgb(64,128,208);
+    font-style: normal 
+}
+strong {
+    color: rgb(128,0,0);
+    font-weight: normal
+}
+a {
+    color: rgb(64,128,208);
+    text-decoration: none
+}
+a:visited {
+    color: rgb(64,128,208);
+}
+a:hover {
+    
+}
+h2 {
+    color: #483725
+}
+h3 {
+    color: #54422E
+}
+.hints {
+    font-size: 80%;
+    color: rgb(105,146,64)
+}
+#con table {
+    font-size: 90%;
+    background: #f9f9f9;
+    border-collapse: collapse;
+}
+#con th {
+    border:1px solid #aaa
+}
+#con td {
+    border: 1px solid #AAA;
+}
+#con .layout {
+    background: transparent;
+    padding: 0;
+}
+#con .layout td {
+    border: none;
+    vertical-align: top;
+    padding: 0;
+}
+.timestamp {
+    color: #aaaaaa
+}
+#toc {
+    width: 10em;
+}
+#toc ul {
+    padding: 0
+}
+#toc li {
+    list-style: none;
+    padding-left: 1em;
+    color: rgb(91,75,42);
+}
+#toc a {
+    display: block;
+    color: rgb(91,75,42);
+    border-bottom: dashed 1px rgba(91,75,42,0.3);
+    margin-left: -1em;
+    padding-left: 1em
+}
+footer {
+    width: 100%;
+    font-size: 0.7em;
+    color: #808080;
+    text-align: right
+}
