@@ -14,44 +14,47 @@ for http://snowy.asia/mabiwiki
     <body>
         <div style="display:flex;min-height:100vh;">
             <div id="toc">
-                <h1>洛奇wiki</h1>
+                <a href=""><h1>洛奇wiki</h1></a>
                 <ul>
-                <li><a href="start" title="">入坑建议</a></li>
-                <li>养号<ul>
-                <li><a href="story" title="">做主线</a></li>
-                <li><a href="Farming" title="">升等级</a></li>
-                <li><a href="Fishing" title="">练技能</a></li>
-                <li><a href="Taming" title="">刷评论</a></li>
-                </ul></li>
-                <li>整装备<ul>
-                <li><a href="Equip" title="">常用装备</a></li>
-                <li><a href="Upgrade" title="">武器改造</a></li>
-                <li><a href="option" title="">魔法释放</a></li>
-                <li><a href="Reforge" title="">鉴定/回音</a></li>
-                <li><a href="Totem">图腾/徽章</a></li>
-                </ul></li>
-                <li>肝副本<ul>
-                <li><a href="Collectible" title="野外与地下城的怪物和收集品">佑拉地下</a></li>
-                <li><a href="Collectible" title="野外与地下城的怪物和收集品">影子世界</a></li>
-                <li><a href="Upgrade" title="武器、法杖、防具的强化">训练所</a></li>
-                <li><a href="Upgrade" title="武器、法杖、防具的强化">遗迹</a></li>
-                <li><a href="Recipes/Farming" title="农具配方">净化</a></li>
-                </ul></li>
-                <li>做生产<ul>
-                <li><a href="Collectible" title="野外与地下城的怪物和收集品">设计图纸</a></li>
-                <li><a href="Collectible" title="野外与地下城的怪物和收集品">衣服样本</a></li>
-                <li><a href="Upgrade" title="武器、法杖、防具的强化">工学</a></li>
-                <li><a href="Upgrade" title="武器、法杖、防具的强化">工艺</a></li>
-                <li><a href="Recipes/Farming" title="农具配方">药剂制作</a></li>
-                <li><a href="Recipes/Medicine" title="药学配方">手工艺</a></li>
-                <li><a href="Recipes/Cooking" title="料理配方">料理配方</a></li>
-                </ul></li>
-                <li>休闲娱乐<ul>
-                <li><a href="Monsters" title="怪掉物品一览">钓鱼</a></li>
-                <li><a href="MapHidden">跑商</a></li>
-                <li><a href="MapHidden">时装大赛</a></li>
-                <li><a href="MapHidden">骑士冲锋</a></li>
-                </ul></li>
+                    <li><a href="Start" title="">入坑建议</a></li>
+                    <li>养号<ul>
+                    <li><a href="Story" title="">做主线</a></li>
+                    <li><a href="Farming" title="">升等级</a></li>
+                    <li><a href="Fishing" title="">练技能</a></li>
+                    <li><a href="Taming" title="">刷评论</a></li>
+                    </ul></li>
+                    <li>整装备<ul>
+                    <li><a href="Equip" title="">常用装备</a></li>
+                    <li><a href="Upgrade" title="">道具改造</a></li>
+                    <li><a href="Option" title="">魔法释放</a></li>
+                    <li><a href="Reforge" title="">鉴定/回音</a></li>
+                    <li><a>尔格</a></li>
+                    <li><a href="Totem">图腾/徽章</a></li>
+                    </ul></li>
+                    <li>肝副本<ul>
+                    <li><a href="Collectible" title="野外与地下城的怪物和收集品">佑拉地下</a></li>
+                    <li><a href="Collectible" title="野外与地下城的怪物和收集品">影子世界</a></li>
+                    <li><a href="Upgrade" title="武器、法杖、防具的强化">训练所</a></li>
+                    <li><a href="Upgrade" title="武器、法杖、防具的强化">遗迹</a></li>
+                    <li><a href="Recipes/Farming" title="农具配方">净化</a></li>
+                    </ul></li>
+                    <li>做生产<ul>
+                    <li><a href="Collectible" title="野外与地下城的怪物和收集品">设计图纸</a></li>
+                    <li><a href="Collectible" title="野外与地下城的怪物和收集品">衣服样本</a></li>
+                    <li><a href="Upgrade" title="武器、法杖、防具的强化">工学</a></li>
+                    <li><a href="Upgrade" title="武器、法杖、防具的强化">工艺</a></li>
+                    <li><a href="Recipes/Farming" title="农具配方">药剂制作</a></li>
+                    <li><a href="Recipes/Medicine" title="药学配方">手工艺</a></li>
+                    <li><a href="Recipes/Cooking" title="料理配方">料理配方</a></li>
+                    </ul></li>
+                    <li>休闲娱乐<ul>
+                    <li><a href="Monsters" title="怪掉物品一览">钓鱼</a></li>
+                    <li><a href="MapHidden">跑商</a></li>
+                    <li><a href="MapHidden">时装大赛</a></li>
+                    <li><a href="MapHidden">骑士冲锋</a></li>
+                    </ul></li>
+                    <li>其他<ul>
+                    <li><a href="Names">俗称术语表</a></li></ul></li>
                 </ul>
                 <ul>
                 <!--li><a href="/QandA" title="留言与提问区">留言板</a></li-->
@@ -62,8 +65,9 @@ for http://snowy.asia/mabiwiki
             <div style="flex-grow:8">
                 <main style="height:calc(100% - 1rem);margin-left:1rem"><?php
                     switch ($_GET['q']) {
-                        case '/option':
-                        case '/story':
+                        case '/Option':
+                        case '/AllOption':
+                        case '/Story':
                             require substr($_GET['q'],1).'.php';
                             break;
                         default:

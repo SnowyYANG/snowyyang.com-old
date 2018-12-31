@@ -22,6 +22,7 @@ Alice <strong>Snowy</strong> Fei YANG<br>
 <br>
 LinkedIn: <a target="_blank" href="https://www.linkedin.com/in/alicefeiyang/">Alice Fei YANG</a><br>
 GitHub: <a target="_blank" href="https://github.com/SnowyYANG">SnowyYANG</a><br>
+支付宝：pay@snowy.asia<br>
 洛奇：冰之妖夜（国服全服）<br>
 精灵宝可梦：大正8年8月的东京百合花<br>
 豆瓣：<a target="_blank" href="https://www.douban.com/people/snowyyang/">若雪爱丽丝</a><br>

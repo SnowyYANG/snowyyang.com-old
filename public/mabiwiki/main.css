@@ -12,6 +12,9 @@ body {
 p {
     line-height: 1.5
 }
+th {
+    text-align:left;
+}
 em {
     color: rgb(64,128,208);
     font-style: normal 
@@ -31,10 +34,13 @@ a:hover {
     
 }
 h2 {
-    color: #483725
+}
+nav {
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: normal;
 }
 h3 {
-    color: #54422E
 }
 .hints {
     font-size: 80%;
@@ -72,11 +78,9 @@ h3 {
 #toc li {
     list-style: none;
     padding-left: 1em;
-    color: rgb(91,75,42);
 }
 #toc a {
     display: block;
-    color: rgb(91,75,42);
     border-bottom: dashed 1px rgba(91,75,42,0.3);
     margin-left: -1em;
     padding-left: 1em
