@@ -48,7 +48,9 @@ for http://snowy.asia/mabiwiki
                     <li><a href="Recipes/Cooking" title="料理配方">料理配方</a></li>
                     </ul></li>
                     <li>休闲娱乐<ul>
-                    <li><a href="Monsters" title="怪掉物品一览">钓鱼</a></li>
+                    <li><a href="Monsters" title="">时装</a></li>
+                    <li><a href="Monsters" title="">农场</a></li>
+                    <li><a href="Monsters" title="">钓鱼</a></li>
                     <li><a href="MapHidden">跑商</a></li>
                     <li><a href="MapHidden">时装大赛</a></li>
                     <li><a href="MapHidden">骑士冲锋</a></li>
