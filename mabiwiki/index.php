@@ -11,10 +11,10 @@ for http://snowy.asia/mabiwiki
         <link href="favicon.ico" rel="shortcut icon"/>
         <link href="main.css" type="text/css" rel="stylesheet"/>
     </head>
-    <body>
-        <div style="display:flex;min-height:100vh;">
-            <div id="toc">
-                <a href=""><h1>洛奇wiki</h1></a>
+    <body style="background:#e9dfe5">
+        <div style="display:flex;aligen-items:stretch;min-height:100vh;max-width:1024px;margin:auto;background:#ffffff">
+            <div id="toc" style="width:10em;min-width:10em">
+                <a href="" style="margin:0"><h1>洛奇wiki</h1></a>
                 <ul>
                     <li><a href="Start" title="">入坑建议</a></li>
                     <li>养号<ul>
@@ -62,8 +62,8 @@ for http://snowy.asia/mabiwiki
                 <li><a href="/References" title="友情链接与参考资料">友情链接</a></li>
                 </ul>
             </div>
-            <div style="flex-grow:8">
-                <main style="height:calc(100% - 1rem);margin-left:1rem"><?php
+            <div style="display:flex;flex-direction:column;flex-grow:8;">
+                <main style="flex-grow:99;margin-left:1rem;padding-right:1rem;"><?php
                     switch ($_GET['q']) {
                         case '/Option':
                         case '/AllOption':
@@ -76,7 +76,7 @@ for http://snowy.asia/mabiwiki
                     };
                     mainview();
                 ?></main>
-                <footer>洛奇wiki的全部文字在<a target="_blank" href="https://creativecommons.org/licenses/by-sa/3.0/deed.zh">知识共享 署名-相同方式共享 3.0</a>协议之条款下提供。</footer>
+                <footer style="margin-bottom:1em">洛奇wiki的全部文字在<a target="_blank" href="https://creativecommons.org/licenses/by-sa/3.0/deed.zh">知识共享 署名-相同方式共享 3.0</a>协议之条款下提供。</footer>
             </div>
         </div>
     </body>

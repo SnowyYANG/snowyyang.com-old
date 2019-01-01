@@ -12,6 +12,10 @@ body {
 p {
     line-height: 1.5
 }
+hr {
+    border: 0;
+    border-top: #e9dfe5 1px solid
+}
 th {
     text-align:left;
 }
@@ -24,11 +28,11 @@ strong {
     font-weight: normal
 }
 a {
-    color: rgb(64,128,208);
+    color: #a25768;
     text-decoration: none
 }
 a:visited {
-    color: rgb(64,128,208);
+    color: #705b67;
 }
 a:hover {
     
@@ -45,6 +49,11 @@ h3 {
 .hints {
     font-size: 80%;
     color: rgb(105,146,64)
+}
+.notice {
+    background: #f8f4e6;
+    color: #e6b422;
+    border: #e6b422 1px solid
 }
 #con table {
     font-size: 90%;
@@ -68,9 +77,6 @@ h3 {
 }
 .timestamp {
     color: #aaaaaa
-}
-#toc {
-    width: 10em;
 }
 #toc ul {
     padding: 0
