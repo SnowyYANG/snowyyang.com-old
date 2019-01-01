@@ -28,11 +28,10 @@ strong {
     font-weight: normal
 }
 a {
-    color: #a25768;
-    text-decoration: none
+    color: #006e54; 
 }
 a:visited {
-    color: #705b67;
+    color: #43676b;
 }
 a:hover {
     
@@ -43,6 +42,10 @@ nav {
     display: inline-block;
     font-size: 1rem;
     font-weight: normal;
+    
+}
+nav a {
+    text-decoration: none
 }
 h3 {
 }
@@ -54,26 +57,6 @@ h3 {
     background: #f8f4e6;
     color: #e6b422;
     border: #e6b422 1px solid
-}
-#con table {
-    font-size: 90%;
-    background: #f9f9f9;
-    border-collapse: collapse;
-}
-#con th {
-    border:1px solid #aaa
-}
-#con td {
-    border: 1px solid #AAA;
-}
-#con .layout {
-    background: transparent;
-    padding: 0;
-}
-#con .layout td {
-    border: none;
-    vertical-align: top;
-    padding: 0;
 }
 .timestamp {
     color: #aaaaaa

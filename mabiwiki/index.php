@@ -11,10 +11,10 @@ for http://snowy.asia/mabiwiki
         <link href="favicon.ico" rel="shortcut icon"/>
         <link href="main.css" type="text/css" rel="stylesheet"/>
     </head>
-    <body style="background:#e9dfe5">
+    <body style="background:#316745">
         <div style="display:flex;aligen-items:stretch;min-height:100vh;max-width:1024px;margin:auto;background:#ffffff">
-            <div id="toc" style="width:10em;min-width:10em">
-                <a href="" style="margin:0"><h1>洛奇wiki</h1></a>
+            <nav id="toc" style="width:10em;min-width:10em;background:#e1eee8">
+                <a href="" style="margin:0;color:#00552e"><h1 style="font-size:2rem">洛奇wiki</h1></a>
                 <ul>
                     <li><a href="Start" title="">入坑建议</a></li>
                     <li>养号<ul>
@@ -61,7 +61,7 @@ for http://snowy.asia/mabiwiki
                 <li><a href="/Logs" title="网站内容更新日志">更新日志</a></li>
                 <li><a href="/References" title="友情链接与参考资料">友情链接</a></li>
                 </ul>
-            </div>
+            </nav>
             <div style="display:flex;flex-direction:column;flex-grow:8;">
                 <main style="flex-grow:99;margin-left:1rem;padding-right:1rem;"><?php
                     switch ($_GET['q']) {
