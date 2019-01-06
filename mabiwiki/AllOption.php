@@ -1,11 +1,13 @@
 <?php 
 
-require 'optiondata.php';
+require 'data/option.php';
+
+$h2 = '魔法释放';
+$nav = '<a href="Option">常用释放</a> | 所有释放</nav>';
+$unf = true;
 
 function mainview() {
     global $option;
-?>
-    <h2>魔法释放 <nav><a href="Option">常用释放</a> | 所有释放</nav></h2>
-    <div class="notice">（这个页面尚未完工）</div>
-    <?php ListOption($option);
+    echo '<div>可以使用Ctrl+F在本页查找，点击左侧的小三角展开详细资料（IE和Edge会自动展开）。</div><br>';
+    ListOption($option);
 }?>

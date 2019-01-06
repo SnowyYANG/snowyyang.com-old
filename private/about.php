@@ -22,9 +22,8 @@ Alice <strong>Snowy</strong> Fei YANG<br>
 <br>
 LinkedIn: <a target="_blank" href="https://www.linkedin.com/in/alicefeiyang/">Alice Fei YANG</a><br>
 GitHub: <a target="_blank" href="https://github.com/SnowyYANG">SnowyYANG</a><br>
-支付宝：pay@snowy.asia<br>
+Pixiv：<a target="_blank" href="https://www.pixiv.net/member.php?id=15972970">大正８年８月の東京ユリカ</a><br>
 洛奇：冰之妖夜（国服全服）<br>
-精灵宝可梦：大正8年8月的东京百合花<br>
 豆瓣：<a target="_blank" href="https://www.douban.com/people/snowyyang/">若雪爱丽丝</a><br>
 微博：<a target="_blank" href="http://weibo.com/AliceFYANG">若雪爱丽丝</a><br>
 百度贴吧：<a target="_blank" href="http://tieba.baidu.com/home/main?un=%E8%8B%A5%E9%9B%AA%E7%88%B1%E4%B8%BD%E4%B8%9D">若雪爱丽丝</a><br>

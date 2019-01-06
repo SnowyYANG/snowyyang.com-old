@@ -24,28 +24,29 @@ for http://snowy.asia/mabiwiki
                     <li><a href="Taming" title="">刷评论</a></li>
                     </ul></li>
                     <li>整装备<ul>
-                    <li><a href="Equip" title="">常用装备</a></li>
-                    <li><a href="Upgrade" title="">道具改造</a></li>
+                    <li><a href="Upgrade" title="">装备改造</a></li>
                     <li><a href="Option" title="">魔法释放</a></li>
                     <li><a href="Reforge" title="">鉴定/回音</a></li>
                     <li><a>尔格</a></li>
                     <li><a href="Totem">图腾/徽章</a></li>
                     </ul></li>
                     <li>肝副本<ul>
-                    <li><a href="Collectible" title="野外与地下城的怪物和收集品">佑拉地下</a></li>
-                    <li><a href="Collectible" title="野外与地下城的怪物和收集品">影子世界</a></li>
-                    <li><a href="Upgrade" title="武器、法杖、防具的强化">训练所</a></li>
-                    <li><a href="Upgrade" title="武器、法杖、防具的强化">遗迹</a></li>
+                    <li><a href="Phantom" title="野外与地下城的怪物和收集品">梦幻拉比</a></li>
                     <li><a href="Recipes/Farming" title="农具配方">净化</a></li>
+                    <li>使徒</li>
+                    <li><a href="Collectible" title="野外与地下城的怪物和收集品">困高</a></li>
+                    <li><a href="Upgrade" title="武器、法杖、防具的强化">训练所</a></li>
+                    <li><a href="Collectible" title="野外与地下城的怪物和收集品">影子</a></li>
+                    <li><a href="Upgrade" title="武器、法杖、防具的强化">其他</a></li>
                     </ul></li>
                     <li>做生产<ul>
-                    <li><a href="Collectible" title="野外与地下城的怪物和收集品">设计图纸</a></li>
-                    <li><a href="Collectible" title="野外与地下城的怪物和收集品">衣服样本</a></li>
-                    <li><a href="Upgrade" title="武器、法杖、防具的强化">工学</a></li>
-                    <li><a href="Upgrade" title="武器、法杖、防具的强化">工艺</a></li>
-                    <li><a href="Recipes/Farming" title="农具配方">药剂制作</a></li>
-                    <li><a href="Recipes/Medicine" title="药学配方">手工艺</a></li>
-                    <li><a href="Recipes/Cooking" title="料理配方">料理配方</a></li>
+                    <li><a href="Collectible" title="">设计图纸</a></li>
+                    <li><a href="Collectible" title="">衣服样本</a></li>
+                    <li><a href="Upgrade" title="">工学</a></li>
+                    <li><a href="Upgrade" title="">工艺</a></li>
+                    <li><a href="Recipes/Farming" title="">药剂制作</a></li>
+                    <li><a href="Recipes/Medicine" title="">手工艺</a></li>
+                    <li><a href="Cooking" title="">料理</a></li>
                     </ul></li>
                     <li>休闲娱乐<ul>
                     <li><a href="Monsters" title="">时装</a></li>
@@ -70,14 +71,19 @@ for http://snowy.asia/mabiwiki
                         case '/Option':
                         case '/AllOption':
                         case '/Story':
+                        case '/Cooking':
+                        case '/AllCooking':
                             require substr($_GET['q'],1).'.php';
                             break;
                         default:
                             require 'homepage.php';
                             break;
                     };
+                    echo "<h2>$h2 <nav>$nav</nav></h2>";
+                    if ($unf) echo '<div class="notice">（这个页面尚未完工）</div>';
                     mainview();
                 ?></main>
+                <br>
                 <footer style="margin-bottom:1em">洛奇wiki的全部文字在<a target="_blank" href="https://creativecommons.org/licenses/by-sa/3.0/deed.zh">知识共享 署名-相同方式共享 3.0</a>协议之条款下提供。</footer>
             </div>
         </div>
