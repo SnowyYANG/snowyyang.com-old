@@ -450,8 +450,8 @@ $recipe2 = [];
 foreach($recipe as $r) $recipe2[$r['dish']]=$r;
 
 function Detail2($r) {
-    echo "<div><span style=\"display:inline-block;width:10em\">&emsp;$r[dish]</span> <span style=\"display:inline-block;width:4em\">$r[a]</span>
-    <span style=\"display:inline-block;width:13em\">$r[s1]</span><span style=\"display:inline-block;width:11em\">$r[s2]</span>$r[s3]</div>";
+    echo "<span style=\"display:inline-block;width:10em\">&emsp;$r[dish]</span> <span style=\"display:inline-block;width:4em\">$r[a]</span>
+    <span style=\"display:inline-block;width:13em\">$r[s1]</span><span style=\"display:inline-block;width:11em\">$r[s2]</span>$r[s3]<br>";
 }
 
 function Expand($r, &$result) {
@@ -473,7 +473,7 @@ function Expand($r, &$result) {
 
 function Detail($r,$open='') {
     echo "<details $open><summary><span style=\"display:inline-block;width:9em\">$r[dish]</span> <span style=\"display:inline-block;width:4em\">$r[a]</span> 
-    <span style=\"display:inline-block;width:13em\">$r[s1]</span><span style=\"display:inline-block;width:11em\">$r[s2]</span>$r[s3]</summary>";
+    <span style=\"display:inline-block;width:13em\">$r[s1]</span><span style=\"display:inline-block;width:11em\">$r[s2]</span>$r[s3]<br></summary>";
     $source = [];
     Expand($r, $source);
     if ($source)

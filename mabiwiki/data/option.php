@@ -1012,7 +1012,7 @@ function ListOption($list) {
         $desc = str_replace(['\n','[',']'],['<br>','<span style="color:#c00000">','</span>'],$l['Desc']);
         $base = $l['base']?"<br>垫卷：$l[base]":'';
         $get = $l['get']?:'等待补充';
-        echo "<details><summary>$name $l[Name] <span style=\"color:#808080\">$usage$lv</span></summary><span style=\"color:#0000c0\">$desc</span><br>
+        echo "<details><summary>$name $l[Name] <span style=\"color:#808080\">$usage$lv</span><br></summary><span style=\"color:#0000c0\">$desc</span><br>
         出处：$get$base<hr></details>";
     }
 }

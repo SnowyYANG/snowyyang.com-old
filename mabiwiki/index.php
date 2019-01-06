@@ -21,7 +21,7 @@ for http://snowy.asia/mabiwiki
                     <li><a href="Story" title="">做主线</a></li>
                     <li><a href="Farming" title="">升等级</a></li>
                     <li><a href="Fishing" title="">练技能</a></li>
-                    <li><a href="Taming" title="">刷评论</a></li>
+                    <li><a href="Reputation" title="">刷评论</a></li>
                     </ul></li>
                     <li>整装备<ul>
                     <li><a href="Upgrade" title="">装备改造</a></li>
@@ -57,6 +57,7 @@ for http://snowy.asia/mabiwiki
                     <li><a href="MapHidden">骑士冲锋</a></li>
                     </ul></li>
                     <li>其他<ul>
+                    <li>我的骑士团</li>
                     <li><a href="Names">俗称术语表</a></li></ul></li>
                 </ul>
                 <ul>
@@ -67,18 +68,8 @@ for http://snowy.asia/mabiwiki
             </nav>
             <div style="display:flex;flex-direction:column;flex-grow:8;">
                 <main style="flex-grow:99;margin-left:1rem;padding-right:1rem;"><?php
-                    switch ($_GET['q']) {
-                        case '/Option':
-                        case '/AllOption':
-                        case '/Story':
-                        case '/Cooking':
-                        case '/AllCooking':
-                            require substr($_GET['q'],1).'.php';
-                            break;
-                        default:
-                            require 'homepage.php';
-                            break;
-                    };
+                    if (($q = substr($_GET['q'],1)) && preg_match("/^[a-zA-Z]+$/",$q) && @include("$q.php")) ;
+                    else require 'homepage.php';
                     echo "<h2>$h2 <nav>$nav</nav></h2>";
                     if ($unf) echo '<div class="notice">（这个页面尚未完工）</div>';
                     mainview();
