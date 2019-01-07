@@ -21,6 +21,7 @@ for http://snowy.asia/mabiwiki
                     <li><a href="Story" title="">做主线</a></li>
                     <li><a href="Farming" title="">升等级</a></li>
                     <li><a href="Fishing" title="">练技能</a></li>
+                    <li>做宗师</li>
                     <li><a href="Reputation" title="">刷评论</a></li>
                     </ul></li>
                     <li>整装备<ul>
@@ -66,8 +67,8 @@ for http://snowy.asia/mabiwiki
                 <li><a href="/References" title="友情链接与参考资料">友情链接</a></li>
                 </ul>
             </nav>
-            <div style="display:flex;flex-direction:column;flex-grow:8;">
-                <main style="flex-grow:99;margin-left:1rem;padding-right:1rem;"><?php
+            <div style="display:flex;flex-direction:column;flex-grow:8;padding-right:2rem">
+                <main style="flex-grow:99;margin:0 1rem;word-break:break-all;width:100%;max-width:100%"><?php
                     if (($q = substr($_GET['q'],1)) && preg_match("/^[a-zA-Z]+$/",$q) && @include("$q.php")) ;
                     else require 'homepage.php';
                     echo "<h2>$h2 <nav>$nav</nav></h2>";
