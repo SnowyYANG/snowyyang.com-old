@@ -19,8 +19,8 @@ for http://snowy.asia/mabiwiki
                     <li><a href="Start" title="">入坑建议</a></li>
                     <li>养号<ul>
                     <li><a href="Story" title="">做主线</a></li>
-                    <li><a href="Farming" title="">升等级</a></li>
-                    <li><a href="Fishing" title="">练技能</a></li>
+                    <li><a href="Lv" title="">升等级</a></li>
+                    <li><a href="Skill" title="">练技能</a></li>
                     <li>做宗师</li>
                     <li><a href="Reputation" title="">刷评论</a></li>
                     </ul></li>
