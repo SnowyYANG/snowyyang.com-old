@@ -69,7 +69,7 @@ for http://snowy.asia/mabiwiki
             </nav>
             <div style="display:flex;flex-direction:column;flex-grow:8;padding-right:2rem">
                 <main style="flex-grow:99;margin:0 1rem;word-break:break-all;width:100%;max-width:100%"><?php
-                    if (($q = substr($_GET['q'],1)) && preg_match("/^[a-zA-Z]+$/",$q) && @include("$q.php")) ;
+                    if (($q = substr($_GET['q'],1)) && $q!=='index' && preg_match("/^[a-zA-Z]+$/",$q) && @include("$q.php")) ;
                     else require 'homepage.php';
                     echo "<h2>$h2 <nav>$nav</nav></h2>";
                     if ($unf) echo '<div class="notice">（这个页面尚未完工）</div>';
