@@ -1,7 +1,7 @@
 <?php
 
 $h2 = '装备改造';
-$nav = '常用装备改造';
+$nav = '常用装备改造 | 所有改造';
 
 function mainview() {
 $text = <<<'TXT'
