@@ -66,6 +66,7 @@ h3 {
 }
 #toc li {
     list-style: none;
+    color: #006e54; 
     padding-left: 1em;
 }
 #toc a {

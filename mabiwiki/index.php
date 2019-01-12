@@ -16,7 +16,7 @@ for http://snowy.asia/mabiwiki
             <nav id="toc" style="width:10em;min-width:10em;background:#e1eee8">
                 <a href="" style="margin:0;color:#00552e"><h1 style="font-size:2rem">洛奇wiki</h1></a>
                 <ul>
-                    <li><a href="Start" title="">入坑建议</a></li>
+                    <li>入坑建议</li>
                     <li>养号<ul>
                     <li><a href="Story" title="">主线</a></li>
                     <li><a href="Lv" title="">等级</a></li>
@@ -29,7 +29,7 @@ for http://snowy.asia/mabiwiki
                     <li><a href="Upgrade" title="">装备改造</a></li>
                     <li><a href="Option" title="">魔法释放</a></li>
                     <li><a href="Reforge" title="">鉴定/回音</a></li>
-                    <li><a>尔格</a></li>
+                    <li>尔格</li>
                     <li>图腾/徽章</li>
                     </ul></li>
                     <li>肝副本<ul>
@@ -63,9 +63,9 @@ for http://snowy.asia/mabiwiki
                     <li>俗称术语表</li></ul></li>
                 </ul>
                 <ul>
-                <!--li><a href="/QandA" title="留言与提问区">留言板</a></li-->
-                <li><a href="/Logs" title="网站内容更新日志">更新日志</a></li>
-                <li><a href="/References" title="友情链接与参考资料">友情链接</a></li>
+                <li>留言板</li>
+                <li>更新日志</li>
+                <li>友情链接</li>
                 </ul>
             </nav>
             <div style="display:flex;flex-direction:column;flex-grow:8;padding-right:2rem">
