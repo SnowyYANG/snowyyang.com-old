@@ -6,7 +6,7 @@ require 'data/cooking.php';
 
 function mainview() {
     global $recipe2;
-    echo '属性料理';
+    echo '<b>属性料理</b><br>';
     echo '刺身拼盘盖饭 大伤+2 魔攻+2 生命+35 魔法+25<br>';
     Detail($recipe2['刺身拼盘盖饭'], 'open');
     echo '开心点心套餐 大伤+2 保护+1 幸运+30 敏捷+25<br>';
@@ -24,4 +24,14 @@ function mainview() {
     Detail($recipe2['虾仁炒饭']);
     Detail($recipe2['蔬菜纤维']);
     echo '<br><b>尔格材料</b><br>';
+    Detail($recipe2['炒蔬菜'],'open');
+    Detail($recipe2['黄金鱼柳'],'open');
+    Detail($recipe2['海鲜意大利细面条'],'open');
+    Detail($recipe2['奶油焗龙虾'],'open');
+    Detail($recipe2['花生奶油酱'],'open');
+    Detail($recipe2['蛤蜊酱'],'open');
+    Detail($recipe2['贝尔法斯特鳗鱼盖饭'],'open');
+    Detail($recipe2['鲐鱼排'],'open');
+    Detail($recipe2['南瓜炖排骨'],'open');
+    Detail($recipe2['橙皮马末兰果酱'],'open');
 }
