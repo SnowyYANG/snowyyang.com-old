@@ -18,48 +18,49 @@ for http://snowy.asia/mabiwiki
                 <ul>
                     <li><a href="Start" title="">入坑建议</a></li>
                     <li>养号<ul>
-                    <li><a href="Story" title="">做主线</a></li>
-                    <li><a href="Lv" title="">升等级</a></li>
-                    <li><a href="Skill" title="">练技能</a></li>
-                    <li>做宗师</li>
-                    <li><a href="Reputation" title="">刷评论</a></li>
+                    <li><a href="Story" title="">主线</a></li>
+                    <li><a href="Lv" title="">等级</a></li>
+                    <li><a href="Skills1" title="">技能</a></li>
+                    <li>宗师</li>
+                    <li>头衔</li>
+                    <li><a href="Reputation" title="">评论</a></li>
                     </ul></li>
                     <li>整装备<ul>
                     <li><a href="Upgrade" title="">装备改造</a></li>
                     <li><a href="Option" title="">魔法释放</a></li>
                     <li><a href="Reforge" title="">鉴定/回音</a></li>
                     <li><a>尔格</a></li>
-                    <li><a href="Totem">图腾/徽章</a></li>
+                    <li>图腾/徽章</li>
                     </ul></li>
                     <li>肝副本<ul>
-                    <li><a href="Phantom" title="野外与地下城的怪物和收集品">梦幻拉比</a></li>
-                    <li><a href="Recipes/Farming" title="农具配方">净化</a></li>
+                    <li>梦幻拉比</li>
+                    <li>净化</li>
                     <li>使徒</li>
-                    <li><a href="Collectible" title="野外与地下城的怪物和收集品">困高</a></li>
-                    <li><a href="Upgrade" title="武器、法杖、防具的强化">训练所</a></li>
-                    <li><a href="Collectible" title="野外与地下城的怪物和收集品">影子</a></li>
-                    <li><a href="Upgrade" title="武器、法杖、防具的强化">其他</a></li>
+                    <li>困高</li>
+                    <li>训练所</li>
+                    <li>影子</li>
+                    <li>其他</li>
                     </ul></li>
                     <li>做生产<ul>
-                    <li><a href="Collectible" title="">设计图纸</a></li>
-                    <li><a href="Collectible" title="">衣服样本</a></li>
-                    <li><a href="Upgrade" title="">工学</a></li>
-                    <li><a href="Upgrade" title="">工艺</a></li>
-                    <li><a href="Recipes/Farming" title="">药剂制作</a></li>
-                    <li><a href="Recipes/Medicine" title="">手工艺</a></li>
+                    <li>设计图纸</li>
+                    <li>衣服样本</li>
+                    <li>工学</li>
+                    <li>工艺</li>
+                    <li>药剂制作</li>
+                    <li>手工艺</li>
                     <li><a href="Cooking" title="">料理</a></li>
                     </ul></li>
                     <li>休闲娱乐<ul>
-                    <li><a href="Monsters" title="">时装</a></li>
-                    <li><a href="Monsters" title="">农场</a></li>
-                    <li><a href="Monsters" title="">钓鱼</a></li>
-                    <li><a href="MapHidden">跑商</a></li>
-                    <li><a href="MapHidden">时装大赛</a></li>
-                    <li><a href="MapHidden">骑士冲锋</a></li>
+                    <li>时装</li>
+                    <li>农场</li>
+                    <li>钓鱼</li>
+                    <li>跑商</li>
+                    <li>时装大赛</li>
+                    <li>骑士冲锋</li>
                     </ul></li>
                     <li>其他<ul>
                     <li>我的骑士团</li>
-                    <li><a href="Names">俗称术语表</a></li></ul></li>
+                    <li>俗称术语表</li></ul></li>
                 </ul>
                 <ul>
                 <!--li><a href="/QandA" title="留言与提问区">留言板</a></li-->
@@ -69,7 +70,7 @@ for http://snowy.asia/mabiwiki
             </nav>
             <div style="display:flex;flex-direction:column;flex-grow:8;padding-right:2rem">
                 <main style="flex-grow:99;margin:0 1rem;word-break:break-all;width:100%;max-width:100%"><?php
-                    if (($q = substr($_GET['q'],1)) && $q!=='index' && preg_match("/^[a-zA-Z]+$/",$q) && @include("$q.php")) ;
+                    if (($q = substr($_GET['q'],1)) && $q!=='index' && preg_match("/^[a-zA-Z0-9]+$/",$q) && @include("$q.php")) ;
                     else require 'homepage.php';
                     echo "<h2>$h2 <nav>$nav</nav></h2>";
                     if ($unf) echo '<div class="notice">（这个页面尚未完工）</div>';

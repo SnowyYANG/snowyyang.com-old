@@ -6,6 +6,7 @@ require 'data/cooking.php';
 
 function mainview() {
     global $recipe2;
+    echo '属性料理';
     echo '刺身拼盘盖饭 大伤+2 魔攻+2 生命+35 魔法+25<br>';
     Detail($recipe2['刺身拼盘盖饭'], 'open');
     echo '开心点心套餐 大伤+2 保护+1 幸运+30 敏捷+25<br>';
@@ -16,4 +17,11 @@ function mainview() {
     Detail($recipe2['酸梅'], 'open');
     echo '蓝莓酸奶 魔法+65 防御+2 敏捷+25<br>';
     Detail($recipe2['蓝莓酸奶'], 'open');
+    echo '<br><b>任务料理</b><br>';
+    Detail($recipe2['毒蘑菇炖汤']);
+    Detail($recipe2['青梅茶']);
+    echo '<br><b>温泉猴子喜欢的料理</b><br>';
+    Detail($recipe2['虾仁炒饭']);
+    Detail($recipe2['蔬菜纤维']);
+    echo '<br><b>尔格材料</b><br>';
 }

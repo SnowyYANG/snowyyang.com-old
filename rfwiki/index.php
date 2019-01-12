@@ -86,6 +86,13 @@ else if ($url === 'QandA' && $_POST['phrase'] === PHRASE) {
         <title><?php echo $title === '' ? '符文工房中文百科': ($title ?? specialtitle()).' - 符文工房中文百科'; ?></title>
         <link href="<?php echo SITE; ?>/favicon.ico" rel="shortcut icon"/>
         <link href="<?php echo SITE; ?>/rfwiki.css" type="text/css" rel="stylesheet"/>
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-6743509518408947",
+    enable_page_level_ads: true
+  });
+</script>
     </head>
     <body>
         <table style="table-layout: fixed; border-collapse:collapse; height:100%; width:100%">
