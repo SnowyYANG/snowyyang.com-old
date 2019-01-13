@@ -6,7 +6,7 @@
  */
 require __DIR__.'/config.php';
 
-$mysqli = new mysqli(DB_SERVER, DB_USER, DB_PASSWORD, DB_DATABASE);
+if (!$mysqli) $mysqli = new mysqli(DB_SERVER, DB_USER, DB_PASSWORD, DB_DATABASE);
 if ($mysqli->connect_errno) {
     http_response_code(503);
     echo '符文工房中文百科 维护中。Maintaining...';
@@ -14,11 +14,11 @@ if ($mysqli->connect_errno) {
 }
 
 $mysqli->set_charset('utf8mb4');
-$uri = $mysqli->escape_string($_SERVER['REQUEST_URI']);
+/*$uri = $mysqli->escape_string($_SERVER['REQUEST_URI']);
 $referer = $mysqli->escape_string($_SERVER['HTTP_REFERER']);
 $ip = $mysqli->escape_string($_SERVER['REMOTE_ADDR']);
 $browser = $mysqli->escape_string($_SERVER['HTTP_USER_AGENT']);
-$mysqli->query("INSERT rfwiki_requests (uri, referer, ip, browser) VALUES ('$uri', '$referer', '$ip', '$browser')");
+$mysqli->query("INSERT rfwiki_requests (uri, referer, ip, browser) VALUES ('$uri', '$referer', '$ip', '$browser')");*/
 
 require __DIR__.'/parser.php';
 $edit = $_REQUEST['a'] === 'edit';
@@ -84,15 +84,8 @@ else if ($url === 'QandA' && $_POST['phrase'] === PHRASE) {
     <head>
         <meta charset="UTF-8">
         <title><?php echo $title === '' ? '符文工房中文百科': ($title ?? specialtitle()).' - 符文工房中文百科'; ?></title>
-        <link href="<?php echo SITE; ?>/favicon.ico" rel="shortcut icon"/>
-        <link href="<?php echo SITE; ?>/rfwiki.css" type="text/css" rel="stylesheet"/>
-		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-  (adsbygoogle = window.adsbygoogle || []).push({
-    google_ad_client: "ca-pub-6743509518408947",
-    enable_page_level_ads: true
-  });
-</script>
+        <link href="/rfwiki/favicon.ico" rel="shortcut icon"/>
+        <link href="/rfwiki/rfwiki.css" type="text/css" rel="stylesheet"/>
     </head>
     <body>
         <table style="table-layout: fixed; border-collapse:collapse; height:100%; width:100%">
@@ -100,10 +93,10 @@ else if ($url === 'QandA' && $_POST['phrase'] === PHRASE) {
             <col style="width:100%">
             <tr>
                 <td rowspan="2" style="vertical-align:top; background:#f8e8b8; border-right:dashed 1px rgba(91,75,42,0.3)">
-                    <a href="<?php echo SITE; ?>">
+                    <a href="/rfwiki">
                         <h1 style="width:4em;padding:0 0.5em;color:#205010">符文工房中文百科</h1>
                     </a>
-                    <form action="<?php echo SITE;?>" onsubmit="return !!this.s.value"><input name="s" style="width: 80%; margin:0 1em" placeholder="搜索 至少输入两个字" value="<?php echo htmlspecialchars($search); ?>"></form>
+                    <form action="/rfwiki" onsubmit="return !!this.s.value"><input name="s" style="width: 80%; margin:0 1em" placeholder="搜索 至少输入两个字" value="<?php echo htmlspecialchars($search); ?>"></form>
                     <div id="toc">
                     <?php 
                     if ($result = $mysqli->query("SELECT html FROM rfwiki_pages WHERE url = 'toc'")) {

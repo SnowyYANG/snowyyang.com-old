@@ -1,5 +1,19 @@
 <?php
 
+require_once 'config.php'; 
+if ($mysqli = mysqli_connect(DB_SERVER, DB_USER, DB_PASSWORD, DB_DATABASE)) {
+    $mysqli->set_charset('utf8mb4');
+	$uri = $mysqli->escape_string($_SERVER['REQUEST_URI']);
+	$referer = $mysqli->escape_string($_SERVER['HTTP_REFERER']);
+	$ip = $mysqli->escape_string($_SERVER['REMOTE_ADDR']);
+	$browser = $mysqli->escape_string($_SERVER['HTTP_USER_AGENT']);
+	$mysqli->query("INSERT requests (uri, referer, ip, browser) VALUES ('$uri', '$referer', '$ip', '$browser')");
+}
+else {
+    http_response_code(503);
+    echo '维护中...Maintaining...';
+}
+
 if ($q = $_GET['q']) {
     $q = explode('/', $q);
     switch ($q[1]) {
@@ -27,15 +41,6 @@ if ($q = $_GET['q']) {
 			http_response_code(404);
 			break;
     }
-}
-
-require_once 'config.php'; 
-if ($mysqli = mysqli_connect(DB_SERVER, DB_USER, DB_PASSWORD, DB_DATABASE)) {
-	$uri = $mysqli->escape_string($_SERVER['REQUEST_URI']);
-	$referer = $mysqli->escape_string($_SERVER['HTTP_REFERER']);
-	$ip = $mysqli->escape_string($_SERVER['REMOTE_ADDR']);
-	$browser = $mysqli->escape_string($_SERVER['HTTP_USER_AGENT']);
-	$mysqli->query("INSERT requests (uri, referer, ip, browser) VALUES ('$uri', '$referer', '$ip', '$browser')");
 }
 if (!$router) $router = 'homepage';
 
