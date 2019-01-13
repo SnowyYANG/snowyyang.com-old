@@ -55,7 +55,7 @@ for http://snowy.asia/mabiwiki
                     </ul></li>
                     <li>休闲娱乐<ul>
                     <li>时装</li>
-                    <li>农场</li>
+                    <li><a href="Farm">农场</a></li>
                     <li>钓鱼</li>
                     <li>跑商</li>
                     <li>时装大赛</li>
