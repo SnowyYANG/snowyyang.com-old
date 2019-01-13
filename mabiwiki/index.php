@@ -51,6 +51,8 @@ for http://snowy.asia/mabiwiki
                     <li>工艺</li>
                     <li>药剂制作</li>
                     <li>手工艺</li>
+                    <li>合成</li>
+                    <li>分解</li>
                     <li><a href="Cooking" title="">料理</a></li>
                     </ul></li>
                     <li>休闲娱乐<ul>
