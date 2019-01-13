@@ -6,14 +6,21 @@
  */
 require __DIR__.'/config.php';
 
-if (!$mysqli) $mysqli = new mysqli(DB_SERVER, DB_USER, DB_PASSWORD, DB_DATABASE);
-if ($mysqli->connect_errno) {
-    http_response_code(503);
-    echo '符文工房中文百科 维护中。Maintaining...';
-    exit;
-}
+if (!$mysqli) 
+    if ($mysqli = new mysqli(DB_SERVER, DB_USER, DB_PASSWORD, DB_DATABASE)) {
+        $mysqli->set_charset('utf8mb4');
+        $uri = $mysqli->escape_string($_SERVER['REQUEST_URI']);
+        $referer = $mysqli->escape_string($_SERVER['HTTP_REFERER']);
+        $ip = $mysqli->escape_string($_SERVER['REMOTE_ADDR']);
+        $browser = $mysqli->escape_string($_SERVER['HTTP_USER_AGENT']);
+        $mysqli->query("INSERT requests (uri, referer, ip, browser) VALUES ('$uri', '$referer', '$ip', '$browser')");    
+    }
+    else if ($mysqli->connect_errno) {
+        http_response_code(503);
+        echo '符文工房中文百科 维护中。Maintaining...';
+        exit;
+    }
 
-$mysqli->set_charset('utf8mb4');
 /*$uri = $mysqli->escape_string($_SERVER['REQUEST_URI']);
 $referer = $mysqli->escape_string($_SERVER['HTTP_REFERER']);
 $ip = $mysqli->escape_string($_SERVER['REMOTE_ADDR']);
