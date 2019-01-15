@@ -1,7 +1,7 @@
 <?php 
 
 $h2 = '鉴定与回音';
-$nav = '常用鉴定 | <a href="AllReforge">所有鉴定与回音项目</a>';
+$nav = '<b>常用鉴定</b> | 所有鉴定与回音项目';
 
 function mainview() {
 $text = <<<'TXT'

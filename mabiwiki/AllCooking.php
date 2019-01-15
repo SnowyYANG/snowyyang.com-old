@@ -1,6 +1,6 @@
 <?php
 $h2 = '料理配方';
-$nav = '<a href="Cooking">常用料理</a> | 所有料理';
+$nav = '<a href="Cooking">常用料理</a> | <b>所有料理</b>';
 $cf = true;
 
 require 'data/cooking.php';

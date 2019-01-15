@@ -3,7 +3,7 @@
 require 'data/option.php';
 
 $h2 = '魔法释放';
-$nav = '<a href="Option">常用释放</a> | 所有释放</nav>';
+$nav = '<a href="Option">常用释放</a> | <b>所有释放</b></nav>';
 $unf = true;
 
 function mainview() {

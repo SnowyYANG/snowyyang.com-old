@@ -36,16 +36,13 @@ a:visited {
 a:hover {
     
 }
-h2 {
+#toc a {
+    text-decoration: none;
 }
 nav {
-    display: inline-block;
-    font-size: 1rem;
-    font-weight: normal;
-    
+    display:inline-block;
 }
-nav a {
-    text-decoration: none
+h2 {
 }
 h3 {
 }
