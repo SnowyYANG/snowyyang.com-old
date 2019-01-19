@@ -226,5 +226,5 @@ foreach($lines as $l) {
 	echo $l;
 	echo '<br>';
 }
-echo "<br>（未）</p>";
+echo "<br>（完）</p>";
 }
