@@ -220,11 +220,11 @@ $text = <<<'TEXT'
 她没有说错，我就一直生活在笼中，等待与自己的主人来世重逢。
 TEXT;
 $timestamp = date('Y年n月j日H:i:s', filemtime(__FILE__));
-echo "<h1>$title</h1><p style=\"max-width:50em\">（更新中...最后编辑于${timestamp}）<br><br>";
+echo "<h1>$title</h1><p style=\"max-width:50em\">（已完结 最后编辑于${timestamp}）<br><br>";
 $lines = explode("\n",$text);
 foreach($lines as $l) {
 	echo $l;
 	echo '<br>';
 }
-echo "<br>（未完待续...最后编辑于${timestamp}）</p>";
+echo "<br>（未）</p>";
 }
