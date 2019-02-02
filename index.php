@@ -67,7 +67,7 @@ for http://snowy.asia/
 		</a>
         <div style="margin:0em 6em"><?php view(); ?></div>
         <div style="width: 3em; position: fixed; top:0; right:0; background: #eaf4fc; padding: 1em; height: 100%;">
-          <footer style="position:absolute; left:1em; bottom:8em; color:#ffffff; white-space:nowrap; transform-origin:left center 0; transform:rotate(90deg)">Snowy❄&#65038;2018</footer>
+          <footer style="position:absolute; left:1em; bottom:8em; color:#ffffff; white-space:nowrap; transform-origin:left center 0; transform:rotate(90deg)">Snowy❄&#65038;2019</footer>
         </div>
     </body>
 </html>

@@ -50,9 +50,9 @@ for http://snowy.asia/mabiwiki
                     <li>工学</li>
                     <li>工艺</li>
                     <li>药剂制作</li>
-                    <li>手工艺</li>
+                    <li><a href="Handcraft">手工艺</a></li>
                     <li>合成</li>
-                    <li>分解</li>
+                    <li><a href="Dissolution">分解</a></li>
                     <li><a href="Cooking" title="">料理</a></li>
                     </ul></li>
                     <li>休闲娱乐<ul>
@@ -74,7 +74,7 @@ for http://snowy.asia/mabiwiki
                 </ul>
             </nav>
             <div style="display:flex;flex-direction:column;flex-grow:8;padding-right:2rem">
-                <main style="flex-grow:99;margin:0 1rem;word-break:break-all;width:100%;max-width:100%"><?php
+                <main style="flex-grow:99;margin:0 1rem;word-break:break-all;width:100%;max-width:100%;line-height:1.5"><?php
                     echo "<h2>$h2</h2>";
                     if ($nav) echo "<div>相关页面：<nav>$nav</nav></div><br>";
                     if ($unf) echo '<div class="notice">（这个页面尚未完工）</div>';
