@@ -36,6 +36,7 @@ for http://snowy.asia/mabiwiki
                     <li>图腾/徽章</li>
                     </ul></li>
                     <li>肝副本<ul>
+                    <li>迷雾残像</li>
                     <li>梦幻拉比</li>
                     <li>净化</li>
                     <li>使徒</li>
