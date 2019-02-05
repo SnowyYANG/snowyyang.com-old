@@ -24,9 +24,10 @@ for http://snowy.asia/mabiwiki
                     <li><a href="Story" title="">主线</a></li>
                     <li><a href="Lv" title="">等级</a></li>
                     <li><a href="Skills1" title="">技能</a></li>
-                    <li>宗师</li>
                     <li>头衔</li>
+                    <li>宗师</li>
                     <li><a href="Reputation" title="">评论</a></li>
+                    <li>特性</li>
                     </ul></li>
                     <li>整装备<ul>
                     <li><a href="Upgrade" title="">装备改造</a></li>
@@ -34,6 +35,7 @@ for http://snowy.asia/mabiwiki
                     <li><a href="Reforge" title="">鉴定/回音</a></li>
                     <li>尔格</li>
                     <li>图腾/徽章</li>
+                    <li>组合卡</li>
                     </ul></li>
                     <li>肝副本<ul>
                     <li>迷雾残像</li>
@@ -66,7 +68,7 @@ for http://snowy.asia/mabiwiki
                     </ul></li>
                     <li>其他<ul>
                     <li>我的骑士团</li>
-                    <li>俗称术语表</li></ul></li>
+                    <li><a href="Names">俗称术语表</a></li></ul></li>
                 </ul>
                 <ul>
                 <li>留言板</li>

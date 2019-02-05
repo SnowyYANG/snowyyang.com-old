@@ -20,6 +20,7 @@ function mainview() {
     echo '<br><b>任务料理</b><br>';
     Detail($recipe2['毒蘑菇炖汤']);
     Detail($recipe2['青梅茶']);
+    Detail($recipe2['巧克力甜饼']);
     echo '<br><b>温泉猴子喜欢的料理</b><br>';
     Detail($recipe2['虾仁炒饭']);
     Detail($recipe2['蔬菜纤维']);
