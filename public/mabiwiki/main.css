@@ -46,6 +46,12 @@ h2 {
 }
 h3 {
 }
+h5 {
+    display:inline-block;
+    font-size:100%;
+    line-height:1;
+    margin:0
+}
 .hints {
     font-size: 80%;
     color: rgb(105,146,64)

@@ -90,30 +90,32 @@ else if ($url === 'QandA' && $_POST['phrase'] === PHRASE) {
 <html>
     <head>
         <meta charset="UTF-8">
-        <title><?php echo $title === '' ? '符文工房中文百科': ($title ?? specialtitle()).' - 符文工房中文百科'; ?></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title><?php echo $title === '' ? '符文工房4中文百科': ($title ?? specialtitle()).' - 符文工房4中文百科'; ?></title>
         <link href="/rfwiki/favicon.ico" rel="shortcut icon"/>
         <link href="/rfwiki/rfwiki.css" type="text/css" rel="stylesheet"/>
     </head>
     <body>
-        <table style="table-layout: fixed; border-collapse:collapse; height:100%; width:100%">
-            <col style="width:10.1em">
-            <col style="width:100%">
-            <tr>
-                <td rowspan="2" style="vertical-align:top; background:#f8e8b8; border-right:dashed 1px rgba(91,75,42,0.3)">
-                    <a href="/rfwiki">
-                        <h1 style="width:4em;padding:0 0.5em;color:#205010">符文工房中文百科</h1>
-                    </a>
-                    <form action="/rfwiki" onsubmit="return !!this.s.value"><input name="s" style="width: 80%; margin:0 1em" placeholder="搜索 至少输入两个字" value="<?php echo htmlspecialchars($search); ?>"></form>
-                    <div id="toc">
-                    <?php 
-                    if ($result = $mysqli->query("SELECT html FROM rfwiki_pages WHERE url = 'toc'")) {
-                        echo parse_link($result->fetch_assoc()['html']);
-                        $result->free();
-                    }
-                    ?>
-                    </div>
-                </td>
-                <td id="con" style="vertical-align:top; padding-left:1em">
+        <div style="display:flex;aligen-items:stretch;min-height:100vh">
+            <nav style="width:10em;min-width:10em;background:#f8e8b8;border-right:dashed 1px rgba(91,75,42,0.3);min-height:100vh">
+                <a class="title-l" href="/rfwiki">
+                    <h1 style="font-size:200%;width:4.5em;padding:0 0.5em;color:#205010">符文工房<sup style="font-size:50%">4</sup>中文百科</h1>
+                </a>
+                <form action="/rfwiki" onsubmit="return !!this.s.value"><input name="s" style="width: 80%; margin:0 1em" placeholder="搜索 至少输入两个字" value="<?php echo htmlspecialchars($search); ?>"></form>
+                <div id="toc">
+                <?php 
+                if ($result = $mysqli->query("SELECT html FROM rfwiki_pages WHERE url = 'toc'")) {
+                    echo parse_link($result->fetch_assoc()['html']);
+                    $result->free();
+                }
+                ?>
+                </div>
+            </nav>
+            <div id="con" style="display:flex;flex-direction:column;flex-grow:8">
+                <div class="title-s" style="background:#f8e8b8;"><a href="/rfwiki"><h1 style="display:inline-block;line-height:1;color:#205010;margin:0.4em">符文工房中文百科</h1></a>
+                <div style="float:right;padding:1em;color:rgb(91,75,42)"
+                onclick="var nav = document.querySelector('nav');nav.style.display=nav.style.display==='block'?'none':'block'">目录</div></div>
+                <main style="flex-grow:99;padding:0 1rem;word-break:break-all;width:100%;max-width:100%;box-sizing:border-box;line-height:1.5">
                     <?php 
                     if ($edit) {
                     ?>
@@ -142,13 +144,6 @@ else if ($url === 'QandA' && $_POST['phrase'] === PHRASE) {
                         }
                     }
                     else {
-                        if (!$special) {
-                        ?>
-                            <div style="font-size:0.7em; float:right">
-                                <a href="<?php echo SITE; ?>/?a=edit&q=<?php echo htmlspecialchars($url); ?>"></a>
-                            </div>
-                        <?php 
-                        }
                         echo '<div style="padding-right:1em">';
                         if ($special) specialcontent();
                         else echo parse_link(parse_template($content));
@@ -156,13 +151,8 @@ else if ($url === 'QandA' && $_POST['phrase'] === PHRASE) {
                         echo '</div>';
                     } 
                     ?>
-                </td>
-            </tr>
-            <tr style="height:0">
-                <td style="height:0">
-                    <footer>符文工房中文百科的全部文字在<a href="https://creativecommons.org/licenses/by-sa/3.0/deed.zh">知识共享 署名-相同方式共享 3.0</a>协议之条款下提供。</footer>
-                </td>
-            </tr>
-        </table>
+                </main>
+                <footer>符文工房中文百科的全部文字在<a href="https://creativecommons.org/licenses/by-sa/3.0/deed.zh">知识共享 署名-相同方式共享 3.0</a>协议之条款下提供。</footer>
+            </div>
     </body>
 </html>

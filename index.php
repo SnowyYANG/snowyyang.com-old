@@ -17,6 +17,10 @@ else {
 if ($q = $_GET['q']) {
     $q = explode('/', $q);
     switch ($q[1]) {
+        case 'yydzh':
+            $choices = ['/alipay.jpg','http://wx3.sinaimg.cn/large/006poOf4gy1g00kbv9jmyg309w05kgrv.gif','http://wx4.sinaimg.cn/large/006poOf4gy1g00kbtqkolj309705k3z8.jpg'];
+            header('Location: '.$choices[rand(0,2)], true, 307);
+            exit;
 		case '':
         case 'mc':
 		case 'mrp':
@@ -32,6 +36,9 @@ if ($q = $_GET['q']) {
             $_GET['q'] = substr($_GET['q'], $skip);
             $_REQUEST['q'] = substr($_REQUEST['q'], $skip);
             require $q[1].'/index.php';
+            exit;
+        case 'rf4wiki':
+            header('Location: /rfwiki',true,301);
             exit;
 		case 'mc.txt':
 		case 'mc.xlsx':

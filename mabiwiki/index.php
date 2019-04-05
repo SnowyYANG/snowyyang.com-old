@@ -38,11 +38,11 @@ for http://snowy.asia/mabiwiki
                     <li>组合卡</li>
                     </ul></li>
                     <li>肝副本<ul>
-                    <li>迷雾残像</li>
+                    <li>迷雾/残像</li>
                     <li>梦幻拉比</li>
                     <li>净化</li>
                     <li>使徒</li>
-                    <li>困高</li>
+                    <li>困高地下</li>
                     <li>训练所</li>
                     <li>影子</li>
                     <li>其他</li>

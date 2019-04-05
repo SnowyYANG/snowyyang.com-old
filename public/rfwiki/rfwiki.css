@@ -2,12 +2,28 @@
 by Snowy YANG
 for 符文工房中文百科
 */
+@media only screen and (max-width:500px) {
+.title-l {
+    display:none
+}
+nav {
+    position:absolute;
+    left:0;
+    display:none;
+    margin-top:3.6em;
+}
+}
+@media only screen and (min-width:500px) {
+    .title-s {
+        display:none
+    }
+}
+
 
 body {
     margin: 0;
     font: 16px Microsoft YaHei;
-    height: 100vh
-        
+    height: 100vh 
 }
 p {
     line-height: 1.5
