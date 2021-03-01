@@ -58,11 +58,13 @@ h3 {
 }
 #con table {
     font-size: 90%;
-    background: #f9f9f9;
     border-collapse: collapse;
 }
 #con th {
     border:1px solid #aaa
+}
+#con tr:nth-child(odd) {
+	background:#f0f0f0
 }
 #con td {
     border: 1px solid #AAA;

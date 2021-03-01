@@ -7,13 +7,7 @@
 
 $title = '洛奇普染颜色大全';
 
-if ($_REQUEST['s']) {
-    if ($mysqli) {
-        $s = $mysqli->escape_string($_SERVER['QUERY_STRING']);
-        $mysqli->query("INSERT mc_s(ip,s) VALUES('$ip','$s')");
-    }
-	exit;
-}
+if ($_REQUEST['s']) exit;
 
 function view() {
 ?>
@@ -27,10 +21,11 @@ function view() {
 }
 </style>
 <h1>洛奇普通染色颜色代码大全</h1>
-<p>by 冰之妖夜（国服全服 日常在玛丽服务器）</p>
-<p style="color:#005000">广告：欢迎加入工程师的冬柏树群282157732 <b>洛奇攻略索引</b>计划预想中</p>
+<p>by 冰之妖夜玛一</p>
 <p>欢迎使用洛奇普通染色颜色代码大全，这里可以搜索普染和金属普染能染出的精确颜色代码。<br>
-下一版更新：推荐颜色。<span style="color:#ff0000">注意：可能不支持QQ浏览器</span>，建议使用最新版Firefox、Chrome。<br>
+因天然染色活动，不再更新新版本。<br>
+注意：<span style="color:#ff0000">可能不支持QQ浏览器</span>，建议使用最新版Firefox、Chrome。<br>
+<br><br><b>反馈bug请发邮件至snowyyang(a)outlook.com</b>
 <br>
 <div style="display:flex">
     <div><img id="dye" src="/mabicolor/cloth.png"></div>
@@ -54,7 +49,6 @@ function view() {
 		“R/G/B大于小于等于号十进制数值”筛选颜色，符号半角不要有空格，如“G=0 B=0”搜索纯红色；<br>
 		混合使用以上查找，用空格隔开，如“#008000 R&lt;64 B&lt;64”搜索中绿色。<br>
 		<br>
-		推荐工具：<a target="_blank" href="http://www.yydzh.com/read.php?tid=1402600">染色助手</a>，<a target="_blank" href="http://labo.erinn.biz/cs/index.php?action=changeFramework">纸娃娃模拟器</a>。</p>
     </div>
 </div>
 <div id="r"></div>

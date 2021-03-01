@@ -20,16 +20,18 @@ function specialcontent() {
 function qanda() {
     ?>
     <h2>留言板</h2>
-    <p>如果对游戏或网站内容有任何问题，可以在这里留言，也欢迎留下个人建议。<br>百科编辑招募中，可加群983528930，群内不闲聊。</p>    
+    <p>如果对游戏或网站内容有任何问题，可以在这里留言，也可以发送email至snowyyang(a)outlook.com。</b></p>    
     <form method="POST" style="text-align:right; padding-right:1em">
         <textarea name="question" style="width:100%" type="text" placeholder="输入问题或留言...可以匿名或在末尾 - 附上姓名"><?php echo htmlspecialchars($_POST['question']);?></textarea><br>
         <span style="font-size:80%">主人公的住处原本应该是谁的房间？填入答案（中文）--&gt;</span><input name="phrase" text="text" value="<?php if ($_POST['question']) echo '答案错误'; ?>">
         <input value="提交" type="submit">
-    </form>
+    </form><br>
     <?php
-    echo '<p>';
+    echo '<div>';
     global $mysqli;
-    if ($result = $mysqli->query('SELECT * FROM rfwiki_qanda ORDER BY qtime DESC')) {
+	$q = 'SELECT * FROM rfwiki_qanda ORDER BY qtime DESC';
+	if (!($all=$_GET['all'])) $q.=' LIMIT 50';
+    if ($result = $mysqli->query($q)) {
         while ($row = $result->fetch_assoc()) {
             $question = htmlspecialchars($row['question']);
             if ($row['answer'] === null) echo "言：$question <span class=\"timestamp\">($row[qtime])</span><br>";
@@ -42,7 +44,8 @@ function qanda() {
         $result->free();
     }
     else echo '无法加载已有的问题或留言。';
-    echo '</p>';
+    echo '</div>';
+	if (!$all) echo '<div style="text-align:center"><a href="'.$_SERVER['REQUEST_URI'].'?all=1">查看全部留言</a></div>';
 }
 
 function logs() {

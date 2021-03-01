@@ -9,15 +9,15 @@ require __DIR__.'/config.php';
 if (!$mysqli) 
     if ($mysqli = new mysqli(DB_SERVER, DB_USER, DB_PASSWORD, DB_DATABASE)) {
         $mysqli->set_charset('utf8mb4');
-        $uri = $mysqli->escape_string($_SERVER['REQUEST_URI']);
-        $referer = $mysqli->escape_string($_SERVER['HTTP_REFERER']);
-        $ip = $mysqli->escape_string($_SERVER['REMOTE_ADDR']);
-        $browser = $mysqli->escape_string($_SERVER['HTTP_USER_AGENT']);
-        $mysqli->query("INSERT requests (uri, referer, ip, browser) VALUES ('$uri', '$referer', '$ip', '$browser')");    
+        //$uri = $mysqli->escape_string($_SERVER['REQUEST_URI']);
+        //$referer = $mysqli->escape_string($_SERVER['HTTP_REFERER']);
+        //$ip = $mysqli->escape_string($_SERVER['REMOTE_ADDR']);
+        //$browser = $mysqli->escape_string($_SERVER['HTTP_USER_AGENT']);
+        //$mysqli->query("INSERT requests (uri, referer, ip, browser) VALUES ('$uri', '$referer', '$ip', '$browser')");    
     }
     else if ($mysqli->connect_errno) {
         http_response_code(503);
-        echo '符文工房中文百科 维护中。Maintaining...';
+        echo '符文工房4中文百科 维护中。Maintaining...';
         exit;
     }
 
@@ -41,7 +41,7 @@ if ($edit && $_POST['password'] === EDIT_PASSWORD) {
     $memo = $_POST['memo'];
     if ($_POST['save']) {
         $t = $mysqli->escape_string($title);
-        $html = $mysqli->escape_string(parse_template($content));
+        $html = $mysqli->escape_string(parse_link(parse_template($content)));
         $c = $mysqli->escape_string($content);
         $fulltext = fulltext($html);
         if ($mysqli->query("INSERT INTO rfwiki_pages(url,title,content,html,`fulltext`) VALUES('$url','$t','$c','$html','$fulltext') ON DUPLICATE KEY UPDATE title='$t',content='$c',html='$html',`fulltext`='$fulltext'") && $mysqli->affected_rows) {
@@ -50,27 +50,35 @@ if ($edit && $_POST['password'] === EDIT_PASSWORD) {
             $memo = $mysqli->escape_string($memo);
             $mysqli->query("INSERT INTO rfwiki_logs(action,page,memo) VALUES($action,$page_id,'$memo')");
             $mysqli->query("INSERT INTO rfwiki_history(page_id,content) VALUES($page_id,'$c')");
-            $edit = false;
+			header('Location: '.SITE."/$url", true, 303);
+			exit;
         }
     }
 }
 else if (!$special) {
-    $result = $mysqli->query("SELECT time,title,content FROM rfwiki_pages WHERE url='$url'");
+	$c = $edit?'content':'html';
+    $result = $mysqli->query("SELECT title,$c FROM rfwiki_pages WHERE url='$url'");
     $page = $result->fetch_assoc();
     if ($page === null) {
         $title = '';
-        $content = '<p>符文工房中文百科里没有名为'.htmlspecialchars($url).'的页面。</p>';
         if ($edit) $memo = '创建了页面。';
+		else {
+			http_response_code(404);
+			$html = '<p>符文工房中文百科里没有名为'.htmlspecialchars($url).'的页面。</p>';
+		}
     }
     else {
         $title = $page['title'];
-        $content = $page['content'];
-        if ($edit) $memo = '编辑了'.($url === '' ? '主页。' : $title.'页面。');
+        if ($edit) {
+			$memo = '编辑了'.($url === '' ? '主页。' : $title.'页面。');
+			$content = $page['content'];
+		}
+		else $html = $page['html'];
     }
     $result->free();
     $title = htmlspecialchars($title);
 }
-else if ($url === 'QandA' && $_POST['phrase'] === PHRASE) {
+else if ($url === 'QandA' && ($_POST['phrase'] === PHRASE1 || $_POST['phrase'] === PHRASE2)) {
     $question = trim($_POST['question']);
     if ($question !== '') {
         $question = $mysqli->escape_string($question);
@@ -105,7 +113,7 @@ else if ($url === 'QandA' && $_POST['phrase'] === PHRASE) {
                 <div id="toc">
                 <?php 
                 if ($result = $mysqli->query("SELECT html FROM rfwiki_pages WHERE url = 'toc'")) {
-                    echo parse_link($result->fetch_assoc()['html']);
+                    echo $result->fetch_assoc()['html'];
                     $result->free();
                 }
                 ?>
@@ -145,14 +153,18 @@ else if ($url === 'QandA' && $_POST['phrase'] === PHRASE) {
                     }
                     else {
                         echo '<div style="padding-right:1em">';
-                        if ($special) specialcontent();
-                        else echo parse_link(parse_template($content));
+						$ad = '<div style="text-align:center"><span style="color:red">符文工房吧吧群103805515</span> <a href="/rfwiki/Ad" style="text-decoration:underline">捐助本站</a></div>';
+                        echo $ad;
+						if ($special) specialcontent();
+                        else echo $html;
                         $mysqli->close();
+                        echo '<br><br>';
+						echo $ad;
                         echo '</div>';
                     } 
                     ?>
                 </main>
-                <footer>符文工房中文百科的全部文字在<a href="https://creativecommons.org/licenses/by-sa/3.0/deed.zh">知识共享 署名-相同方式共享 3.0</a>协议之条款下提供。</footer>
+                <footer><br>符文工房4中文百科的全部文字在<a href="https://creativecommons.org/licenses/by-sa/3.0/deed.zh">知识共享 署名-相同方式共享 3.0</a>协议之条款下提供。</footer>
             </div>
     </body>
 </html>
