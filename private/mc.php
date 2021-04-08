@@ -25,8 +25,7 @@ function view() {
 <p>欢迎使用洛奇普通染色颜色代码大全，这里可以搜索普染和金属普染能染出的精确颜色代码。<br>
 因天然染色活动，不再更新新版本。<br>
 注意：<span style="color:#ff0000">可能不支持QQ浏览器</span>，建议使用最新版Firefox、Chrome。<br>
-<br><br><b>反馈bug请发邮件至snowyyang(a)outlook.com</b>
-<br>
+反馈bug请发邮件至<b>snowyyang(a)outlook.com</b></p>
 <div style="display:flex">
     <div><img id="dye" src="/mabicolor/cloth.png"></div>
     <div style="margin-left:1em">
