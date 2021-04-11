@@ -25,7 +25,7 @@ if ($q = $_GET['q']) {
             $router = $q[1];
             break;
         case 'rfwiki':
-        case 'mabiwiki':
+        //case 'mabiwiki':
 			$skip = strlen($q[1])+1;
             $_GET['q'] = substr($_GET['q'], $skip);
             $_REQUEST['q'] = substr($_REQUEST['q'], $skip);
@@ -38,9 +38,6 @@ if ($q = $_GET['q']) {
 		case 'mc.xlsx':
 			header('Location: /mc', true, 301);
 			exit;
-        case 'lqtempwords':
-            require 'private/lqtempwords.php';
-            exit;
 		default:
 			http_response_code(404);
 			break;
