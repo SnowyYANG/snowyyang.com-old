@@ -25,7 +25,7 @@ LinkedIn: <a target="_blank" href="https://www.linkedin.com/in/snowyyang/">Fei Y
 GitHub: <a target="_blank" href="https://github.com/SnowyYANG">SnowyYANG</a><br>
 豆瓣：<a target="_blank" href="https://www.douban.com/people/snowyyang/">Snowy</a><br>
 Pixiv：<a target="_blank" href="https://www.pixiv.net/member.php?id=15972970">大正８年８月の東京ユリカ</a><br>
-Twitter: SnowyYANG <a target="_blank" href="https://twitter.com/Aug1919">@Aug1919</a><br>
+Twitter: Snowy <a target="_blank" href="https://twitter.com/Aug1919">@Aug1919</a><br>
 微博：<a target="_blank" href="https://weibo.com/August1919">@做游戏的Snowy</a>
 </div>
 <script>
