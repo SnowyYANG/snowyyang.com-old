@@ -59,7 +59,7 @@ for http://snowy.asia/
         <meta charset="UTF-8">
         <title><?php if ($title) echo $title.' - '; ?>雪亚幻想阵地</title>
 		<link rel="shortcut icon" href="/favicon.ico"/>
-		<style>a:visited{color:green} summary{cursor:pointer} <?php echo $style; ?></style>
+		<style>a:visited{color:#009} summary{cursor:pointer} <?php echo $style; ?></style>
     </head>
     <body style="margin:0;font:16px Microsoft YaHei;">
         <a href="/" style="color:<?php echo $router == 'homepage' ? '#000000' : '#ffffff';?>">
