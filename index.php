@@ -21,7 +21,7 @@ if ($q = $_GET['q']) {
 		case 'mrp':
 		case 'mr':
         case 'about':
-		case 'dreamcage':
+		case 'love':
             $router = $q[1];
             break;
         case 'rfwiki':
