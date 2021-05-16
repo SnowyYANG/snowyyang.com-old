@@ -17,9 +17,9 @@ function view() {
 	&emsp;❄&#65038; <a href="/mrp">国服梦幻拉比最终宝箱出货概率统计</a><br>
 	❄&#65038; <a target="blank" href="https://github.com/SnowyYANG/PokemonTextBattle">精灵宝可梦纯文字UI在线对战模拟器</a><br>
 	<br>
-	❄&#65038; <a target="blank" href="https://github.com/SnowyYANG/Delusion">少女躁狂妄想（小说</a><br>
-	❄&#65038; <a >雪鸟幻梦之笼（小说，准备重写，封印中</a><br>
-	❄&#65038; <a target="blank" href="https://store.steampowered.com/app/1511310/_/">消灭魔王军-改（放置策略游戏</a><br>
+	❄&#65038; <a target="blank" href="https://github.com/SnowyYANG/Delusion">少女躁狂妄想</a>（小说<br>
+	❄&#65038; <a >少女幻梦之恋（小说，写作中</a><br>
+	❄&#65038; <a target="blank" href="https://store.steampowered.com/app/1511310/_/">消灭魔王军-改</a>（放置策略游戏<br>
 </p>
 <p>
 	<a href="/about">关于Snowy</a>
