@@ -7,15 +7,15 @@
 require __DIR__.'/config.php';
 
 if (!$mysqli) 
-    if ($mysqli = new mysqli(DB_SERVER, DB_USER, DB_PASSWORD, DB_DATABASE)) $mysqli->set_charset('utf8mb4');
-    else if ($mysqli->connect_errno) {
+    if ($mysqli = mysqli_connect(DB_SERVER, DB_USER, DB_PASSWORD, DB_DATABASE)) $mysqli->set_charset('utf8mb4');
+    else {
         http_response_code(503);
         echo '符文工房4中文百科 维护中。Maintaining...';
         exit;
     }
 
 if ($edit = $_REQUEST['a'] === 'edit') require __DIR__.'/parser.php';
-$search = $_REQUEST['s'];
+$search = $_GET['s'];
 $url = $_REQUEST['q'];
 if ($url[0] === '/') $url = substr ($url, 1);
 if ($special = $url === 'QandA' || $url === 'Logs' || $search) require __DIR__.'/special.php';
