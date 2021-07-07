@@ -7,8 +7,10 @@ config.php
 /private/test.php
 /public/rfwiki/img/
 test.html
-yydzh.*
 alipay.jpg
 baidu_verify_*
 *.ppk
 *.pem
+bin
+obj
+*.suo
