@@ -27,22 +27,29 @@ namespace CheckClient
         }
         private static void onTick(Object o)
         {
-            HttpWebRequest req = (HttpWebRequest)WebRequest.Create("http://snowy.asia/rfwiki/QandA?a=check");
-            // access req.Headers to get/set header values before calling GetResponse. 
-            // req.CookieContainer allows you access cookies.
+            try
+            {
+                HttpWebRequest req = (HttpWebRequest)WebRequest.Create("http://snowy.asia/rfwiki/QandA?a=check");
+                // access req.Headers to get/set header values before calling GetResponse. 
+                // req.CookieContainer allows you access cookies.
 
-            var response = req.GetResponse();
-            string webcontent;
-            using (var strm = new StreamReader(response.GetResponseStream()))
-            {
-                webcontent = strm.ReadToEnd();
+                var response = req.GetResponse();
+                string webcontent;
+                using (var strm = new StreamReader(response.GetResponseStream()))
+                {
+                    webcontent = strm.ReadToEnd();
+                }
+                if (!int.TryParse(webcontent, out _)) MessageBox.Show("Error");
+                else if (lastId != webcontent)
+                {
+                    lastId = webcontent;
+                    using (var sw = new StreamWriter("lastId.txt")) sw.WriteLine(lastId);
+                    MessageBox.Show("New");
+                }
             }
-            if (webcontent == "") MessageBox.Show("Error");
-            else if (lastId != webcontent)
+            catch(Exception e)
             {
-                lastId = webcontent;
-                using (var sw = new StreamWriter("lastId.txt")) sw.WriteLine(lastId);
-                MessageBox.Show("New");
+                MessageBox.Show(e.Message);
             }
         }
     } 
