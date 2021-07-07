@@ -5,10 +5,23 @@
  * for 符文工房中文百科
  */
 
-function specialtitle() {
-    global $url;
-    return $url === 'QandA' ? '留言板' : ($url === 'Logs' ? '更新日志' : '搜索');
-}
+if ($url === 'QandA')
+	if ($_POST['phrase'] === PHRASE1 || $_POST['phrase'] === PHRASE2) {
+		if ($question = trim($_POST['question'])) {
+			$question = $mysqli->escape_string($question);
+			$qip = $mysqli->escape_string($_SERVER['REMOTE_ADDR']);
+			$mysqli->query("INSERT INTO rfwiki_qanda(question, qip) VALUES ('$question','$qip')");
+			header('Location: '.SITE.'/QandA', true, 303);
+			exit;
+		}
+	}
+	else if ($_GET['a']==='check') {
+		$row=$mysqli->query('SELECT MAX(id) AS i FROM rfwiki_qanda')->fetch_assoc();
+		echo $row['i'];
+		exit;
+	}
+
+$title=$url === 'QandA' ? '留言板' : ($url === 'Logs' ? '更新日志' : '搜索');
 
 function specialcontent() {
     global $url,$search;
