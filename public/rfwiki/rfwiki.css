@@ -52,6 +52,9 @@ h2 {
 h3 {
     color: #54422E
 }
+summary {
+	cursor:pointer;
+}
 .hints {
     font-size: 80%;
     color: rgb(105,146,64)

@@ -39,6 +39,7 @@ namespace CheckClient
                 {
                     webcontent = strm.ReadToEnd();
                 }
+                req.Abort();
                 if (!int.TryParse(webcontent, out _)) MessageBox.Show("Error");
                 else if (lastId != webcontent)
                 {
