@@ -123,7 +123,7 @@ else {
                     }
                     else {
                         echo '<div style="padding-right:1em">';
-						$ad = '<div style="text-align:center"><span style="color:red">符文工房吧吧群103805515</span> <a href="/rfwiki/Ad" style="text-decoration:underline">捐助本站</a></div>';
+						$ad = '<div style="text-align:center"><span style="color:red">本百科即将搬到新地址<a href="http://snowyyang.com/rfwiki" style="color:red;text-decoration:underline">http://snowyyang.com/rfwiki</a></span> <a href="/rfwiki/Ad" style="text-decoration:underline">捐助本站</a></div>';
                         echo $ad;
 						if ($special) specialcontent();
                         else echo $html;
