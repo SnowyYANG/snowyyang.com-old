@@ -7,7 +7,6 @@
 
 function view() {
 ?>
-<div style="color:red">本站即将搬到新域名<a href="http://snowyyang.com" style="color:red">snowyyang.com</a>并更名为“雪亚小站”。</div>
 <p>
 	欢迎来到<span style="color:blue"><b>雪亚</b>幻想阵地</span><br>
 	<br>

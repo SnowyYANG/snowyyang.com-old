@@ -67,9 +67,12 @@ for http://snowy.asia/
                 雪亚幻想阵地
             </div>
 		</a>
-        <div style="margin:0em 6em"><?php view(); ?></div>
+        <div style="margin:0em 6em">
+            <div style="color:red">本站即将搬到新域名<a href="http://snowyyang.com" style="color:red">snowyyang.com</a>并更名为“雪亚小站”。</div>
+            <?php view(); ?>
+        </div>
         <div style="width: 3em; position: fixed; top:0; right:0; background: #eaf4fc; padding: 1em; height: 100%;">
-          <footer style="position:absolute; left:1em; bottom:8em; color:#ffffff; white-space:nowrap; transform-origin:left center 0; transform:rotate(90deg)">Snowy❄&#65038;2021</footer>
+          <footer style="position:absolute; left:1em; bottom:8em; color:#ffffff; white-space:nowrap; transform-origin:left center 0; transform:rotate(90deg)">Snowy❄&#65038;2022</footer>
         </div>
     </body>
 </html>

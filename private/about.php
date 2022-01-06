@@ -10,7 +10,7 @@ function view() {
 ?>
 <div>
 <span style="color:blue;font-weight:bold">Snowy</span> YANG<br>
-若<span style="color:blue;font-weight:bold">雪</span><br>
+<span style="color:blue;font-weight:bold">雪</span>桠<br>
 <br>
 出生于安徽省芜湖市<br>
 不知名城市隐居中<br>
@@ -27,7 +27,7 @@ GitHub: <a target="_blank" href="https://github.com/SnowyYANG">SnowyYANG</a><br>
 豆瓣阅读：<a target="_blank" href="https://read.douban.com/author/63749418/">Snowy</a><br>
 Pixiv：<a target="_blank" href="https://www.pixiv.net/users/15972970">大正８年８月の東京ユリカ</a><br>
 Twitter: Snowy <a target="_blank" href="https://twitter.com/Aug1919">@Aug1919</a><br>
-微博：<a target="_blank" href="https://weibo.com/August1919">@做游戏的Snowy</a>
+微博：<a target="_blank" href="https://weibo.com/August1919">@Snowy雪桠</a>
 </div>
 <script>
 var yin = function(e) {
