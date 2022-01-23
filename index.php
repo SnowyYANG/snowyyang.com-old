@@ -21,11 +21,9 @@ if ($q = $_GET['q']) {
 		case 'mrp':
 		case 'mr':
         case 'about':
-		case 'love':
             $router = $q[1];
             break;
         case 'rfwiki':
-        //case 'mabiwiki':
 			$skip = strlen($q[1])+1;
             $_GET['q'] = substr($_GET['q'], $skip);
             $_REQUEST['q'] = substr($_REQUEST['q'], $skip);
@@ -38,6 +36,12 @@ if ($q = $_GET['q']) {
 		case 'mc.xlsx':
 			header('Location: /mc', true, 301);
 			exit;
+        case 'mabiwiki':
+            header('Location: http://www.luoqi.wiki/', true, 301);
+            break;
+		case 'love':
+            header('Location: https://read.douban.com/reader/essay/317897624/', true, 301);
+            break;
 		default:
 			http_response_code(404);
 			break;
@@ -68,7 +72,7 @@ for http://snowy.asia/
             </div>
 		</a>
         <div style="margin:0em 6em">
-            <div style="color:red">本站即将搬到新域名<a href="http://snowyyang.com" style="color:red">snowyyang.com</a>并更名为“雪亚小站”。</div>
+            <div style="color:red">snowyyang.com即将备案无法访问，请使用snowy.asia访问。</div>
             <?php view(); ?>
         </div>
         <div style="width: 3em; position: fixed; top:0; right:0; background: #eaf4fc; padding: 1em; height: 100%;">
