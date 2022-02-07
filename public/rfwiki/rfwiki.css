@@ -10,7 +10,7 @@ for 符文工房中文百科
         position:absolute;
         left:0;
         display:none;
-        margin-top:3.6em;
+        margin-top:5rem;
     }
     .ad {
         display: block;
@@ -31,6 +31,9 @@ body {
     margin: 0;
     font: 16px Microsoft YaHei;
     height: 100vh 
+}
+nav {
+    width:10em;min-width:10em;background:#f8e8b8;border-right:dashed 1px rgba(91,75,42,0.3);min-height:100vh
 }
 p {
     line-height: 1.5
@@ -115,4 +118,10 @@ footer {
     font-size: 0.7em;
     color: #808080;
     text-align: right
+}
+.xyxz {
+    display:block;color:#f8e8b8;background-color:#205010;font-size:50%;
+}
+.xyxz:visited {
+    color:#f8e8b8
 }
