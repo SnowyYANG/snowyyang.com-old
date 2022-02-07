@@ -1,0 +1,36 @@
+server {
+    listen 443 ssl;
+    listen [::]:443 ssl;
+    ssl_certificate 1_snowyyang.com_bundle.crt;
+    ssl_certificate_key 2_snowyyang.com.key;
+    server_name snowyyang.com;
+
+    root /home/ubuntu/snowyyang.com/public;
+    location / {
+        index index.php;
+        try_files $uri $uri/ /index.php?q=$uri&$args;
+    }
+
+    location ~ \.php$ {
+        include snippets/fastcgi-php.conf;
+        fastcgi_pass unix:/run/php/php7.2-fpm.sock;
+    }
+}
+server {
+    listen 443 ssl;
+    listen [::]:443 ssl;
+    server_name www.snowyyang.com;
+    rewrite ^(.*) https://snowyyang.com$1 permanent;
+}
+server {
+    listen 80;
+    listen [::]:80;
+    server_name snowyyang.com;
+    rewrite ^(.*) https://snowyyang.com$1 permanent;
+}
+server {
+    listen 80;
+    listen [::]:80;
+    server_name www.snowyyang.com;
+    rewrite ^(.*) https://snowyyang.com$1 permanent;
+}

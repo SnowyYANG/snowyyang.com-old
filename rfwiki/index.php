@@ -122,19 +122,16 @@ else {
                         }
                     }
                     else {
+						echo '<a href="/rfwiki/Ad" class="ad" style="color:red;text-decoration:underline;">捐助本站</a>';
                         echo '<div style="padding-right:1em">';
-						$ad = '<div style="text-align:center"><a href="/rfwiki/Ad" style="text-decoration:underline">捐助本站</a></div>';
-                        echo $ad;
 						if ($special) specialcontent();
                         else echo $html;
                         $mysqli->close();
-                        echo '<br><br>';
-						echo $ad;
                         echo '</div>';
                     } 
                     ?>
                 </main>
-                <footer><br>符文工房4中文百科的全部文字在<a href="https://creativecommons.org/licenses/by-sa/3.0/deed.zh">知识共享 署名-相同方式共享 3.0</a>协议之条款下提供。</footer>
+                <footer><br>符文工房4中文百科的全部文字在<a href="https://creativecommons.org/licenses/by-sa/3.0/deed.zh">知识共享 署名-相同方式共享 3.0协议之条款</a>下提供。<br>皖ICP备2022001590号-1</footer>
             </div>
     </body>
 </html>
