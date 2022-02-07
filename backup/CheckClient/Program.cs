@@ -29,7 +29,7 @@ namespace CheckClient
         {
             try
             {
-                HttpWebRequest req = (HttpWebRequest)WebRequest.Create("http://snowy.asia/rfwiki/QandA?a=check");
+                HttpWebRequest req = (HttpWebRequest)WebRequest.Create("https://snowyyang.com/rfwiki/QandA?a=check");
                 // access req.Headers to get/set header values before calling GetResponse. 
                 // req.CookieContainer allows you access cookies.
 
