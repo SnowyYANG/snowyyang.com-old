@@ -76,20 +76,37 @@ function logs() {
 
 function search() {
     global $search,$mysqli;
-    echo "<h2>搜索结果 - $search</h2>";
-    $search = $mysqli->escape_string($search);
-    if ($result = $mysqli->query("SELECT url,title,`fulltext` FROM rfwiki_pages WHERE MATCH (`fulltext`) AGAINST ('$search')")) {
-    //if ($result = $mysqli->query("SELECT url,title,`fulltext` FROM rfwiki_pages WHERE `fulltext` LIKE '%$search%'")) {
-        while($row = $result->fetch_assoc()) {
-            ?>
-    <div>
-        <a href="<?php echo SITE.'/'.htmlspecialchars($row['url']); ?>"><?php echo $row['title']; ?></a>
-        
-    </div>
-            <?php
+    $search_html = htmlspecialchars($search);
+    echo "<h2>搜索结果 - $search_html</h2>";
+    $s = $mysqli->escape_string($search);
+    echo "<p><b>精确搜索：</b><br>";
+    if (strpos($search, '%') !== false) echo '不支持搜索半角百分号。';
+    else {
+        if ($result = $mysqli->query("SELECT url,title,`fulltext` FROM rfwiki_pages WHERE `fulltext` LIKE '%$s%'")) {
+            while($row = $result->fetch_assoc()) {
+                if ($row['url'] === '') $row['title']='主页';
+                ?>
+                <a href="<?php echo SITE.'/'.htmlspecialchars($row['url']); ?>"><?php echo $row['title']; ?></a><br>
+                <?php
+            }
+            if (!$result->num_rows) echo '找不到相关页面。';
+            $result->free();
         }
-        $search = htmlspecialchars($search);
-        if (!$result->num_rows) echo "<p>找不到包含{$search}的页面。</p>";
-        $result->free();
     }
+    echo '</p>';
+    echo "<p><b>模糊搜索：</b><br>";
+    if (mb_strlen($search,'UTF-8')<2) echo '搜索关键字至少2个字。';
+    else {
+        if ($result = $mysqli->query("SELECT url,title,`fulltext` FROM rfwiki_pages WHERE MATCH (`fulltext`) AGAINST ('$s')")) {
+            while($row = $result->fetch_assoc()) {
+                if ($row['url'] === '') $row['title']='主页';
+                ?>
+                <a href="<?php echo SITE.'/'.htmlspecialchars($row['url']); ?>"><?php echo $row['title']; ?></a><br>
+                <?php
+            }
+            if (!$result->num_rows) echo '找不到相关页面。';
+            $result->free();
+        }
+    }
+    echo '</p>';
 }

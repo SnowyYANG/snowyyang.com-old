@@ -79,7 +79,7 @@ else {
                 <a class="title-l" href="/rfwiki">
                     <h1 style="font-size:200%;width:4.5em;padding:0 0.5em;color:#205010">符文工房<sup style="font-size:50%">4</sup>中文百科</h1>
                 </a>
-                <form action="/rfwiki" onsubmit="return !!this.s.value"><input name="s" style="width: 80%; margin:0 1em" placeholder="搜索 至少输入两个字" value="<?php echo htmlspecialchars($search); ?>"></form>
+                <form action="/rfwiki" onsubmit="return !!this.s.value"><input name="s" style="width: 80%; margin:0 1em" placeholder="搜索 输入文本后回车" value="<?php echo htmlspecialchars($search); ?>"></form>
                 <div id="toc">
                 <?php 
                 if ($result = $mysqli->query("SELECT html FROM rfwiki_pages WHERE url = 'toc'")) {
@@ -90,7 +90,7 @@ else {
                 </div>
             </nav>
             <div id="con" style="display:flex;flex-direction:column;flex-grow:8">
-                <div class="title-s" style="background:#f8e8b8;"><a href="/rfwiki"><h1 style="display:inline-block;line-height:1;color:#205010;margin:0.4em">符文工房中文百科</h1></a>
+                <div class="title-s" style="background:#f8e8b8;"><a href="/rfwiki"><h1 style="display:inline-block;line-height:1;color:#205010;margin:0.4em">符文工房4中文百科</h1></a>
                 <div style="float:right;padding:1em;color:rgb(91,75,42)"
                 onclick="var nav = document.querySelector('nav');nav.style.display=nav.style.display==='block'?'none':'block'">目录</div></div>
                 <main style="flex-grow:99;padding:0 1rem;word-break:break-all;width:100%;max-width:100%;box-sizing:border-box;line-height:1.5">
@@ -123,7 +123,7 @@ else {
                     }
                     else {
                         echo '<div style="padding-right:1em">';
-						$ad = '<div style="text-align:center"><span style="color:red">snowyyang.com即将备案无法访问，请使用snowy.asia访问。</span> <a href="/rfwiki/Ad" style="text-decoration:underline">捐助本站</a></div>';
+						$ad = '<div style="text-align:center"><a href="/rfwiki/Ad" style="text-decoration:underline">捐助本站</a></div>';
                         echo $ad;
 						if ($special) specialcontent();
                         else echo $html;

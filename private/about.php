@@ -8,7 +8,7 @@ $title = 'Snowy';
 
 function view() {
 ?>
-<p>
+<p style="float:left">
 <span style="color:blue;font-weight:bold">Snowy</span> YANG<br>
 <span style="color:blue;font-weight:bold">雪</span>桠<br>
 <br>
@@ -29,6 +29,7 @@ Pixiv：<a target="_blank" href="https://www.pixiv.net/users/15972970">大正８
 Twitter: Snowy <a target="_blank" href="https://twitter.com/Aug1919">@Aug1919</a><br>
 微博：<a target="_blank" href="https://weibo.com/August1919">@Snowy雪桠</a>
 </p>
+<img style="float:left;width:32rem;max-width:100%" src="/snowy.jpg">
 <script>
 var yin = function(e) {
 	e.innerHTML = '八面玲珑百灵鸟 嘤嘤楚楚笼中傲<br>经枫经雨生不悔 若霜若雪竞妖娆<br>机关算尽不误命 露才露色也平安<br>耐得春宵萧寒夜 平步青云又一朝​';
