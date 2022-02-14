@@ -139,7 +139,7 @@ else {
                 </main>
                 <footer>
 					<br>符文工房4中文百科的全部文字在<a href="https://creativecommons.org/licenses/by-sa/3.0/deed.zh">知识共享 署名-相同方式共享 3.0协议之条款</a>下提供。
-					<br><a href="https://beian.miit.gov.cn">皖ICP备2022001590号-1</a>
+					<br><a href="https://beian.miit.gov.cn" target="_blank">皖ICP备2022001590号-1</a>
 				</footer>
             </div>
             <script>
