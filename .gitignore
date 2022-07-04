@@ -13,3 +13,5 @@ baidu_verify_*
 bin
 obj
 *.suo
+*.db
+*.db-journal
