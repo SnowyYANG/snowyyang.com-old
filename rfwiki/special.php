@@ -6,7 +6,7 @@
  */
 
 if ($url === 'QandA')
-	if ($_POST['phrase'] === PHRASE1 || $_POST['phrase'] === PHRASE2) {
+	if (false) {
 		if ($question = trim($_POST['question'])) {
 			$question = $mysqli->escape_string($question);
 			$qip = $mysqli->escape_string($_SERVER['REMOTE_ADDR']);
@@ -32,18 +32,21 @@ function specialcontent() {
 
 function qanda() {
     ?>
-    <h2>留言板</h2>
-    <p>如果对游戏或网站内容有任何问题，可以在这里留言，也可以发送email至snowyyang@outlook.com。</b></p>    
-    <form method="POST" style="text-align:right; padding-right:1em">
+    <h2>留言板（已关闭</h2>
+    <p>为符合个人网站备案相关规定（无UGC），留言板已关闭。<br>
+    网站相关事务（如勘误、建议等），可以发送email至<a href="mailto:snowyyang@outlook.com">snowyyang@outlook.com</a>。<br>
+    游戏相关问题，推荐去<a href="https://tieba.baidu.com/f?kw=%E7%AC%A6%E6%96%87%E5%B7%A5%E6%88%BF">百度符文工房吧</a>或<a href="https://forum.gamer.com.tw/A.php?bsn=1405">巴哈姆特牧场物语系列哈拉版</a>和网友讨论。</p>    
+    <form method="POST" style="display:none">
         <textarea name="question" style="width:100%" type="text" placeholder="输入问题或留言...可以匿名或在末尾 - 附上姓名"><?php echo htmlspecialchars($_POST['question']);?></textarea><br>
         <span style="font-size:80%">主人公的住处原本应该是谁的房间？填入答案（中文）--&gt;</span><input name="phrase" text="text" value="<?php if ($_POST['question']) echo '答案错误'; ?>">
         <input value="提交" type="submit">
-    </form><br>
+    </form>
+    <h3>历史留言</h3>
     <?php
     echo '<div>';
     global $mysqli;
 	$q = 'SELECT * FROM rfwiki_qanda ORDER BY qtime DESC';
-	if (!($all=$_GET['all'])) $q.=' LIMIT 50';
+	//if (!($all=$_GET['all'])) $q.=' LIMIT 50';
     if ($result = $mysqli->query($q)) {
         while ($row = $result->fetch_assoc()) {
             $question = htmlspecialchars($row['question']);
@@ -58,7 +61,7 @@ function qanda() {
     }
     else echo '无法加载已有的问题或留言。';
     echo '</div>';
-	if (!$all) echo '<div style="text-align:center"><a href="'.$_SERVER['REQUEST_URI'].'?all=1">查看全部留言</a></div>';
+	//if (!$all) echo '<div style="text-align:center"><a href="'.$_SERVER['REQUEST_URI'].'?all=1">查看全部留言</a></div>';
 }
 
 function logs() {
