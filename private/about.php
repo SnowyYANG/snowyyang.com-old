@@ -27,7 +27,7 @@ GitHub: <a target="_blank" href="https://github.com/SnowyYANG">SnowyYANG</a><br>
 豆瓣阅读：<a target="_blank" href="https://read.douban.com/author/63749418/">Snowy</a><br>
 Pixiv：<a target="_blank" href="https://www.pixiv.net/users/15972970">大正８年８月の東京ユリカ</a><br>
 Twitter: Snowy <a target="_blank" href="https://twitter.com/Aug1919">@Aug1919</a><br>
-微博：<a target="_blank" href="https://weibo.com/August1919">@Snowy喜欢做游戏</a>
+微博：<a target="_blank" href="https://weibo.com/August1919">@假装是鸽子的白色乌鸦</a>
 </p>
 <img style="float:left;width:32rem;max-width:100%" src="https://ik.imagekit.io/snowyyang/snowy.jpg">
 <script>

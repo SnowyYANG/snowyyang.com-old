@@ -16,11 +16,10 @@ function view() {
 	&emsp;❄&#65038; <a target="_blank" href="https://github.com/SnowyYANG/MabinogiClock">洛奇小闹钟</a><br>
 	&emsp;❄&#65038; <a href="/mr">韩服旧版鉴定详细概率</a><br>
 	&emsp;❄&#65038; <a href="/mrp">国服梦幻拉比最终宝箱出货概率统计</a><br>
-	❄&#65038; <a target="_blank" href="https://github.com/SnowyYANG/PokemonBattleSimulator">宝可梦对战模拟器 - 纯文字UI版</a><br>
+	❄&#65038; <a target="_blank" href="https://github.com/SnowyYANG/PokemonBattleOnline">Pokemon Battle Online</a>（宝可梦对战平台<br>
 	<br>
-	❄&#65038; <a target="_blank" href="https://read.douban.com/reader/essay/317897624/">幻梦情劫</a>（私小说<br>
-	❄&#65038; <a target="_blank" href="https://github.com/SnowyYANG/Delusions">少女躁狂妄想</a>（短篇小说集<br>
-	❄&#65038; <a target="_blank" href="https://store.steampowered.com/app/1511310/">消灭魔王军-改</a>（放置策略游戏<br>
+	❄&#65038; <a target="_blank" href="https://github.com/SnowyYANG/Delusions">少女躁狂妄想</a>（架空历史企划<br>
+	❄&#65038; <a target="_blank" href="https://store.steampowered.com/app/1511310/">消灭魔王军-改</a>（数值策略游戏<br>
 	❄&#65038; <a target="_blank" href="https://store.steampowered.com/app/1604930/">笼鸟之心</a>（多结局视觉小说<br>
 </p>
 <p>
