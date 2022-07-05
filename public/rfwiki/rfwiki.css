@@ -104,15 +104,6 @@ summary {
 #con td {
     border: 1px solid #AAA;
 }
-#con .layout {
-    background: transparent;
-    padding: 0;
-}
-#con .layout td {
-    border: none;
-    vertical-align: top;
-    padding: 0;
-}
 .timestamp {
     color: #aaaaaa
 }
@@ -158,4 +149,21 @@ footer {
 }
 .ad:visited {
     color:red
+}
+#con .layout-table {
+    background: transparent;
+    padding: 0;
+}
+#con .layout-table tr {
+    background: transparent;
+}
+#con .layout-table td {
+    border: none;
+    vertical-align: top;
+    padding: 0;
+}
+@media (max-width: 600px) {
+    .face {
+        display:block;width:100%;
+    }
 }
