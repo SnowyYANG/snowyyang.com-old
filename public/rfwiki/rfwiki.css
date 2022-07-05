@@ -45,7 +45,22 @@ nav {
 nav input[name="s"] {
     width: 80%; margin:0 1em
 }
-#con {
+nav ul {
+    padding: 0
+}
+nav li {
+    list-style: none;
+    padding-left: 1em;
+    color: rgb(91,75,42);
+}
+nav li a {
+    display: block;
+    color: rgb(91,75,42);
+    border-bottom: dashed 1px rgba(91,75,42,0.3);
+    margin-left: -1em;
+    padding-left: 1em
+}
+.content {
     display:flex;flex-direction:column;flex-grow:8
 }
 main {
@@ -66,8 +81,8 @@ a {
     color: rgb(64,128,208);
     text-decoration: none
 }
-a:visited {
-    color: rgb(64,128,208);
+main a:visited {
+    color: rgb(32,64,104);
 }
 a:hover {
 }
@@ -90,39 +105,21 @@ summary {
     font-size: 80%;
     color: rgb(105,146,64)
 }
-#con table {
+main table {
     font-size: 90%;
     border-collapse: collapse;
 }
-#con th {
+main th {
     border:1px solid #aaa
 }
-#con tr:nth-child(odd) {
+main tr:nth-child(odd) {
 	background:#f0f0f0
 }
-#con td {
+main td {
     border: 1px solid #AAA;
 }
 .timestamp {
     color: #aaaaaa
-}
-#toc {
-    width: 10em;
-}
-#toc ul {
-    padding: 0
-}
-#toc li {
-    list-style: none;
-    padding-left: 1em;
-    color: rgb(91,75,42);
-}
-#toc a {
-    display: block;
-    color: rgb(91,75,42);
-    border-bottom: dashed 1px rgba(91,75,42,0.3);
-    margin-left: -1em;
-    padding-left: 1em
 }
 footer {
     float: left;
@@ -149,14 +146,14 @@ footer {
 .ad:visited {
     color:red
 }
-#con .layout-table {
+main .layout-table {
     background: transparent;
     padding: 0;
 }
-#con .layout-table tr {
+main .layout-table tr {
     background: transparent;
 }
-#con .layout-table td {
+main .layout-table td {
     border: none;
     vertical-align: top;
     padding: 0;

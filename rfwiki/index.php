@@ -67,9 +67,9 @@ else {
                 <form action="/rfwiki" onsubmit="return !!this.s.value">
                     <input name="s" placeholder="搜索 输入文本后回车" value="<?php echo htmlspecialchars($search); ?>">
                 </form>
-                <div id="toc"><?php echo $db->querySingle("SELECT html FROM pages WHERE url='toc'");?></div>
+                <?php echo $db->querySingle("SELECT html FROM pages WHERE url='toc'");?>
             </nav>
-            <div id="con">
+            <div class="content">
                 <div class="title-s">
                     <a href="/" class="xyxz">雪亚小站旗下</a>
                     <a href="/rfwiki"><h1>符文工房4中文百科</h1></a>
