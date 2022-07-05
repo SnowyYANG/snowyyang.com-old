@@ -47,7 +47,7 @@ function qanda() { ?>
 function logs() {
     echo '<h2>更新日志</h2><p>';
     global $db;
-    if ($result = $db->query('SELECT * FROM logs ORDER BY time DESC LIMIT 100')) {
+    if ($result = $db->query('SELECT * FROM logs ORDER BY time DESC LIMIT 500')) {
         while ($row = $result->fetchArray()) {
             $time=utc2local($row['time']);
             echo "$time $row[memo]<br>";
