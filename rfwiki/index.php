@@ -6,7 +6,7 @@ if ($edit = $_REQUEST['a'] === 'edit') require __DIR__.'/parser.php';
 $search = $_GET['s'];
 $url = $_REQUEST['q'];
 if ($url[0] === '/') $url = substr ($url, 1);
-if ($special = $url === 'QandA' || $url === 'Logs' || $search) require __DIR__.'/special.php';
+if ($special = strcasecmp($url,'QandA')===0 || strcasecmp($url,'Logs')===0 || $search) require __DIR__.'/special.php';
 else {
 	$url = SQLite3::escapeString($url);
 	if ($edit && $_POST['password'] === EDIT_PASSWORD) {

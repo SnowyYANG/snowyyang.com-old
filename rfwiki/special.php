@@ -1,10 +1,10 @@
 <?php
-$title=$url === 'QandA' ? '留言板' : ($url === 'Logs' ? '更新日志' : '搜索');
+$title=strcasecmp($url,'QandA')===0 ? '留言板' : (strcasecmp($url,'Logs')===0 ? '更新日志' : '搜索');
 
 function specialcontent() {
     global $url,$search;
-    if ($url === 'QandA') qanda();
-    else if ($url === 'Logs') logs();
+    if (strcasecmp($url,'QandA')===0) qanda();
+    else if (strcasecmp($url,'Logs')===0) logs();
     else if ($search) search();
 }
 
