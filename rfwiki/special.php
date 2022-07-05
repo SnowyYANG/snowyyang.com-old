@@ -69,7 +69,7 @@ function search() {
                 if ($row['url'] === '') $row['title']='主页'; ?>
                 <a href="<?php echo SITE.'/'.htmlspecialchars($row['url']); ?>"><?php echo $row['title']; ?></a><br><?php
             }
-            if ($db->querySingle("SELECT TOP 1 rowid FROM qa WHERE question LIKE '%$s%' OR answer LIKE '%$s%'")) {
+            if ($db->querySingle("SELECT rowid FROM qa WHERE question LIKE '%$s%' OR answer LIKE '%$s%' LIMIT 1")) {
                 $found=true;
                 echo '<a href="'.SITE.'/QandA">留言板</a>';
             }
