@@ -8,6 +8,12 @@ function specialcontent() {
     else if ($search) search();
 }
 
+function utc2local($time) {
+    $dt=new DateTime($time, new DateTimeZone('UTC'));
+    $dt->setTimezone(new DateTimeZone(date_default_timezone_get()));
+    return $dt->format('Y-m-d H:i:s');
+}
+
 function qanda() { ?>
     <h2>留言板（已关闭</h2>
     <p>为符合个人网站备案相关规定（无UGC），留言板已关闭。<br>
@@ -24,10 +30,12 @@ function qanda() { ?>
     if ($result = $db->query('SELECT * FROM qa ORDER BY qtime DESC')) {
         while ($row = $result->fetchArray()) {
             $question = htmlspecialchars($row['question']);
-            if ($row['answer'] === null) echo "言：$question <span class=\"timestamp\">($row[qtime])</span><br>";
+            $qtime=utc2local($row['qtime']);
+            if ($row['answer'] === null) echo "言：$question <span class=\"timestamp\">($qtime)</span><br>";
             else {
-                echo "问：$question <span class=\"timestamp\">($row[qtime])</span><br>";
-                echo "答：$row[answer] <span class=\"timestamp\">($row[atime])</span><br>";
+                $atime=utc2local($row['atime']);
+                echo "问：$question <span class=\"timestamp\">($qtime)</span><br>";
+                echo "答：$row[answer] <span class=\"timestamp\">($atime)</span><br>";
             }
             echo '<br>';
         }
@@ -41,7 +49,8 @@ function logs() {
     global $db;
     if ($result = $db->query('SELECT * FROM logs ORDER BY time DESC LIMIT 100')) {
         while ($row = $result->fetchArray()) {
-            echo "$row[time] $row[memo]<br>";
+            $time=utc2local($row['time']);
+            echo "$time $row[memo]<br>";
         }
     }
     else echo '无法加载更新日志。';
