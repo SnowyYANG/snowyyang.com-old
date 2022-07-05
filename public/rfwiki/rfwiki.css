@@ -25,15 +25,31 @@ for 符文工房中文百科
         float:right;
     }
 }
-
-
 body {
     margin: 0;
     font: 16px Microsoft YaHei;
     height: 100vh 
 }
+.layout {
+    display:flex;min-height:100vh
+}
+.title-s {
+    background:#f8e8b8;
+}
+#toc-button {
+    float:right;padding:1em;color:rgb(91,75,42)
+}
 nav {
     width:10em;min-width:10em;background:#f8e8b8;border-right:dashed 1px rgba(91,75,42,0.3);min-height:100vh
+}
+nav input[name="s"] {
+    width: 80%; margin:0 1em
+}
+#con {
+    display:flex;flex-direction:column;flex-grow:8
+}
+main {
+    flex-grow:99;padding:0 1rem;word-break:break-all;width:100%;max-width:100%;box-sizing:border-box;line-height:1.5
 }
 p {
     line-height: 1.5
@@ -55,6 +71,12 @@ a:visited {
 }
 a:hover {
     
+}
+.title-l h1 {
+    font-size:200%;width:4.5em;padding:0 0.5rem 0 1rem;color:#205010
+}
+.title-s h1 {
+    display:inline-block;line-height:1;margin:0.4em;color:#205010
 }
 h2 {
     color: #483725
@@ -124,4 +146,16 @@ footer {
 }
 .xyxz:visited {
     color:#f8e8b8
+}
+.title-l .xyxz {
+    text-align:center
+}
+.title-s .xyxz {
+    padding:0.2rem 0.8rem
+}
+.ad {
+    color:red;text-decoration:underline;
+}
+.ad:visited {
+    color:red
 }

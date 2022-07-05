@@ -19,8 +19,8 @@ else {
 			$c = SQLite3::escapeString($content);
 			$fulltext = fulltext($html);
 			if ($db->exec("INSERT OR IGNORE INTO pages(url) VALUES('$url')")) {
-				$db->exec("UPDATE pages SET title='$t',content='$c',html='$html',`fulltext`='$fulltext',`time`=CURRENT_TIMESTAMP WHERE url='$url'");
                 $page = $db->lastInsertRowID();
+				$db->exec("UPDATE pages SET title='$t',content='$c',html='$html',`fulltext`='$fulltext',`time`=CURRENT_TIMESTAMP WHERE url='$url'");
 				$memo = SQLite3::escapeString($memo);
 				$db->exec("INSERT INTO logs(page,memo) VALUES($page,'$memo')");
 				$db->exec("INSERT INTO history(page,content) VALUES($page,'$c')");
@@ -51,30 +51,31 @@ else {
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title><?php echo $title ? $title.' - 符文工房4中文百科':'符文工房4中文百科'; ?></title>
+        <title><?php echo ($title ? $title.' - ' : '').'符文工房4中文百科'; ?></title>
         <link href="/rfwiki/favicon.ico" rel="shortcut icon"/>
         <link href="/rfwiki/rfwiki.css" type="text/css" rel="stylesheet"/>
     </head>
     <body>
-        <div style="display:flex;aligen-items:stretch;min-height:100vh">
+        <div class="layout">
             <nav>
                 <div class="title-l">
-                    <a href="/" class="xyxz" style="text-align:center">雪亚小站旗下</a>
+                    <a href="/" class="xyxz">雪亚小站旗下</a>
                     <a href="/rfwiki">
-                        <h1 style="font-size:200%;width:4.5em;padding:0 0.5rem 0 1rem;color:#205010">符文工房<sup style="font-size:50%">4</sup>中文百科</h1>
+                        <h1>符文工房<sup style="font-size:50%">4</sup>中文百科</h1>
                     </a>
                 </div>    
-                <form action="/rfwiki" onsubmit="return !!this.s.value"><input name="s" style="width: 80%; margin:0 1em" placeholder="搜索 输入文本后回车" value="<?php echo htmlspecialchars($search); ?>"></form>
+                <form action="/rfwiki" onsubmit="return !!this.s.value">
+                    <input name="s" placeholder="搜索 输入文本后回车" value="<?php echo htmlspecialchars($search); ?>">
+                </form>
                 <div id="toc"><?php echo $db->querySingle("SELECT html FROM pages WHERE url='toc'");?></div>
             </nav>
-            <div id="con" style="display:flex;flex-direction:column;flex-grow:8">
-                <div class="title-s" style="background:#f8e8b8;">
-                    <a href="/" class="xyxz" style="padding:0.2rem 0.8rem">雪亚小站旗下</a>
-                    <a href="/rfwiki"><h1 style="display:inline-block;line-height:1;color:#205010;margin:0.4em">符文工房4中文百科</h1>
-                </a>
-                <div style="float:right;padding:1em;color:rgb(91,75,42)"
-                onclick="var nav = document.querySelector('nav');nav.style.display=nav.style.display==='block'?'none':'block'">目录</div></div>
-                <main style="flex-grow:99;padding:0 1rem;word-break:break-all;width:100%;max-width:100%;box-sizing:border-box;line-height:1.5"><?php 
+            <div id="con">
+                <div class="title-s">
+                    <a href="/" class="xyxz">雪亚小站旗下</a>
+                    <a href="/rfwiki"><h1>符文工房4中文百科</h1></a>
+                    <div id="toc-button">目录</div>
+                </div>
+                <main><?php 
                     if ($edit) { ?>
                         <script>
                             function _onclick() {
@@ -100,10 +101,10 @@ else {
                         }
                     }
                     else { ?>
-						<a href="/rfwiki/Ad" class="ad" style="color:red;text-decoration:underline;">捐助本站</a>
+						<a href="/rfwiki/Ad" class="ad">捐助本站</a>
                         <div style="padding-right:1em"><?php
-                        if ($special) specialcontent();
-                        else echo $html; ?>
+                            if ($special) specialcontent();
+                            else echo $html; ?>
                         </div><?php 
                     } ?>
                 </main>
@@ -112,10 +113,14 @@ else {
 					<br><a href="https://beian.miit.gov.cn" target="_blank">皖ICP备2022001590号-1</a>
 				</footer>
             </div>
-            <script>
-                window.onresize = function() {
-                    if (document.body.offsetWidth>=500) document.querySelector('nav').style.display='block';
-                }
-            </script>
+        </div>
+        <script>
+            document.getElementById('toc-button').onclick=function() {
+                var nav = document.querySelector('nav');nav.style.display=nav.style.display==='block'?'none':'block';
+            }
+            window.onresize = function() {
+                if (document.body.offsetWidth>=500) document.querySelector('nav').style.display='block';
+            }
+        </script>
     </body>
 </html>
