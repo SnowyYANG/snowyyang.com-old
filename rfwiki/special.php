@@ -60,13 +60,20 @@ function logs() {
 function search() {
     global $search,$db;
     echo '<h2>搜索结果 - '.htmlspecialchars($search).'</h2>';
-    $s = SQLite3::escapeString($search);
-    if ($result = $db->query("SELECT url,title,`fulltext` FROM pages WHERE `fulltext` LIKE '%$s%'")) {
-        while($row = $result->fetchArray()) {
-            $found=true;
-            if ($row['url'] === '') $row['title']='主页'; ?>
-            <a href="<?php echo SITE.'/'.htmlspecialchars($row['url']); ?>"><?php echo $row['title']; ?></a><br><?php
+    if (strpos($search, '%') !== false || strpos($search, '_') !== false) echo '不支持搜索百分号和下划线。';
+    else {
+        $s = SQLite3::escapeString($search);
+        if ($result = $db->query("SELECT url,title,`fulltext` FROM pages WHERE `fulltext` LIKE '%$s%'")) {
+            while($row = $result->fetchArray()) {
+                $found=true;
+                if ($row['url'] === '') $row['title']='主页'; ?>
+                <a href="<?php echo SITE.'/'.htmlspecialchars($row['url']); ?>"><?php echo $row['title']; ?></a><br><?php
+            }
+            if ($db->querySingle("SELECT TOP 1 rowid FROM qa WHERE question LIKE '%$s%' OR answer LIKE '%$s%'")) {
+                $found=true;
+                echo '<a href="'.SITE.'/QandA">留言板</a>';
+            }
+            if (!$found) echo '找不到相关页面。';
         }
-        if (!$found) echo '找不到相关页面。';
     }
 }
