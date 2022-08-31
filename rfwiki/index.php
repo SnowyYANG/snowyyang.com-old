@@ -101,7 +101,7 @@ else {
                         }
                     }
                     else { ?>
-						<a href="/rfwiki/Ad" class="ad">捐助本站</a>
+						<a href="/rfwiki/Ad" class="ad">本站寻求转让</a>
                         <div style="padding-right:1em"><?php
                             if ($special) specialcontent();
                             else echo $html; ?>
