@@ -59,7 +59,7 @@ else {
         <div class="layout">
             <nav>
                 <div class="title-l">
-                    <a href="/" class="xyxz">雪亚小站旗下</a>
+                    <a href="/" class="xyxz">&nbsp;</a>
                     <a href="/rfwiki">
                         <h1>符文工房<sup style="font-size:50%">4</sup>中文百科</h1>
                     </a>
@@ -71,7 +71,7 @@ else {
             </nav>
             <div class="content">
                 <div class="title-s">
-                    <a href="/" class="xyxz">雪亚小站旗下</a>
+                    <a href="/" class="xyxz">&nbsp;</a>
                     <a href="/rfwiki"><h1>符文工房4中文百科</h1></a>
                     <div id="toc-button">目录</div>
                 </div>
@@ -101,7 +101,7 @@ else {
                         }
                     }
                     else { ?>
-						<a href="/rfwiki/Ad" class="ad">本站寻求转让</a>
+						<a href="/rfwiki/Ad" class="ad">本站转让中...</a>
                         <div style="padding-right:1em"><?php
                             if ($special) specialcontent();
                             else echo $html; ?>
