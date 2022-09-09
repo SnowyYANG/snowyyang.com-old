@@ -10,10 +10,7 @@ if ($q = $_GET['q']) {
             $router = $q[1];
             break;
         case 'rfwiki':
-			$skip = strlen($q[1])+1;
-            $_GET['q'] = substr($_GET['q'], $skip);
-            $_REQUEST['q'] = substr($_REQUEST['q'], $skip);
-            require $q[1].'/index.php';
+            header('Location: https://rf4wiki.allie.tw'.$_GET['q'], true, 301);
             exit;
         case 'rf4wiki':
             header('Location: /rfwiki',true,301);
@@ -22,12 +19,6 @@ if ($q = $_GET['q']) {
 		case 'mc.xlsx':
 			header('Location: /mc', true, 301);
 			exit;
-        case 'mabiwiki':
-            header('Location: http://www.luoqi.wiki/', true, 301);
-            break;
-		case 'love':
-            header('Location: https://read.douban.com/reader/essay/317897624/', true, 301);
-            break;
 		default:
 			http_response_code(404);
 			break;

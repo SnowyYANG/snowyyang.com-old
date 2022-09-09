@@ -10,7 +10,7 @@ function view() {
 <p>
 	欢迎来到<span style="color:blue"><b>雪亚</b>小站</span><br>
 	<br>
-	❄&#65038; <a href="/rfwiki">符文工房4中文百科</a><br>
+	❄&#65038; 符文工房4中文百科已转让，新网址：<a target="_blank" href="https://rf4wiki.allie.tw/">https://rf4wiki.allie.tw</a><br>
 	❄&#65038; 洛奇Mabinogi<br>
 	&emsp;❄&#65038; <a href="/mc">普通染色颜色代码大全</a><br>
 	&emsp;❄&#65038; <a target="_blank" href="https://github.com/SnowyYANG/MabinogiClock">洛奇小闹钟</a><br>

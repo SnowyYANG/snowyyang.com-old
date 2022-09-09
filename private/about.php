@@ -10,7 +10,6 @@ function view() {
 ?>
 <p style="float:left">
 <span style="color:blue;font-weight:bold">Snowy</span> YANG<br>
-<span style="color:blue;font-weight:bold">雪</span>桠<br>
 <br>
 出生居住于安徽省芜湖市<br>
 事业感情均已稳定 谢绝各类猎头<br>
