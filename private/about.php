@@ -19,7 +19,8 @@ function view() {
 <span onmouseenter="yin(this)" onmouseleave="yang(this)">八面玲珑百灵鸟 嘤嘤楚楚笼中傲<br>经风经雨生不毁 历霜历雪尽妖娆<br>机关算尽不误命 露财露色也平安<br>耐得春宵萧寒夜 平步青云又一朝</span>​<br>
 <br>
 E-mail: <b>snowyyang@outlook.com</b><br>
-LinkedIn: <a target="_blank" href="https://www.linkedin.com/in/snowyyang/">Fei YANG</a><br>
+LinkedIn: <a target="_blank" href="https://www.linkedin.com/in/snowyyang/">Fei (Snowy) YANG</a><br>
+爱发电：<a target="_blank" href="https://afdian.net/a/snowyyang">Snowy</a><br>
 Steam开发者: <a target="_blank" href="https://store.steampowered.com/developer/Snowy">Snowy</a><br>
 GitHub: <a target="_blank" href="https://github.com/SnowyYANG">SnowyYANG</a><br>
 豆瓣阅读：<a target="_blank" href="https://read.douban.com/author/63749418/">Snowy</a><br>
