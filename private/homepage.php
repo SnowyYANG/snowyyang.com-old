@@ -17,7 +17,7 @@ function view() {
 	❄&#65038; Steam<br>
 	&emsp;❄&#65038; <a target="_blank" href="https://store.steampowered.com/app/2116000">阴桃花</a>（互动小说<br>
 	&emsp;❄&#65038; <a target="_blank" href="https://store.steampowered.com/app/1604930">笼鸟之心</a>（视觉小说<br>
-	&emsp;❄&#65038; <a target="_blank" href="https://store.steampowered.com/app/1511310">消灭魔王军-改</a>（数值策略游戏<br>
+	&emsp;❄&#65038; <a target="_blank" href="https://store.steampowered.com/app/1511310">数值魔王猫</a>（数值策略游戏<br>
 	<br>
 	❄&#65038; 洛奇Mabinogi<br>
 	&emsp;❄&#65038; <a href="/mc">普通染色颜色代码大全</a><br>

@@ -51,8 +51,8 @@ for http://snowy.asia/
             <?php view(); ?>
         </div>
         <div style="width: 3em; position: fixed; top:0; right:0; background: #eaf4fc; padding: 1em; height: 100%;">
-			<footer style="position:absolute; left:1em; bottom:20rem; color:#ffffff; white-space:nowrap; transform-origin:left center 0; transform:rotate(90deg)">
-				<a href="https://beian.miit.gov.cn" target="_blank" style="text-decoration: none"><span style="color:white">皖ICP备2022001590号-1</span></a> Snowy❄&#65038;2023
+			<footer style="position:absolute; left:1em; bottom:8rem; color:#ffffff; white-space:nowrap; transform-origin:left center 0; transform:rotate(90deg)">
+				Snowy❄&#65038;2023
 			</footer>
         </div>
     </body>

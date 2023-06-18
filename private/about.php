@@ -8,7 +8,7 @@ $title = 'Snowy';
 
 function view() {
 ?>
-<p style="float:left">
+<p>
 <span style="color:blue;font-weight:bold">Snowy</span> YANG<br>
 <br>
 出生居住于安徽省芜湖市<br>
@@ -19,16 +19,13 @@ function view() {
 <span onmouseenter="yin(this)" onmouseleave="yang(this)">八面玲珑百灵鸟 嘤嘤楚楚笼中傲<br>经风经雨生不毁 历霜历雪尽妖娆<br>机关算尽不误命 露财露色也平安<br>耐得春宵萧寒夜 平步青云又一朝</span>​<br>
 <br>
 E-mail: <b>snowyyang@outlook.com</b><br>
-LinkedIn: <a target="_blank" href="https://www.linkedin.com/in/snowyyang/">Fei (Snowy) YANG</a><br>
 爱发电：<a target="_blank" href="https://afdian.net/a/snowyyang">Snowy</a><br>
 Steam开发者: <a target="_blank" href="https://store.steampowered.com/developer/Snowy">Snowy</a><br>
 GitHub: <a target="_blank" href="https://github.com/SnowyYANG">SnowyYANG</a><br>
-豆瓣阅读：<a target="_blank" href="https://read.douban.com/author/63749418/">Snowy</a><br>
-Pixiv：<a target="_blank" href="https://www.pixiv.net/users/15972970">大正８年８月の東京ユリカ</a><br>
+微博：<a target="_blank" href="https://weibo.com/August1919">@假装是鸽子的白色乌鸦</a><br>
 Twitter: Snowy <a target="_blank" href="https://twitter.com/Aug1919">@Aug1919</a><br>
-微博：<a target="_blank" href="https://weibo.com/August1919">@假装是鸽子的白色乌鸦</a>
+半次元：<a href="https://www.bcy.net/u/3570862174240957">假装是鸽子的白色乌鸦</a>
 </p>
-<img style="float:left;width:28rem;max-width:100%" src="https://ik.imagekit.io/snowyyang/snowy.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1663843956323">
 <script>
 var yin = function(e) {
 	e.innerHTML = '八面玲珑百灵鸟 嘤嘤楚楚笼中傲<br>经枫经雨生不悔 若霜若雪竞妖娆<br>机关算尽不误命 露才露色也平安<br>耐得春宵萧寒夜 平步青云又一朝​';
