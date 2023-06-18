@@ -24,7 +24,6 @@ Steam开发者: <a target="_blank" href="https://store.steampowered.com/develope
 GitHub: <a target="_blank" href="https://github.com/SnowyYANG">SnowyYANG</a><br>
 微博：<a target="_blank" href="https://weibo.com/August1919">@假装是鸽子的白色乌鸦</a><br>
 Twitter: Snowy <a target="_blank" href="https://twitter.com/Aug1919">@Aug1919</a><br>
-半次元：<a href="https://www.bcy.net/u/3570862174240957">假装是鸽子的白色乌鸦</a>
 </p>
 <script>
 var yin = function(e) {
