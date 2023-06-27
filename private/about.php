@@ -11,7 +11,7 @@ function view() {
 <p>
 <span style="color:blue;font-weight:bold">Snowy</span> YANG<br>
 <br>
-隔绝现实的幻想追求者<br>
+隔绝现实的纯粹幻想者<br>
 事业感情均已稳定 谢绝各类猎头<br>
 人生梦想成为全能天才美少女<br>
 实际天天吃吃睡睡<br>
