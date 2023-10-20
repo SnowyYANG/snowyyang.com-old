@@ -3,9 +3,6 @@ if ($q = $_GET['q']) {
     $q = explode('/', $q);
     switch ($q[1]) {
 		case '':
-        case 'mc':
-		case 'mrp':
-		case 'mr':
         case 'about':
         case 'love':
             $router = $q[1];
@@ -18,8 +15,15 @@ if ($q = $_GET['q']) {
             exit;
 		case 'mc.txt':
 		case 'mc.xlsx':
-			header('Location: /mc', true, 301);
+        case 'mc':
+			header('Location: https://luoqi.wiki/dye-colors', true, 301);
 			exit;
+		case 'mrp':
+            header('Location: https://luoqi.wiki/rabbie', true, 301);
+            exit;
+		case 'mr':
+            header('Location: https://luoqi.wiki/metalware-old', true, 301);
+            exit;
 		default:
 			http_response_code(404);
 			break;
