@@ -7,10 +7,8 @@ if ($q = $_GET['q']) {
             $router = $q[1];
             break;
         case 'rfwiki':
-            header('Location: https://rf4wiki.allie.tw'.$_GET['q'], true, 301);
-            exit;
         case 'rf4wiki':
-            header('Location: /rfwiki',true,301);
+            header('Location: https://rf4wiki.allie.tw'.$_GET['q'], true, 301);
             exit;
 		case 'mc.txt':
 		case 'mc.xlsx':
