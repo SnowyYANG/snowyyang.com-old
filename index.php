@@ -3,7 +3,6 @@ if ($q = $_GET['q']) {
     $q = explode('/', $q);
     switch ($q[1]) {
 		case '':
-        case 'about':
         case 'love':
             $router = $q[1];
             break;
@@ -41,12 +40,12 @@ for http://snowy.asia/
 <html>
     <head>
         <meta charset="UTF-8">
-        <title><?php if ($title) echo $title.' - '; ?>雪亚小站</title>
+        <title><?php if ($title) echo $title.' | '; ?>雪亚小站</title>
 		<link rel="shortcut icon" href="/favicon.ico"/>
 		<style>a:visited{color:#009} summary{cursor:pointer} <?php echo $style; ?></style>
     </head>
     <body style="margin:0;font:16px Microsoft YaHei;">
-        <a href="/" style="color:<?php echo $router == 'homepage' ? '#000000' : '#ffffff';?>">
+        <a href="/" style="color:#fff">
 			<div style="width: 1em;position: fixed;top:0;background: #eaf4fc;padding: 1rem;height: 100%;font: bold 3em SimSun;">
                 雪亚小站
             </div>
