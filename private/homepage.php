@@ -36,7 +36,7 @@ var yang = function(e) {
 	事业感情均已稳定 谢绝各类猎头<br>
 	人生梦想成为全能天才美少女<br>
 	实际天天吃吃睡睡</p>
-	<p>E-mail: <a href="mailto:snowyyang@outlook.com"><strong>snowyyang@outlook.com</strong></a><br>
+	<p>E-mail: <a href="mailto:snowyyang@outlook.com">snowyyang@outlook.com</a><br>
 	爱发电：<a target="_blank" href="https://afdian.net/a/snowyyang">Snowy</a><br>
 	Steam开发者: <a target="_blank" href="https://store.steampowered.com/developer/Snowy">Snowy</a><br>
 	淘宝店：<a target="_blank" href="https://snowyyang.taobao.com/">雪亚小铺</a><br>

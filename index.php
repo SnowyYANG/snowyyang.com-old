@@ -31,30 +31,17 @@ if (!$router) $router = 'homepage';
 require 'private/'.$router.'.php';
 ?>
 <!DOCTYPE html>
-<!--
-by Snowy YANG
-for http://snowy.asia/
--->
-<html>
+<html lang="zh-CN">
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title><?php if ($title) echo $title.' | '; ?>雪亚小站</title>
 		<link rel="shortcut icon" href="/favicon.ico"/>
-		<style>a:visited{color:#009} summary{cursor:pointer} <?php echo $style; ?></style>
+        <link rel="stylesheet" type="text/css" href="/main.css">
     </head>
-    <body style="margin:0;font:16px Microsoft YaHei;">
-        <a href="/" style="color:#fff">
-			<div style="width: 1em;position: fixed;top:0;background: #eaf4fc;padding: 1rem;height: 100%;font: bold 3em SimSun;">
-                雪亚小站
-            </div>
-		</a>
-        <div style="margin:0em 6em">
-            <?php view(); ?>
-        </div>
-        <div style="width: 3em; position: fixed; top:0; right:0; background: #eaf4fc; padding: 1em; height: 100%;">
-			<footer style="position:absolute; left:1em; bottom:8rem; color:#ffffff; white-space:nowrap; transform-origin:left center 0; transform:rotate(90deg)">
-				Snowy❄&#65038;2023
-			</footer>
-        </div>
+    <body>
+        <header><a href="/" style="color:#fff"><h1>雪亚小站</h1></a></header>
+        <main><?php view(); ?></main>
+        <footer><div class="footer">Snowy❄&#65038;2023</div></footer>
     </body>
 </html>
