@@ -8,10 +8,10 @@
 function view() {
 ?>
 <h2>欢迎来到<span style="color:blue"><b>雪亚</b>小站</span></h2>
-<p>
+<p style="color:red">
 符文工房4中文百科已转让：<a href="https://rf4wiki.allie.tw" target="_blank">https://rf4wiki.allie.tw</a><br>
-洛奇Mabinogi相关已搬：<a href="https://luoqi.wiki" target="_blank">https://luoqi.wiki</a>
-<p>
+洛奇Mabinogi相关已搬家：<a href="https://luoqi.wiki" target="_blank">https://luoqi.wiki</a>
+</p>
 <p onmouseenter="yin(this)" onmouseleave="yang(this)">八面玲珑百灵鸟 嘤嘤楚楚笼中傲<br>经风经雨生不毁 历霜历雪尽妖娆<br>机关算尽不误命 露财露色也平安<br>耐得春宵萧寒夜 平步青云又一朝</p>
 <script>
 var yin = function(e) {
