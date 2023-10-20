@@ -6,7 +6,6 @@ body {
 header, footer {
     position: fixed;
     writing-mode: vertical-lr;
-    text-align: center;
     padding: 10px;
     color: #fff;
 }  
@@ -27,7 +26,6 @@ header a {
 
 h1 {
     font-size: 3rem;
-    width: 1em;
     margin:0;
 }
 
@@ -47,6 +45,7 @@ main {
 h2 {
     margin: 0;
     padding: 0.83em 0;
+    text-align: center;
 }
 
 /*@media screen and (max-width: 480px) {
