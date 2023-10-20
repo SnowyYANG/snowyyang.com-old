@@ -1,10 +1,4 @@
 <?php
-
-/* 
- * by Snowy YANG
- * for http://snowy.asia/
- */
-
 function view() {
 ?>
 <h2>欢迎来到<span style="color:blue"><b>雪亚</b>小站</span></h2>

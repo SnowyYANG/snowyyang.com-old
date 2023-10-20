@@ -1,10 +1,4 @@
 <?php
-
-/* 
- * by Snowy YANG
- * for http://snowy.asia/
- */
-
 $title = '幻梦情劫';
 
 function view() {
